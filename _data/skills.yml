@@ -1,0 +1,27 @@
+- Languages:
+    primary:
+      - HTML
+      - PHP
+      - MySQL
+    secondary:
+      - CSS
+      - Bash
+- Systems:
+    primary:
+      - Windows
+      - CentOS
+      - OS X
+      - Moodle
+    secondary:
+      - Apache
+      - Windows Server
+      - CloudFlare
+      - Jekyll
+      - Wordpress
+- Other:
+    primary:
+      - DNS
+      - Markdown
+      -
+    secondary:
+      -

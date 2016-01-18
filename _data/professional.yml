@@ -1,0 +1,29 @@
+- org:  HowToMoodle
+  role: Support Technician
+  location: Telford, UK
+  when: April 2013 - Now
+  bullets:
+    - Setup, Upgrade and Migrate clients moving or starting with the Moodle platform.
+    - Support clients in troubleshooting problems with the platform, advising and assisting them with their Moodle journey.
+    - Ensuring hosting servers are running smoothly 24/7 and keeping clients informed when issues arise with the service.
+    - Documenting and keeping track of technical changes with the hosting platform.
+    - Debugging Moodle application issues in PHP and MySQL, providing a fix or raising as an issue against the Moodle Tracker
+    - Debugging Moodle Theme issues in PHP and CSS.
+    - Amending and investigating styling issues or requests in PHP and CSS for Moodle.
+    - Managing the LAMP(Linux(CentOS 5, 6 and 7), Apache, MySQL/MariaDB and PHP) + DirectAdmin Control Panel server setups.
+    - Managing colleagues computers on Windows 7, 8 and 10.
+    - Upgrading all colleagues to Windows 10
+    - Performing company rollout to Windows Server 2012 Domain Controller. Ensuring all employee's are connected to the domain correctly and their PCs work as expected.
+    
+
+- org: Capita ITS
+  role: Junior Technical Support
+  location: Telford, UK
+  when: September 2008 - April 2015
+  bullets:
+    - Working with Developers and Designers with the QA testing of Capita's learning platform, OpenHive.
+    - Creating automated QA testing scripts with Selinium
+    - Load testing hosting services
+    - Supporting School and College clients with their Moodle platform with any issues or queries that may arise during term.
+    - Performing yearly school rollovers take place in time for term start within their custom Moodle environment.
+    - Managing the LAMP (Linux(CentOS), Apache, MySQL and PHP) server setups.

@@ -8,7 +8,7 @@
       - Bash
 - Systems:
     primary:
-      - Windows
+      - Windows 7, 8 and 10
       - CentOS
       - OS X
       - Moodle
@@ -22,6 +22,10 @@
     primary:
       - DNS
       - Markdown
-      -
     secondary:
-      -
+      - Windows Active Directory
+      - Remote Desktop (RDP)
+      - VNC
+      - Discord
+      - Twitch
+      - Hitbox

@@ -30,7 +30,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #868686;
+/*  background-color: #868686; */
+  background-color: #2a4286;
   overflow: hidden;
   z-index: 1;
 }
@@ -139,7 +140,8 @@ button.menu img {
   bottom: 0;
   width: 250px;
   height: 100%;
-  background-color: #696969;
+ /* background-color: #696969; */
+  background-color: #3f5a86;
   color: #fff;
   -webkit-transform: translate(-250px, 0);
   transform: translate(-250px, 0);
@@ -224,7 +226,6 @@ main {
     max-width: 864px;
     padding: 0 16px;
     box-sizing: border-box;
-    background-color: #868686;
   }
 
   .app-bar .logo {

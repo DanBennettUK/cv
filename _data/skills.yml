@@ -8,24 +8,29 @@
       - Bash
 - Systems:
     primary:
-      - Windows 7, 8 and 10
+      - Windows
       - CentOS
       - OS X
       - Moodle
     secondary:
       - Apache
       - Windows Server
+      - Salesforce
       - CloudFlare
       - Jekyll
       - Wordpress
+      - iOS
+      - Android
 - Other:
     primary:
+      - Customer Support (1st, 2nd and 3rd lines)
       - DNS
+      - Remote Desktop (RDP)
       - Markdown
     secondary:
       - Windows Active Directory
-      - Remote Desktop (RDP)
       - VNC
       - Discord
       - Twitch
       - Hitbox
+      - VIM

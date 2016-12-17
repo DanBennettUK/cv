@@ -1,25 +1,33 @@
 - org:  HowToMoodle
   role: Support Technician
   location: Telford, UK
-  when: April 2013 - Now
+  when: April 2012 - Now
   bullets:
-    - Setup, Upgrade and Migrate clients moving or starting with the Moodle platform.
-    - Support clients in troubleshooting problems with the platform, advising and assisting them with their Moodle journey.
+    - Setup, Upgrade and Migrate clients moving or starting with the Moodle/Totara platform.
+    - Answering support calls via our ticketing system (Helpspot).
+    - Using Salesforce to get customer details and to be notified of upcoming work.
+    - Support clients in troubleshooting problems with the platform, advising and assisting them with their Moodle/Totara journey.
     - Ensuring hosting servers are running smoothly 24/7 and keeping clients informed when issues arise with the service.
     - Documenting and keeping track of technical changes with the hosting platform.
-    - Debugging Moodle application issues in PHP and MySQL, providing a fix or raising as an issue against the Moodle Tracker
-    - Debugging Moodle Theme issues in PHP and CSS.
-    - Amending and investigating styling issues or requests in PHP and CSS for Moodle.
-    - Managing the LAMP(Linux(CentOS 5, 6 and 7), Apache, MySQL/MariaDB and PHP) + DirectAdmin Control Panel server setups.
+    - Debugging Moodle/Totara application issues in PHP and MySQL, providing a fix or raising as an issue against the Moodle/Totara Tracker.
+    - Debugging Moodle/Totara Theme issues in PHP and CSS.
+    - Amending and investigating styling issues or requests in PHP and CSS for Moodle/Totara.
+    - Managing servers running CentOS (5, 6 and 7), Apache, PHP, MySQL/MariaDB & DirectAdmin Control Panel.
+    - Working out of hours to ensure server updates are performed correctly and with minimum interruption to customers.
+    - Investigating any issues with the servers when they crop up (CPU Loads, disk speeds, disk usages, etc...) working with the Data Centre to get them resolved.
+    - Monitoring each customer site and servers using Icinga (based on Nagios). Ensuring swift action is taken when an alert is raised.
+    - Planning automation of manual tasks performed for site setups.
+    - Managing local GIT repositories for Moodle/Totara, custom plugins and themes.
+    - QA Testing developed applications and raising issues using JIRA.
     - Managing colleagues computers on Windows 7, 8 and 10.
-    - Upgrading all colleagues to Windows 10
+    - Upgrading all colleagues to Windows 10.
     - Performing company rollout to Windows Server 2012 Domain Controller. Ensuring all employee's are connected to the domain correctly and their PCs work as expected.
     
 
 - org: Capita ITS
   role: Junior Technical Support
   location: Telford, UK
-  when: September 2008 - April 2015
+  when: September 2008 - April 2012
   bullets:
     - Working with Developers and Designers with the QA testing of Capita's learning platform, OpenHive.
     - Creating automated QA testing scripts with Selinium

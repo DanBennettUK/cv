@@ -26,6 +26,6 @@
   id: personal
   layout: block
 
-#- name: Honors
-#  id: honors
-#  layout: list
+- name: Hobbies
+  id: hobbies
+  layout: list

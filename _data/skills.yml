@@ -12,9 +12,12 @@
       - CentOS
       - OS X
       - Moodle
+      - Helpspot
     secondary:
       - Apache
       - Windows Server
+      - Nginx
+      - Lighttpd
       - Salesforce
       - CloudFlare
       - Jekyll

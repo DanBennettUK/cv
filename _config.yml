@@ -2,7 +2,7 @@
 
 # Site Settings
 title: Dan Bennett's CV
-url: 'http://cv.danbennett.me'
+url: 'https://cv.danbennett.me'
 baseurl: '' #change it according to your repository name
 # description: A beautiful Jekyll theme for creating resum
 # Style will be applied only after restarting the build or serve. Just choose one of the options.

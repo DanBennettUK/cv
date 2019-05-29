@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DanBennettUK/cv.svg?branch=master)](https://travis-ci.org/DanBennettUK/cv)
+
 <a href="https://jekyll-themes.com">
 <img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield" >
 </a>

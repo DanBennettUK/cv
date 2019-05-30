@@ -202,6 +202,12 @@ skills:
       - name: DNS & Domain Management
         level: 90%
 
+      - name: GIT
+        level: 85%
+      
+      - name: Jekyll
+        level: 75%
+
 
 footer: >
     <i class="fas fa-heart"></i> Dan Bennett

@@ -175,6 +175,10 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
+
+      - name: Customer Support
+        level: 100%
+
       - name: HTML5 & CSS
         level: 80%
 

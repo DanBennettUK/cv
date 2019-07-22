@@ -9,7 +9,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6  {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
 }
 
@@ -29,11 +34,11 @@ p {
 }
 
 .wrapper {
-    background:$theme-color;
+    background: $theme-color;
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
-    @include box-shadow(0px 2px 4px rgba(0,0,0,0.1));
+    @include box-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .sidebar-wrapper {
@@ -80,7 +85,8 @@ p {
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
     .contact-list {
-        .fas, .fab {
+        .fas,
+        .fab {
             margin-right: 5px;
             font-size: 18px;
             vertical-align: middle;
@@ -151,6 +157,16 @@ p {
             }
         }
     }
+
+    .download-list {
+        margin-bottom: 0;
+        li {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .main-wrapper {
@@ -170,7 +186,8 @@ p {
         margin-bottom: 60px;
     }
 
-    .experiences-section, .educations-section {
+    .experiences-section,
+    .educations-section {
         .item {
             margin-bottom: 30px;
         }
@@ -180,7 +197,8 @@ p {
         overflow: hidden;
         margin-bottom: 2px;
     }
-    .job-title, .degree {
+    .job-title,
+    .degree {
         color: $text-color;
         font-size: 16px;
         margin-top: 0;
@@ -193,7 +211,8 @@ p {
         top: 0;
         color: $text-grey;
     }
-    .company, .university {
+    .company,
+    .university {
         margin-bottom: 10px;
         color: $text-grey;
     }
@@ -234,7 +253,6 @@ p {
     }
 }
 
-
 .skillset {
     .item {
         margin-bottom: 15px;
@@ -255,9 +273,6 @@ p {
     }
 }
 
-
-
-
 .footer {
     padding-top: 30px;
     .copyright {
@@ -269,5 +284,4 @@ p {
     .fa-heart {
         color: $heart;
     }
-
 }

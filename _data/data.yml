@@ -46,7 +46,7 @@ sidebar:
 
     download:
         - item: Download CV
-          link: cv.danbennett.me/download/CV_General.doc
+          link: download/CV_General.doc
 
 career-profile:
     title: Career Profile

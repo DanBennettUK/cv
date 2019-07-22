@@ -7,7 +7,7 @@
     <ul class="list-unstyled download-list">
         {% for download in download %}
         <li>
-            <a href="https://{{ download.link }}">{{ download.item }}</a>
+            <a href="{{ site.url }}/{{ download.link }}">{{ download.item }}</a>
         </li>
         {% endfor %}
     </ul>

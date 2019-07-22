@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "alias": "cv.danbennett.me",
     "name": "Dan Bennett Online CV",
     "builds": [
         {

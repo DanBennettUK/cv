@@ -1,0 +1,141 @@
+# Experience template
+- layout: left
+  company: APT Solutions
+  link:
+  job_title: Service Desk Agent
+  dates: November 2019 - present
+  quote: >
+      APT Solutions is a specialist supplier of membership software and services to a wide range of clients predominantly in the Not for profit sector. We specialise in systems for Trade Unions, Professional Institutions, Sporting Bodies and Charities ranging from 1,000 to 1.5 million members.
+  description: | # this will include new lines to allow paragraphs
+      At APT Solutions I am one of three Service Desk Agents supporting customers with their Membership software. From small taxi firms to huge unions.
+      Working three different shift patterns, including one night shift, ensuring our support is covered for our UK, AUS and NZ customers.
+
+# Experience template
+- layout: left
+  company: PUBG Reddit (r/PUBATTLEGROUNDS)
+  link: https://www.reddit.com/r/pubattlegrounds
+  job_title: Volunteer Community Manager & Community Games Host
+  dates: 2018 - Present
+  quote: >
+      The largest community for PLAYERUNKNOWN'S BATTLEGROUNDS on PC, Xbox One and PlayStation 4.
+  description: | # this will include new lines to allow paragraphs
+      At PUBG Reddit, after being a member of the community I was invited to be part
+      of the moderation team.
+      This mostly involves ensuring rules are abided to by our 100k+ members and assisting with
+      any issues and conflicts between members.
+
+      I am also in charge of hosting our Community Custom Games where we run a leaderboard
+      and fun tournaments with fun and specific modes made up by ourselves and the players.
+      All games are streamed live on Twitch and I, along with others, cast these games as they
+      are being played out to provide a fun experience to the players and the community watching.
+
+      I also work closely with PUBG Corp staff with any requirements they may have with the subreddit,
+      working together on fun community events and giveaways as well as providing any
+      feedback and bugs in the game itself for PUBG Corp to investigate and improve.
+
+      As part of this, I also manage the PUBG Reddit Twitter account, ensuring relevant content is shared 
+      and posted in relation to the game and providing talking points to drive the conversation.
+
+      - Discord Community Moderator
+      - Subreddit Community Moderator
+      - Social Media Manager
+      - PUBG Games Host & Observer
+      - PUBG Twitch Caster
+      - Self-taught Discord Bot development in Python
+
+- layout: left
+  company: EGX & epicLAN
+  link: https://www.egx.net/egx/2019/watch-and-learn
+  job_title: Watch & Learn PLAYERUNKNOWNS BATTLEGROUNDS (PUBG) Professional
+  dates: 17th October - 20th October
+  quote: >
+      UK's premier video games show.
+  description: | # this will include new lines to allow paragraphs
+      During the four days at EGX 2019, I was enlisted by epicLAN to teach in their Watch & Learn area. 
+      Teaching new players about PUBG, explaining and showing how then can improve and giving console players a taste of the PC side.
+      This was during all four days of EGX 2019 for sessions booked for 30 minutes at a time.
+
+      - Assisted in setting up & packing down of multiple EGX stages managed by epicLAN
+      - Managed my dedicated Watch & Learn station
+      - Grown new skills in teaching
+      - Advertising on personal Social Media
+
+- layout: left
+  company: HowToMoodle
+  link: howtomoodle.com
+  job_title: Support Technician
+  dates: 2012 - 2018
+  quote: >
+      We provide end-to-end learning solutions that enable UK and European organisations, of all types and sizes, to create engaging learning experiences to help them stay current in their industry and achieve significant learning ROI.
+  description: | # this will include new lines to allow paragraphs
+      At HowToMoodle my role was to ensure new and existing clients had the best customer service experience possible. 
+      I managed migrations and upgrades of customers’ sites, to ensure they were kept up to date. 
+      I worked hard to build and maintain good relationships with customers, ensuring they always had all the required information 
+      to make the processes as smooth as possible and completed to mutually agreed timescales. 
+
+        - Setup, Upgraded and Migrated clients moving to the Moodle/Totara platform.
+        - Designed and implemented automation of most manual tasks performed for site setups.
+        - Answered support calls via our support desk system - Helpspot.
+        - Supported clients in troubleshooting problems with the platform, advising and assisting them 
+          with their Moodle/Totara journey.
+        - Provided on-call service to ensure hosting servers are running smoothly 24/7 and keeping clients 
+          informed when issues arise with the service.
+        - Provided Administrator Support and Technical Server Support to clients Moodle sites.
+        - Wrote accurate and comprehensive documentation to support and track technical changes with the hosting platform.
+        - Providing Technical Server Support to clients whose services are hosted in-house or by 
+          a third-party provider.
+        - Debugged Moodle/Totara application issues in PHP and MySQL, providing a fix or 
+          raising as an issue against the Moodle/Totara Tracker.
+        - Managed all internal hosting servers running CentOS (5, 6 and 7), Apache, PHP, 
+          MySQL/MariaDB & DirectAdmin Control Panel.
+        - Managed external client servers running CentOS, Ubuntu, Gentoo and Windows Server and using HTTPD, Apache2 and Nginx.
+        - Monitoring each customer site and servers using Icinga (based on Nagios).
+        - Managed local GIT repositories for Moodle/Totara, custom plugins and themes.
+        - QA Testing developed plugins and raising issues using JIRA.
+        - Performing company rollout to Windows Server 2012 Domain Controller. 
+        - Management of all company Windows desktops and laptops, including troubleshooting, patches, 
+          software & hardware upgrades, asset management.
+
+# Experience template
+- layout: left
+  company: NovaFM
+  link:
+  job_title: Volunteer Presenter / Producer
+  dates: 2012 - 2014
+  quote: >
+      Newport's Local Community Radio
+  description: | # this will include new lines to allow paragraphs
+      At NovaFM I hosted two local radio shows. One specialising in new, upcoming and rarely heard artists/bands, the other specialising in Dance, Trance and UK Hardcore music. 
+      I produced both shows every week.
+      I wrote and produced Friday and Saturday's News-reading for each hour.
+      Assisted with Outside Broadcasts (Newfest 2012 & 2013. The Pheztival 2012 & 2013)
+
+# Experience template
+- layout: left
+  company: Capita ITS (ex-i2Q Education Limited (A Synetrix Company))
+  link:
+  job_title: Junior Technical Support
+  dates: 2008 - 2012
+  quote: >
+
+  description: | # this will include new lines to allow paragraphs
+      I started at i2Q, which later in life became Capita ITS. 
+
+      At Capita, my main role involved supporting customers, mostly School and College clients, 
+      with their Moodle platform and with any issues or queries that may arise during term. 
+
+      Performing yearly school rollovers take place in time for term start within their custom Moodle environment.
+
+      I also worked with developers, undertaking Quality Assurance testing of Capita’s new learning 
+      platform - OpenHive - during its development, using automated scripting and writing test plans.
+
+# Experience template
+# - layout: left
+#   company: Company name
+#   link: Link to company (optional)
+#   job_title: Job title
+#   dates: Date Range (eg. November 2016 - present)
+#   quote: >
+#       Short description of the company (optional)
+#   description: | # this will include new lines to allow paragraphs
+#       Description of role

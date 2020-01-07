@@ -1,36 +1,99 @@
-#Update all the sections by editing the data.yml file inside _data folder.
+# Site
+repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
+# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
-# Site Settings
-title: Dan Bennett's CV
-url: 'https://cv.danbennett.me'
-baseurl: '' #change it according to your repository name
-description: Dan Bennett's CV
-# Style will be applied only after restarting the build or serve. Just choose one of the options.
-theme_skin: orange # blue turquoise green berry orange ceramic
-chrome_mobile_color: #use hex colors (ex:#1976d2) or leave empty if you don't want a color for chrome mobile searchbar
+# Personal info
+name: Dan Bennett
+title: Volunteer Community Manager, Social Media Nut & Customer Support Guru
+email: dan@danbennett.me
+#phone: Your phone number (optional)
+website: https://danbennett.me
 
-# Tracker
-analytics: UA-141510027-1
+darkmode: false
 
+# Social links
+twitter_username: danbennett
+github_username: danbennettuk
+#stackoverflow_username: "00000001"
+#dribbble_username: jekyll
+#facebook_username: jekyll
+#flickr_username: jekyll
+instagram_username: danbennettuk
+linkedin_username: danbennettuk
+#xing_username: jekyll
+#pinterest_username: jekyll
+#youtube_username: jekyll
+#googleplus_username: +jekyll
+#orcid_username: 0000-0000-0000-0000
 
+# Additional icon links
+#additional_links:
+#    - title: Link name
+#      icon: Font Awesome brand icon name (eg. fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
+#      url: Link url (eg. https://google.com)
+# - title: another link
+#   icon: font awesome brand icon name (eg. fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
+#   url: Link url (eg. https://google.com)
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# Google Analytics and Tag Manager
+# Using more than one of these may cause issues with reporting
+# gtm: "GTM-0000000"
+# gtag: "UA-00000000-0"
+# google_analytics: "UA-00000000-0"
+
+# About Section
+# about_title: About Me (Use this to override about section title)
+about_profile_image: assets/dan.jpg
+about_content: | # this will include new lines to allow paragraphs
+    Hi! I'm Dan 👋
+
+    I am a highly motivated volunteer community manager & full-time customer support guru, looking to move from the typical IT office, to a more community and social focused role in the gaming community.
+
+    I spend the majority of my free time volunteering as a community manager for online gaming communities, 
+    running fun events and tournaments and striving to assist every gamer I come across in giving them answers to their problems and giving them a bigger voice to let their feedback (good and bad) be heard - predominantly on Reddit, Twitter and Discord.
+
+    So if you're looking for someone to help manage your community, speak to gamers on a gamer level and collect all the best (and worst) feedback, and don't mind the odd awful joke - my DMs are open!
+
+# Projects Section
+# projects_title: Projects #(Use this to override about projects section title)
+
+# Experience Section
+experience_title: My work so far...
+
+# Education Section
+# education_title: Education #(Use this to override about education section title)
+
+# More Section
+# more_title: A Little More About Me #(Use this to override about more section title)
+more_content: | # this will include new lines to allow paragraphs
+    This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+
+    Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+
+# Footer
+footer_show_references: false
 
 # Build settings
-compress-site: yes
+# theme: modern-resume-theme (Use this is you are hosting your resume yourself)
+# remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
 
-encoding: "utf-8"
-compress_html: # - http://jch.penibelst.de/
-  clippings: all
-  ignore:
-    envs: development
+sass:
+    sass_dir: _sass
+    style: compressed
 
-# Development Settings
-port: 4000
-host: 0.0.0.0
-safe: false
+plugins:
+    - jekyll-seo-tag
 
-theme: jekyll-theme-minimal
+exclude:
+    [
+        'Gemfile',
+        'Gemfile.lock',
+        'node_modules',
+        'vendor/bundle/',
+        'vendor/cache/',
+        'vendor/gems/',
+        'vendor/ruby/',
+        'lib/',
+        'scripts/',
+        'docker-compose.yml',
+    ]

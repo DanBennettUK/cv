@@ -8,5 +8,6 @@
             "config": { "distDir": "_site" }
         }
     ],
-    "regions": ["lhr1", "dub1", "bru1", "cdg1"]
+    "regions": ["lhr1", "dub1", "bru1", "cdg1"],
+    "engines": { "node": "12.x" }
 }

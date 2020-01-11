@@ -67,7 +67,21 @@
       - Managed my dedicated Watch & Learn station
       - Grown new skills in teaching
       - Advertising on personal Social Media
-
+ 
+- layout: left
+  company: Chicken4Charity - SpecialEffect
+  link: https://www.egx.net/egx/2019/watch-and-learn
+  job_title: PUBG Observer
+  dates: 26th July 2019
+  quote: >
+      SpecialEffect's charity PUBG tournament.
+  description: | # this will include new lines to allow paragraphs
+      SpecialEffect's Chicken4Charity 2019 event saw 20 teams from the UK Games industry, battle it out in PLAYERUNKNOWN'S BATTLEGROUNDS (PUBG) to win some prizes but most
+      importantly to raise money for SpecialEffect. The whole event raised over £14,000 for the charity.
+      
+      I volunteered my time to set up and observe each game during this event, using the games built in camera controls to capture the action as it unfolded so that the game 
+      could be watched and enjoyed on streaming platforms Steam, Twitch and Facebook.
+      
 - layout: left
   company: HowToMoodle
   link: howtomoodle.com

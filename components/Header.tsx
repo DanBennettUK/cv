@@ -14,66 +14,81 @@ export default function Header({ config }: HeaderProps) {
   ].filter(link => link.username);
 
   return (
-    <header className="pt-12 pb-8">
+    <header className="min-h-[70vh] flex flex-col justify-center py-16 relative overflow-hidden">
+      {/* Background decorative element */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[var(--accent-light)] to-transparent opacity-50 -z-10" />
+      
       <div className="container-main">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+        <div className="grid lg:grid-cols-12 gap-8 items-end">
           {/* Left - Name and Title */}
-          <div className="lg:flex-1">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-medium mb-2 text-[var(--foreground)]">
-              {config.name}
+          <div className="lg:col-span-8 animate-fade-in-up">
+            {/* Eyebrow */}
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--accent)] mb-4">
+              Curriculum Vitae
+            </p>
+            
+            {/* Name - massive display */}
+            <h1 className="headline-display text-6xl sm:text-7xl lg:text-8xl xl:text-9xl mb-6">
+              {config.name.split(' ')[0]}
+              <span className="block text-[var(--accent)]">{config.name.split(' ').slice(1).join(' ')}</span>
             </h1>
-            <h2 className="text-2xl sm:text-3xl font-light text-[var(--muted)]">
+            
+            {/* Title - refined */}
+            <p className="text-xl sm:text-2xl lg:text-3xl font-light text-[var(--text-secondary)] max-w-2xl leading-relaxed">
               {config.title}
-            </h2>
-          </div>
-
-          {/* Right - Social Links and Contact */}
-          <div className="lg:text-right">
-            {/* Social Icons */}
-            <ul className="flex flex-wrap lg:justify-end gap-3 mb-4 no-print">
-              {socialLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center justify-center w-14 h-14 rounded-full bg-[var(--button-bg)] text-[var(--button-fg)] hover:scale-110 transition-all duration-300"
-                    title={`${link.name} link`}
-                  >
-                    <link.icon className="w-6 h-6" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* Contact Info */}
-            <div className="space-y-1 text-lg">
+            </p>
+            
+            {/* Contact strip */}
+            <div className="flex flex-wrap gap-6 mt-8 text-sm text-[var(--text-muted)]">
               {config.email && (
-                <p>
-                  Email:{' '}
-                  <a
-                    href={`mailto:${config.email}`}
-                    className="text-[var(--accent)] hover:text-[var(--accent-hover)] font-medium"
-                  >
-                    {config.email}
-                  </a>
-                </p>
+                <a 
+                  href={`mailto:${config.email}`}
+                  className="flex items-center gap-2 hover:text-[var(--accent)] transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  {config.email}
+                </a>
               )}
               {config.website && (
-                <p>
-                  Web:{' '}
-                  <a
-                    href={config.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--accent)] hover:text-[var(--accent-hover)] font-medium"
-                  >
-                    {config.website}
-                  </a>
-                </p>
+                <a 
+                  href={config.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-[var(--accent)] transition-colors"
+                >
+                  <Globe className="w-4 h-4" />
+                  {config.website.replace(/^https?:\/\//, '')}
+                </a>
               )}
             </div>
           </div>
+
+          {/* Right - Social Links */}
+          <div className="lg:col-span-4 lg:text-right animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] mb-4">
+              Connect
+            </p>
+            <div className="flex lg:justify-end gap-3">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-button"
+                  title={link.name}
+                  style={{ animationDelay: `${0.1 * index}s` }}
+                >
+                  <link.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 no-print">
+          <div className="w-px h-16 bg-gradient-to-b from-[var(--border)] to-transparent" />
         </div>
       </div>
     </header>

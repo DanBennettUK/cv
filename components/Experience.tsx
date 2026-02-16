@@ -10,13 +10,13 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
   if (experiences.length === 0) return null;
 
   return (
-    <section className="py-8">
+    <section className="py-16">
       <div className="container-main">
-        <h3 className="section-title">{title}</h3>
+        <div className="section-title-editorial">{title}</div>
         
-        <div className="space-y-12">
+        <div className="space-y-0">
           {experiences.map((exp, index) => (
-            <ExperienceItem key={index} experience={exp} />
+            <ExperienceItem key={index} experience={exp} index={index} />
           ))}
         </div>
       </div>
@@ -24,45 +24,81 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
   );
 }
 
-function ExperienceItem({ experience }: { experience: Experience }) {
-  const { company, link, job_title, dates, quote, description, layout } = experience;
-  
-  // Default to 'left' layout (company on left, details on right)
-  const isLeftLayout = layout === 'left' || !layout;
+function ExperienceItem({ experience, index }: { experience: Experience; index: number }) {
+  const { company, link, job_title, dates, quote, description } = experience;
   
   return (
-    <div className={`flex flex-col md:flex-row gap-6 ${!isLeftLayout ? 'md:flex-row-reverse' : ''}`}>
-      {/* Left/Top - Company Info */}
-      <div className={`md:w-1/3 ${isLeftLayout ? 'md:text-left' : 'md:text-right'}`}>
-        <h4 className="text-2xl sm:text-3xl font-medium mb-1">
-          {link ? (
-            <a 
-              href={link} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
-            >
-              {company}
-            </a>
-          ) : (
-            company
-          )}
-        </h4>
-        <p className="text-lg text-[var(--muted)] italic mb-1">{job_title}</p>
-        <p className="text-base text-[var(--muted)]">{dates}</p>
-      </div>
+    <article className="experience-card group">
+      <div className="grid lg:grid-cols-12 gap-6">
+        {/* Left - Company & Meta */}
+        <div className="lg:col-span-4">
+          {/* Company name */}
+          <h3 className="headline-display text-2xl sm:text-3xl mb-2">
+            {link ? (
+              <a 
+                href={link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors border-b-2 border-transparent hover:border-[var(--accent)]"
+              >
+                {company}
+              </a>
+            ) : (
+              company
+            )}
+          </h3>
+          
+          {/* Job title */}
+          <p className="text-[var(--accent)] font-medium mb-3">
+            {job_title}
+          </p>
+          
+          {/* Dates as tag */}
+          <span className="tag">
+            {dates}
+          </span>
+          
+          {/* Index number - editorial touch */}
+          <div className="mt-6 text-6xl font-light text-[var(--border)] opacity-50 leading-none">
+            {String(index + 1).padStart(2, '0')}
+          </div>
+        </div>
 
-      {/* Right/Bottom - Description */}
-      <div className="md:w-2/3">
-        {quote && (
-          <blockquote className="text-lg italic text-[var(--muted)] mb-4 py-4 px-6 border-l-4 border-[var(--accent)] bg-[var(--background)]">
-            &ldquo;{quote}&rdquo;
-          </blockquote>
-        )}
-        <div className="prose prose-lg dark:prose-invert max-w-none text-[var(--foreground)]">
-          <ReactMarkdown>{description}</ReactMarkdown>
+        {/* Right - Description */}
+        <div className="lg:col-span-8">
+          {quote && (
+            <blockquote className="quote-editorial">
+              &ldquo;{quote}&rdquo;
+            </blockquote>
+          )}
+          
+          <div className="prose prose-lg max-w-none text-[var(--text-secondary)]">
+            <ReactMarkdown
+              components={{
+                p: ({ children }) => (
+                  <p className="mb-4 leading-relaxed">{children}</p>
+                ),
+                ul: ({ children }) => (
+                  <ul className="space-y-2 mt-4 ml-0 pl-0 list-none">
+                    {children}
+                  </ul>
+                ),
+                li: ({ children }) => (
+                  <li className="flex items-start gap-3">
+                    <span className="text-[var(--accent)] mt-1.5">—</span>
+                    <span>{children}</span>
+                  </li>
+                ),
+                strong: ({ children }) => (
+                  <strong className="font-semibold text-[var(--text-primary)]">{children}</strong>
+                ),
+              }}
+            >
+              {description}
+            </ReactMarkdown>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

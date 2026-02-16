@@ -7,27 +7,51 @@ interface AboutProps {
 
 export default function About({ config }: AboutProps) {
   return (
-    <section className="py-8">
+    <section className="py-16">
       <div className="container-main">
-        <h3 className="section-title">About Me</h3>
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Profile Image */}
+        <div className="section-title-editorial">About</div>
+        
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          {/* Profile Image - asymmetric placement */}
           {config.about_profile_image && (
-            <div className="md:w-1/3 lg:w-1/4 flex-shrink-0 no-print">
-              <div
-                className="w-48 h-48 mx-auto rounded-full bg-cover bg-center shadow-inner"
-                style={{
-                  backgroundImage: `url(${config.about_profile_image})`,
-                  boxShadow: 'inset 0 0 20px #636161',
-                }}
-              />
+            <div className="lg:col-span-4 no-print">
+              <div className="relative">
+                {/* Decorative frame */}
+                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[var(--accent)] -z-10" />
+                
+                {/* Image */}
+                <div
+                  className="aspect-square bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500"
+                  style={{
+                    backgroundImage: `url(${config.about_profile_image})`,
+                  }}
+                />
+                
+                {/* Caption */}
+                <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mt-4">
+                  Dan Bennett — Amsterdam, NL
+                </p>
+              </div>
             </div>
           )}
 
           {/* Content */}
-          <div className={`flex-1 ${config.about_profile_image ? 'md:w-2/3 lg:w-3/4' : 'w-full'}`}>
-            <div className="prose prose-lg dark:prose-invert max-w-none text-[var(--foreground)]">
-              <ReactMarkdown>{config.about_content}</ReactMarkdown>
+          <div className={`${config.about_profile_image ? 'lg:col-span-8' : 'lg:col-span-12'}`}>
+            <div className="prose prose-lg max-w-none text-[var(--text-primary)] leading-relaxed">
+              <ReactMarkdown 
+                components={{
+                  p: ({ children }) => (
+                    <p className="text-lg leading-relaxed mb-4 text-[var(--text-secondary)] first:text-[var(--text-primary)] first:text-xl first:font-medium">
+                      {children}
+                    </p>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-semibold text-[var(--text-primary)]">{children}</strong>
+                  ),
+                }}
+              >
+                {config.about_content}
+              </ReactMarkdown>
             </div>
           </div>
         </div>

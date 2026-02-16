@@ -54,14 +54,25 @@ export function getExperience(): Experience[] {
       link: 'https://www.reddit.com/r/pubattlegrounds',
       job_title: 'Volunteer Community Manager & Community Games Host',
       dates: '2018 - 2022',
-      quote: 'The largest community for PLAYERUNKNOWN\'S BATTLEGROUNDS.',
-      description: `Volunteer mod for the biggest PUBG community. Started as a member, became a mod, ended up running community events.
+      quote: 'The biggest community for PLAYERUNKNOWN\'S BATTLEGROUNDS on PC, Xbox and PlayStation.',
+      description: `Started as a community member, got invited to join the mod team, ended up doing a lot more than just moderation.
 
-- Managing Discord and Reddit for 100k+ members
-- Running Community Custom Games with live Twitch streams
-- Helping players give feedback to the devs
-- Reporting cheaters and troublemakers
-- Managing the community Twitter account`,
+The day-to-day involves keeping an eye on our 100k+ members - making sure people follow the rules, helping resolve conflicts between users, and generally keeping things civil. I deal with toxic behaviour quickly and fairly.
+
+A big part of the job is helping the community get their voice heard by the developers. I work with the team to plan discussions on Reddit and Twitter, find ways for players to share feedback with PUBG Corp directly, and keep those conversations constructive rather than just angry rants.
+
+I also run our Community Custom Games - basically fun tournaments with custom modes we invent ourselves. I host these, manage the leaderboards, and stream everything live on Twitch while casting the matches to make it entertaining for viewers.
+
+On top of that, I work directly with PUBG Corp staff on subreddit stuff - coordinating community events, running giveaways, passing on bug reports and feedback. Recently joined their Community Reporting team to gather evidence on cheaters and send it straight to the devs so they can ban them quickly.
+
+I also manage the PUBG Reddit Twitter account - posting relevant content, starting conversations, and generally keeping the community engaged.
+
+- Discord Community Management
+- Subreddit moderation for 100k+ members
+- Social media management
+- PUBG Games Host & Observer
+- Twitch casting and streaming
+- Self-taught Python to build Discord bots`,
     },
     {
       layout: 'left',
@@ -69,67 +80,96 @@ export function getExperience(): Experience[] {
       link: '',
       job_title: 'Service Desk Agent',
       dates: 'November 2019 - 2022',
-      quote: 'Membership software for unions, charities, and professional bodies.',
-      description: `First line support for membership software. Handled everything from tiny taxi firms to massive unions.
+      quote: 'Membership software for unions, professional bodies, charities and sporting organisations - anywhere from 1,000 to 1.5 million members.',
+      description: `One of three Service Desk Agents supporting customers with their membership software. Deals with everyone from tiny taxi firms to massive unions.
 
-- Covering UK, Australia and NZ time zones (including night shifts)
-- Writing incident reports when things broke
-- Supporting customers via phone and ticket system`,
-    },
+I work three different shift patterns including a night shift, so we can cover support for UK, Australian and New Zealand customers around the clock.
+
+Beyond just answering tickets, I dig into problems properly - figuring out what went wrong, how it happened, and how to stop it happening again. I write incident reports that are honest and clear, not full of corporate waffle.
+
+- Supporting membership software across multiple time zones
+- Writing clear, honest incident reports
+- Helping customers from small businesses to huge organisations`,
+      old_string: 
     {
       layout: 'left',
       company: 'EGX & epic.LAN',
-      link: 'https://www.epiclan.co.uk',
+      link: 'https://www.egx.net/egx/2019/watch-and-learn',
       job_title: 'Watch & Learn PUBG Professional',
-      dates: 'October 2019',
+      dates: '17th October - 20th October 2019',
       quote: 'UK\'s biggest gaming show.',
-      description: `Taught new PUBG players at the epic.LAN Watch & Learn area during EGX 2019. 30 minute sessions showing people the ropes.
+      description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG, showing them how to improve, and giving console players a chance to try the PC version.
 
-- Helping console players try PC gaming
-- Running my own station all four days
-- Social media promotion for the sessions`,
-    },
+- Helped set up and pack down multiple EGX stages managed by epic.LAN
+- Ran my own dedicated Watch & Learn station for all four days
+- Developed teaching skills showing complete beginners the ropes
+- Promoted the sessions on my own social media to drive interest`,
+      old_string: 
     {
       layout: 'left',
       company: 'Chicken4Charity - SpecialEffect',
       link: 'https://www.specialeffect.org.uk',
       job_title: 'PUBG Observer',
-      dates: 'July 2019',
-      quote: 'Charity helping disabled gamers play.',
-      description: `Volunteered to run the camera for SpecialEffect's charity PUBG tournament. Raised over £14k for the charity.
+      dates: '26th July 2019',
+      quote: 'SpecialEffect\'s charity PUBG tournament - 20 teams from the UK games industry competing to raise money.',
+      description: `SpecialEffect run charity tournaments to raise money for helping disabled gamers play. Their Chicken4Charity 2019 event had 20 teams from across the UK games industry battling it out in PUBG.
 
-- Operating in-game cameras for the live stream
-- Capturing the action for Twitch, Steam, and Facebook viewers`,
-    },
+I volunteered my time to help set up and observe each game. Used the in-game camera controls to capture the action as it happened, so the matches could be streamed and enjoyed on Steam, Twitch and Facebook. The event raised over £14,000 for the charity.
+
+- Setting up and managing the observer cameras during matches
+- Capturing gameplay for live streaming across multiple platforms
+- Helping run a charity event that raised £14k+`,
+      old_string: 
     {
       layout: 'left',
       company: 'PriorsVLE',
       link: 'https://priorsvle.com',
       job_title: 'Director & VLE Technical Consultant',
       dates: '2017 - 2019',
-      quote: 'Moodle hosting and support for schools and businesses.',
-      description: `Co-founded a Moodle hosting company. Technical support, server management, and keeping clients happy.
+      quote: 'VLE (Virtual Learning Environment) specialists with 15+ years combined experience supporting, managing and hosting Moodle sites for schools, colleges and businesses.',
+      description: `Co-founded PriorsVLE - we provided technical support, hosting, and development services around Moodle. Handled everything from custom plugin development to site migrations and upgrades.
 
-- Managing CentOS servers with Apache, PHP, MySQL
-- First line support for client users
-- Social media and marketing
-- Git repo management for custom plugins`,
-    },
+My role covered a bit of everything. I was the main contact for clients, making sure I understood what they actually needed and that we delivered on time. Built internal systems to keep our processes efficient and running smooth.
+
+Also handled first-line support for client users when they had issues, and managed invoicing to make sure we actually got paid. Ran the social media accounts too - advertising what we offered while posting Moodle tips and news to build our reputation.
+
+- Talking to clients to understand their requirements
+- Building internal systems for efficient workflows
+- First-line customer support
+- Invoice management and chasing payments
+- Social media marketing and content`,
+      old_string: 
     {
       layout: 'left',
       company: 'HowToMoodle',
       link: 'https://howtomoodle.com',
       job_title: 'Support Technician',
       dates: '2012 - 2018',
-      quote: 'Moodle and Totara support and hosting.',
-      description: `Six years of Moodle support - migrations, upgrades, troubleshooting, and customer service.
+      quote: 'End-to-end learning solutions for UK and European organisations - helping them create engaging learning experiences.',
+      description: `Six years of making sure Moodle and Totara customers got the best support possible. Did everything from initial setup to ongoing support, and built solid relationships with clients so they knew what was happening and when.
 
-- Server management (CentOS, Apache, PHP, MySQL)
-- Windows domain controller management
-- Automated site setups with scripts
-- On-call for server issues
-- QA testing with JIRA`,
-    },
+The technical side was pretty broad. I handled site setups, upgrades, and migrations to the Moodle/Totara platform. Automated a load of manual tasks with scripts to save time. Answered support calls through our Helpspot system. Troubleshot platform issues and guided clients through their Moodle journey.
+
+On the server side, I was on-call 24/7 to make sure hosting stayed up, keeping clients informed when things went wrong. Managed all our internal hosting servers running CentOS (versions 5, 6, and 7), Apache, PHP, MySQL/MariaDB with DirectAdmin. Also looked after external client servers running CentOS, Ubuntu, Gentoo and Windows Server with various web servers.
+
+Monitored everything with Icinga (based on Nagios) so we knew about problems before customers did. Ran local Git repos for Moodle/Totara code, custom plugins and themes. Did QA testing on new plugins using JIRA to track issues.
+
+When I wasn't doing Moodle stuff, I was managing the company's IT - rolled us out to a Windows Server 2012 Domain Controller, managed all the desktops and laptops (troubleshooting, patches, hardware upgrades, asset tracking), and wrote proper documentation for all the technical changes to our hosting platform.
+
+- Site setups, upgrades and migrations
+- Automating manual tasks with scripts
+- First-line support via Helpspot
+- Troubleshooting platform issues
+- 24/7 on-call for server monitoring
+- Internal hosting server management (CentOS, Apache, PHP, MySQL, DirectAdmin)
+- External client server support (CentOS, Ubuntu, Gentoo, Windows Server)
+- Nagios/Icinga monitoring
+- Git repository management
+- JIRA QA testing and bug tracking
+- Windows Server 2012 domain rollout
+- Desktop and laptop management
+- Technical documentation`,
+      old_string: 
     {
       layout: 'left',
       company: 'NovaFM',
@@ -137,24 +177,32 @@ export function getExperience(): Experience[] {
       job_title: 'Volunteer Presenter / Producer',
       dates: '2012 - 2014',
       quote: 'Newport\'s local community radio station.',
-      description: `Hosted two weekly radio shows - one for new/upcoming artists, one for dance and trance music. Produced both shows myself.
+      description: `Hosted two weekly shows at Newport's community radio station. One focused on new, upcoming and rarely heard artists. The other was all about dance, trance and UK hardcore music. I produced both shows myself every week.
 
-- Writing and reading news bulletins
-- Helping with outside broadcasts at local festivals`,
-    },
+Also wrote and produced the Friday and Saturday news bulletins for every hour. Helped with outside broadcasts at local festivals including Newfest and The Pheztival.
+
+- Hosting two weekly specialist music shows
+- Producing shows including news bulletins
+- Outside broadcast support at festivals`,
+      old_string: 
     {
       layout: 'left',
-      company: 'Capita ITS',
+      company: 'Capita ITS (ex-i2Q Education)',
       link: '',
       job_title: 'Junior Technical Support',
       dates: '2008 - 2012',
-      quote: 'IT support for schools and colleges.',
-      description: `Started at i2Q (later bought by Capita). Supporting schools with their Moodle platforms.
+      quote: '',
+      description: `Started at i2Q which later became Capita ITS. My main job was supporting schools and colleges with their Moodle platform - helping them with any issues or questions that came up during term time.
 
-- Moodle admin support for schools
-- QA testing for their new learning platform
-- Yearly school rollovers before term starts`,
-    },
+Every year I handled the school rollovers - getting all the data ready for the new academic year in their custom Moodle environment.
+
+Also worked with the development team on QA testing for their new learning platform, OpenHive. Used automated scripting and wrote test plans to make sure things worked properly.
+
+- Supporting schools and colleges with Moodle
+- Yearly school rollovers before term starts
+- QA testing for new learning platform development
+- Writing test plans and automated testing scripts`,
+      old_string: 
   ];
 }
 

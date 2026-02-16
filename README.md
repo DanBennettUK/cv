@@ -1,160 +1,127 @@
-# modern-resume-theme [![Gem Version](https://badge.fury.io/rb/modern-resume-theme.svg)](https://badge.fury.io/rb/modern-resume-theme) [![Build Status](https://travis-ci.com/sproogen/modern-resume-theme.svg?branch=master)](https://travis-ci.com/sproogen/modern-resume-theme)
+# Dan Bennett CV
 
-*A modern simple static resume template and theme. Powered by Jekyll and GitHub pages.*
-*Host your own resume on GitHub for **free!***
+A modern, static resume site built with Next.js 14, React, TypeScript, and Tailwind CSS. Deploys to GitHub Pages.
 
-Now includes **Dark Mode**
+## 🚀 Quick Start
 
-[View Demo](https://sproogen.github.io/modern-resume-theme/)
+```bash
+# Install dependencies
+npm install
 
-![img](screenshot.png)
+# Run development server
+npm run dev
 
-*Thank you for checking out my resume theme / template. If you have any feedback or suggestions for things I can add please let me know by either by raising an [issue](https://github.com/sproogen/modern-resume-theme/issues/new/choose) or feel free to send me an email to [sprog31@gmail.com](mailto:sprog31@gmail.com), I'm always happy to help.*
-
-*I always enjoy seeing how people are using my creations and if you would like to say thanks feel free to [buy me a coffee (buymeacoffee.com/vJ6HfLu)](https://buymeacoff.ee/vJ6HfLu).*
-
-*If you would like to see how I am using this then you can view my resume [here (jameswgrant.co.uk)](http://www.jameswgrant.co.uk/) and find the code [here (sproogen/jameswgrant)](https://github.com/sproogen/jameswgrant), hopefully this might help you.*
-
-You can view the project [roadmap here](https://github.com/sproogen/modern-resume-theme/projects/1).
-
-## Installation & setup guide
-This template is designed to be hosted using GitHub pages and so that's what these instructions will cover. If you plan on hosting it seperately then there might be some extra steps that we wont cover.
-
-Before starting it might be useful to familiarise yourself with [Jekyll](https://jekyllrb.com/docs/home/), [Markdown](https://www.markdownguide.org/getting-started) and [GitHub pages](https://pages.github.com/).
-
-##### Step 1 - GitHub
-Start by creating an account on [GitHub](https://github.com/join)
-
-##### Step 2 - Create Repository
-Create a repository on GitHub to hold your files and host your resume. You can find out how to do that [here](https://pages.github.com/)
-
-##### Step 3 - Download Resume Template
-Download and extract the following zip into the git repository you have just created. [resume-template.zip](https://github.com/sproogen/modern-resume-theme/archive/gh-pages.zip)
-
-##### Step 4 - Push it
-Commit and push the resume template to github
-```
-$ git add --all
-$ git commit -m "Initial resume setup"
-$ git push -u origin master
-```
-##### Set 5 - See it
-You should now be able to see the demo resume template using this theme at `[your-username].github.io`
-
-## Usage
-
-So now you will be able to see the demo template at your github url. You can can edit the yml files and replace the demo content with your own. Hopefully it will be fairly simple to work out where all the content goes, but here is a quick overview.
-
-##### _config.yml
-This will contain all the of the main configuration for your resume such as your name, email, social media links and about me content. It will also allow you to change the titles of some of the content sections.
-A full example of the _config.yml can be found [here](https://github.com/sproogen/modern-resume-theme/blob/master/_config.yml)
-
-##### Dark Mode
-Dark mode is configured via _config.yml 
-```
-darkmode: true/false
+# Build for production
+npm run build
 ```
 
-##### _data/education.yml
-A list of all your education, each education will follow this format
-```
-- layout: left (options: left, right, top, top-right, top-middle)
-  name: Institution name
-  dates: Date Range (eg. 2016 - 2019)
-  qualification: Qualifications (eg. BA Performing Arts)
-  quote: >
-    Short institution or course description (optional)
-  description: | # this will include new lines to allow paragraphs
-    Description of qualification
-```
+## 📁 Project Structure
 
-##### _data/experience.yml
-A list of all your experience, each experience will follow this format
 ```
-- layout: left (options: left, right, top, top-right, top-middle)
-  company: Company name
-  link: Link to company (eg. https://google.com)(optional)
-  job_title: Job title
-  dates: Date Range (eg. November 2016 - present)
-  quote: >
-   Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    Description of role
+.
+├── app/                    # Next.js App Router
+│   ├── globals.css         # Global styles with CSS variables
+│   ├── layout.tsx          # Root layout with dark mode toggle
+│   └── page.tsx            # Main resume page
+├── components/             # React components
+│   ├── Header.tsx          # Name, title, social links
+│   ├── About.tsx           # Profile image and bio
+│   ├── Experience.tsx      # Work history
+│   └── Footer.tsx          # Contact footer
+├── lib/                    # Utilities and data
+│   ├── data.ts             # Resume content (edit this!)
+│   └── types.ts            # TypeScript types
+├── public/                 # Static assets
+│   └── assets/             # Images (dan.jpg, etc.)
+└── dist/                   # Build output (GitHub Pages)
 ```
 
-If you wish to specify multiple job titles for a single company, use this format
+## 🎨 Customization
+
+### Edit Your Content
+
+All resume content is in `lib/data.ts`. Edit this file to update:
+
+- Personal info (name, title, email, social links)
+- About section content
+- Work experience
+- Education (add to the file)
+- Projects (add to the file)
+
+### Styling
+
+- **Colors**: Edit CSS variables in `app/globals.css`
+- **Typography**: Uses Roboto font from Google Fonts
+- **Dark mode**: Automatic via CSS variables + localStorage
+
+## 🌙 Dark Mode
+
+Dark mode is automatically enabled based on:
+1. Saved user preference (localStorage)
+2. System preference (prefers-color-scheme)
+
+Toggle with the sun/moon button in the top-right corner.
+
+## 📦 Deployment
+
+### GitHub Pages
+
+1. Push to GitHub
+2. Go to Settings > Pages
+3. Set source to "Deploy from a branch"
+4. Select the `modern-rewrite` branch and `/ (root)` folder
+5. Save and wait for deployment
+
+### Build Output
+
+The `dist/` folder contains the static export ready for deployment:
+
+```bash
+npm run build
+# Output goes to dist/
 ```
-- layout: left (options: left, right, top, top-right, top-middle)
-  company: Company name
-  link: Link to company (optional)
-  jobs:
-    - title: Job title 1
-      dates: Date Range (eg. November 2016 - present)
-    - title: Job title 2
-      dates: Date Range (eg. January 2015 - November 2016)
-  quote: >
-   Short description of the company (optional)
-  description: | # this will include new lines to allow paragraphs
-    Description of role
-```
 
-##### _data/projects.yml
-A list of all your projects, each project will follow this format
-```
-- layout: left (options: left, right, top, top-right, top-middle)
-  name: Project name
-  link: Link to project (eg. https://sproogen.github.io/modern-resume-theme)(optional)
-  github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
-  quote: >
-    Short overview of the project (optional)
-  description: | # this will include new lines to allow paragraphs
-    Description about the work on/with the project
-```
+## 🔧 Tech Stack
 
-##### assets/main.scss
-Add any css changes or additions you want to make here after the line `@import 'modern-resume-theme';`
+| Feature | Technology |
+|---------|------------|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| Markdown | react-markdown |
 
-## Running locally
+## 📝 Migration from Jekyll
 
-Before you start make sure you have *Ruby* and the gems for *Jekyll* installed locally. You can find out how to do that [here](https://jekyllrb.com/docs/installation/).
+This is a complete rewrite of the original Jekyll-based `modern-resume-theme`:
 
-1. Clone your resume repository locally *(if you haven't already)*
-2. `cd [your-repository-name]`
-3. `bundle install`
-4. `bundle exec jekyll serve`
-5. Open your browser to `http://localhost:4000`
+### What's Different
 
-Any changes you make will automatically build and you will be able to see these by refreshing your browser.
+- **No Ruby/Jekyll**: Pure JavaScript/TypeScript
+- **Modern tooling**: Next.js 14, React 18, Tailwind CSS
+- **Better dev experience**: Fast HMR, TypeScript support
+- **Cleaner build**: Single `npm run build` command
+- **Smaller output**: Optimized static export
 
-*Note: You will need to re-run `bundle exec jekyll serve` to see changes made in `_config.yml`.*
+### What's Preserved
 
-## Contributing
+- Same visual design and layout
+- Dark mode support
+- Print-friendly styles
+- Responsive design
+- All original content migrated
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sproogen/modern-resume-theme. You can view our full guide to contributing [here](https://github.com/sproogen/modern-resume-theme/blob/master/CONTRIBUTING.md)
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+### File Mapping
 
-## Development
+| Jekyll (Old) | Next.js (New) |
+|--------------|---------------|
+| `_config.yml` | `lib/data.ts` |
+| `_data/experience.yml` | `lib/data.ts` - `getExperience()` |
+| `_layouts/default.html` | `app/layout.tsx` |
+| `_includes/*.html` | `components/*.tsx` |
+| `_sass/*.scss` | `app/globals.css` (Tailwind) |
+| `assets/main.scss` | `app/globals.css` |
 
-### Locally
+## 📄 License
 
-Before you start make sure you have *Ruby* and the gems for *Jekyll* installed locally. You can find out how to do that [here](https://jekyllrb.com/docs/installation/).
-
-*Note: You will need version `1.15.2` of bundler, as this is the only version that Heroku supports.*
-
-1. Fork and or clone this repository locally
-2. `cd modern-resume-theme`
-3. `bundle install`
-4. `bundle exec jekyll serve`
-5. Open your browser to `http://localhost:4000`
-
-Any changes you make will automatically build and you will be able to see these by refreshing your browser. To find out more about *Jekyll* take a look [here](https://jekyllrb.com/docs/usage/).
-
-*Note: You will need to re-run `bundle exec jekyll serve` to see changes made in `_config.yml`.*
-
-### Docker
-
-If you have docker installed you can simply run `docker-compose up` to launch the site in a container, it will then be hosted at `http://localhost:4000`
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+MIT

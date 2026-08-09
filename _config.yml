@@ -4,7 +4,7 @@ repository: Git repository where your resume will be hosted, only required if yo
 
 # Personal info
 name: Dan Bennett
-title: Volunteer Community Manager, Social Media Nut & Customer Support Guru
+title: Creator Partnerships and Community Operations Professional in Gaming
 email: dan@danbennett.me
 #phone: Your phone number (optional)
 website: https://danbennett.me
@@ -47,18 +47,17 @@ about_profile_image: assets/dan.jpg
 about_content: | # this will include new lines to allow paragraphs
     Hi! I'm Dan 👋
 
-    I am a highly motivated volunteer community manager & full-time customer support guru, looking to move from the typical IT office, to a more community and social focused role in the gaming community.
+    I am a creator partnerships and community operations professional working in gaming, currently supporting the PUBG Partner Program at KRAFTON.
 
-    I spend the majority of my free time volunteering as a community manager for online gaming communities, 
-    running fun events and tournaments and striving to assist every gamer I come across in giving them answers to their problems and giving them a bigger voice to let their feedback (good and bad) be heard - predominantly on Reddit, Twitter and Discord.
+    My work sits at the intersection of creator relationships, campaign operations, community feedback and performance reporting. I enjoy turning messy, manual processes into clear workflows that help teams support creators, learn from their feedback and make better decisions.
 
-    So if you think there's a space for me and don't mind the odd awful joke - I'd love to hear from you!
+    I also bring hands-on community experience from running gaming communities, events and tournaments. I care about making the experience better for both the people creating content and the players watching it.
 
 # Projects Section
 # projects_title: Projects #(Use this to override about projects section title)
 
 # Experience Section
-experience_title: My work so far...
+experience_title: Professional Experience
 
 # Education Section
 # education_title: Education #(Use this to override about education section title)

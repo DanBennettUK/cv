@@ -236,10 +236,8 @@ GEM
     minitest (5.22.2)
     net-http (0.4.1)
       uri
-    nokogiri (1.16.2)
+    nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
-    nokogiri (1.16.2-x64-mingw32)
       racc (~> 1.4)
     octokit (4.25.1)
       faraday (>= 1, < 3)

@@ -151,7 +151,7 @@ a:hover {
 /* --- Layout --- */
 .page-layout {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 280px 1fr;
   min-height: 100vh;
 }
 
@@ -630,31 +630,6 @@ a:hover {
 }
 
 /* --- Animations --- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-in {
-  animation: fadeInUp 0.4s ease-out both;
-}
-
-.experience-item:nth-child(1) { animation-delay: 0ms; }
-.experience-item:nth-child(2) { animation-delay: 50ms; }
-.experience-item:nth-child(3) { animation-delay: 100ms; }
-.experience-item:nth-child(4) { animation-delay: 150ms; }
-.experience-item:nth-child(5) { animation-delay: 200ms; }
-.experience-item:nth-child(6) { animation-delay: 250ms; }
-.experience-item:nth-child(7) { animation-delay: 300ms; }
-.experience-item:nth-child(8) { animation-delay: 350ms; }
-.experience-item:nth-child(9) { animation-delay: 400ms; }
-.experience-item:nth-child(10) { animation-delay: 450ms; }
 
 /* --- Print Styles --- */
 @media print {
@@ -750,24 +725,10 @@ a:hover {
   }
 }
 
-/* --- Shimmer / Liquid Glass Highlight --- */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
+/* --- Section Separator --- */
 .shimmer-line {
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--accent-glow) 25%,
-    var(--accent) 50%,
-    var(--accent-glow) 75%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+  background: var(--border);
   border-radius: 1px;
 }
 

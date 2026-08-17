@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Dan Bennett — Creator Partnerships and Community Operations Professional in Gaming" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content="https://cv.danbennett.me" />
+  <meta property="og:image" content="https://cv.danbennett.me/dan.jpg" />
+  <meta property="og:site_name" content="Dan Bennett CV" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@danbennett" />
+  <meta name="twitter:creator" content="@danbennett" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://cv.danbennett.me/dan.jpg" />
+  
+  <title>{title}</title>
+  
+  <!-- Preload font for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dan Bennett",
+    "jobTitle": "Creator Partnerships and Community Operations Professional",
+    "url": "https://cv.danbennett.me",
+    "email": "dan@danbennett.me",
+    "sameAs": [
+      "https://twitter.com/danbennett",
+      "https://github.com/danbennettuk",
+      "https://www.linkedin.com/in/danbennettuk",
+      "https://www.instagram.com/danbennettuk"
+    ],
+    "knowsAbout": [
+      "Creator Partnerships",
+      "Community Management",
+      "Gaming",
+      "PUBG",
+      "Content Strategy",
+      "Campaign Management"
+    ]
+  })} />
+</head>
+<body>
+  <slot />
+  
+  <!-- Dark mode script - runs before paint to prevent flash -->
+  <script is:inline>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

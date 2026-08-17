@@ -1,0 +1,43 @@
+---
+const projects = [
+  {
+    name: "PUBG Reddit Discord Bot",
+    link: null,
+    github: "https://github.com/danbennettuk",
+    quote: "Custom bot built to enhance community moderation and engagement.",
+    description: "Self-taught Python development to create a Discord bot for the PUBG Reddit community. Handled automated moderation, custom commands and community game management features."
+  },
+  {
+    name: "PriorsVLE Moodle Plugins",
+    link: null,
+    github: null,
+    quote: "Bespoke Moodle plugins for VLE management.",
+    description: "Developed custom Moodle plugins and themes for PriorsVLE clients, extending core platform functionality to meet specific organisational needs."
+  }
+];
+---
+
+<section class="section projects-section" id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+    {projects.map((project) => (
+      <div class="project-card">
+        <div class="project-name">{project.name}</div>
+        {project.quote && (
+          <div class="project-quote">{project.quote}</div>
+        )}
+        <div class="project-description">
+          <p>{project.description}</p>
+        </div>
+        <div class="project-links">
+          {project.link && (
+            <a href={project.link} class="project-link" target="_blank" rel="noopener noreferrer">View →</a>
+          )}
+          {project.github && (
+            <a href={project.github} class="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

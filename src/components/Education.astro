@@ -1,0 +1,43 @@
+---
+const education = [
+  {
+    institution: "University of South Wales",
+    qualification: "BSc (Hons) Computer Science",
+    dates: "2012 – 2015",
+    quote: "Comprehensive programme covering software development, systems analysis and emerging technologies.",
+    description: "Studied core topics including programming, databases, networking, and web development. Developed a strong foundation in software engineering principles and collaborative project work."
+  }
+];
+---
+
+<section class="section education-section" id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="education-list">
+    {education.map((edu) => (
+      <div class="education-item">
+        <div class="education-header">
+          <div class="education-institution">{edu.institution}</div>
+          <div class="education-dates">{edu.dates}</div>
+        </div>
+        <div class="education-qualification">{edu.qualification}</div>
+        {edu.quote && (
+          <div class="experience-quote">{edu.quote}</div>
+        )}
+        <div class="experience-description">
+          <p>{edu.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>

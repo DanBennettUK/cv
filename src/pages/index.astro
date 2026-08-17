@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Projects from '../components/Projects.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Dan Bennett — Creator Partnerships & Community Operations Professional">
+  <div class="page-layout">
+    <Header />
+    <main class="main-content">
+      <About />
+      <div class="shimmer-line"></div>
+      <Experience />
+      <div class="shimmer-line"></div>
+      <Education />
+      <div class="shimmer-line"></div>
+      <Projects />
+      <Footer />
+    </main>
+  </div>
+</BaseLayout>

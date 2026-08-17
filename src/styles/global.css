@@ -1,6 +1,6 @@
 /* =========================================
    Dan Bennett CV — Global Styles
-   Astro 5 + Plain CSS | Liquid Glass Design
+   Astro + Plain CSS | Liquid Glass Design
    ========================================= */
 
 /* --- CSS Custom Properties (Light Theme) --- */
@@ -769,6 +769,21 @@ a:hover {
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
   border-radius: 1px;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* --- Scrollbar Styling --- */

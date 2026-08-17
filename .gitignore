@@ -15,12 +15,3 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
-
-# Old Jekyll artifacts (can be removed after merge)
-_site/
-.sass-cache/
-.jekyll-metadata
-.sass-cache
-Gemfile.lock
-Gemfile
-modern-resume-theme.gemspec

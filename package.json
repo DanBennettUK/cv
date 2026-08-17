@@ -3,6 +3,9 @@
   "type": "module",
   "version": "2.0.0",
   "description": "Dan Bennett's modern CV website",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

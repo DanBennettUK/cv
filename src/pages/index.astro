@@ -1,67 +1,83 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Dan Bennett — Creator Partnerships & Community Operations">
-  <div class="site-shell">
-    <div class="scene-wrap" aria-hidden="true"><canvas id="scene"></canvas><div class="scene-glow"></div></div>
-    <header class="topbar">
-      <a class="wordmark" href="#top" aria-label="Dan Bennett home"><span class="wordmark-dot"></span> DAN BENNETT</a>
-      <nav class="topnav" aria-label="Primary navigation">
-        <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+<BaseLayout title="Dan Bennett — Creator Partnerships and Community Operations">
+  <div class="site-shell" id="top">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Dan Bennett home">Dan Bennett</a>
+      <nav aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="mailto:dan@danbennett.me">Email</a>
       </nav>
-      <a class="top-contact" href="mailto:dan@danbennett.me">Let's talk <span>↗</span></a>
     </header>
 
-    <main id="top">
-      <section class="hero" id="about">
+    <main>
+      <section class="hero" aria-labelledby="intro-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR THE RIGHT OPPORTUNITY</p>
-          <h1>People, play<br /><em>&amp; possibility.</em></h1>
-          <p class="hero-lede">Creator partnerships and community operations professional turning player energy into better experiences, stronger programs and measurable momentum.</p>
-          <div class="hero-actions"><a class="button button-primary" href="mailto:dan@danbennett.me">Start a conversation <span>↗</span></a><a class="button button-ghost" href="#experience">Explore my work <span>↓</span></a></div>
+          <p class="eyebrow">Creator partnerships · Community operations · Gaming</p>
+          <h1 id="intro-title">Dan<br /><em>Bennett</em></h1>
+          <p class="hero-lede">I work with creators, communities and teams to make programmes and player experiences work better.</p>
+          <p class="availability">Currently Associate Creator Partnerships Manager, PUBG West at KRAFTON.</p>
         </div>
-        <div class="hero-meta">
-          <div class="hero-image"><img src="/dan.jpg" alt="Dan Bennett" /></div>
-          <p class="meta-label">CURRENTLY</p><p class="meta-value">Associate Creator Partnerships Manager<br />KRAFTON · PUBG WEST</p>
-          <div class="hero-rule"></div>
-          <p class="meta-label">BASED IN</p><p class="meta-value">Newport, South Wales<br />Working globally</p>
+        <div class="hero-detail" aria-hidden="true">
+          <div class="ambient-mark"><span></span></div>
+          <p>Newport, South Wales<br />Working globally</p>
         </div>
       </section>
 
-      <div class="marquee" aria-hidden="true"><div>CREATOR PARTNERSHIPS <span>✳</span> COMMUNITY OPERATIONS <span>✳</span> GAMING CULTURE <span>✳</span> CREATOR PARTNERSHIPS <span>✳</span></div></div>
-
-      <section class="intro-grid section-pad">
-        <p class="section-kicker">01 / A LITTLE CONTEXT</p>
-        <div class="intro-copy"><h2>I build the connective tissue between <span>creators, communities and teams.</span></h2><p>My work lives where relationships, operations and culture overlap. At KRAFTON, I support the PUBG Partner Program across the western region — shaping campaigns, improving systems and making sure creator feedback travels all the way to the people who can act on it.</p><p>Before that, I built hands-on experience hosting events, managing communities and solving technical problems. The common thread: making complex things feel more human.</p></div>
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-label"><span>01</span><span>About</span></div>
+        <div class="section-body about-copy">
+          <h2 id="about-title">A practical, people-first approach to community and creator work.</h2>
+          <p>I am a creator partnerships and community operations professional working in gaming, currently supporting the PUBG Partner Program on PUBG: Battlegrounds at KRAFTON.</p>
+          <p>My work includes creator relationships, campaign operations, community feedback and performance reporting. I enjoy turning messy, manual processes into clear workflows that help teams support creators, learn from their feedback and make better decisions.</p>
+          <p>I also bring hands-on experience running gaming communities, events and tournaments.</p>
+        </div>
       </section>
 
-      <div class="section-pad"><Experience /></div>
-      <div class="section-pad"><Projects /></div>
-      <section class="closing section-pad"><div><p class="section-kicker">LET'S MAKE SOMETHING MATTER</p><h2>Have a good<br /><em>one in mind?</em></h2></div><a class="circle-cta" href="mailto:dan@danbennett.me" aria-label="Email Dan Bennett">EMAIL ME <span>↗</span></a></section>
-      <Footer />
+      <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-label"><span>02</span><span>Experience</span></div>
+        <div class="section-body"><h2 id="experience-title" class="visually-hidden">Professional Experience</h2><Experience /></div>
+      </section>
+
+      <section class="section contact-section" aria-labelledby="contact-title">
+        <div class="section-label"><span>03</span><span>Contact</span></div>
+        <div class="section-body contact-copy">
+          <h2 id="contact-title">Get in touch.</h2>
+          <a class="email-link" href="mailto:dan@danbennett.me">dan@danbennett.me <span aria-hidden="true">↗</span></a>
+          <div class="social-list" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/danbennettuk" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/danbennettuk" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/danbennett" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.instagram.com/danbennettuk" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </section>
     </main>
+    <Footer />
   </div>
 </BaseLayout>
 
 <script>
   import * as THREE from 'https://unpkg.com/three@0.161.0/build/three.module.js';
-  const canvas = document.querySelector('#scene');
-  if (canvas) {
+  const mark = document.querySelector('.ambient-mark');
+  if (mark && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    mark.append(canvas);
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(48, innerWidth / innerHeight, 0.1, 100); camera.position.z = 5;
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setSize(innerWidth, innerHeight);
-    const group = new THREE.Group(); scene.add(group);
-    const geometry = new THREE.IcosahedronGeometry(1.42, 2);
-    const material = new THREE.MeshBasicMaterial({ color: 0xff6b35, wireframe: true, transparent: true, opacity: 0.34 });
-    const mesh = new THREE.Mesh(geometry, material); group.add(mesh);
-    const inner = new THREE.Mesh(new THREE.IcosahedronGeometry(1.18, 1), new THREE.MeshBasicMaterial({ color: 0xffb38f, wireframe: true, transparent: true, opacity: 0.11 })); group.add(inner);
-    const points = new THREE.Points(geometry, new THREE.PointsMaterial({color: 0xffb38f, size: 0.025, transparent: true, opacity: 0.8})); group.add(points);
-    let tx=0, ty=0; addEventListener('pointermove', e => { tx=(e.clientX/innerWidth-.5)*.35; ty=(e.clientY/innerHeight-.5)*.2; });
-    addEventListener('resize', () => { camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
-    const animate = () => { requestAnimationFrame(animate); group.rotation.y += .0022; group.rotation.x += .0007; group.rotation.y += (tx-group.rotation.y%6.28)*.002; group.rotation.x += (ty-group.rotation.x%6.28)*.002; renderer.render(scene,camera); }; animate();
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 10); camera.position.z = 3.4;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5)); renderer.setSize(180, 180, false);
+    const mesh = new THREE.Mesh(new THREE.IcosahedronGeometry(0.9, 1), new THREE.MeshBasicMaterial({ color: 0x9b3d2d, wireframe: true, transparent: true, opacity: 0.28 }));
+    scene.add(mesh);
+    let frame = 0;
+    const animate = () => { frame = requestAnimationFrame(animate); mesh.rotation.y += 0.002; mesh.rotation.x += 0.0005; renderer.render(scene, camera); };
+    animate();
+    document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAnimationFrame(frame); else animate(); });
   }
 </script>

@@ -42,7 +42,7 @@ const projects = [
   <h2 class="section-title">Projects</h2>
   <div class="projects-grid">
     {projects.map((project) => (
-      <div class="project-card">
+      <article class="project-card">
         <div class="project-name">{project.name}</div>
         {project.quote && (
           <div class="project-quote">{project.quote}</div>
@@ -58,7 +58,7 @@ const projects = [
             <a href={project.github} class="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
           )}
         </div>
-      </div>
+      </article>
     ))}
   </div>
 </section>

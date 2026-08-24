@@ -14,7 +14,7 @@ export default function Header({ config }: HeaderProps) {
   ].filter(link => link.username);
 
   return (
-    <header className="py-20 sm:py-24">
+    <header className="pt-20 sm:pt-24 pb-10">
       <div className="container-main">
         {/* Eyebrow */}
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] mb-5 no-print">

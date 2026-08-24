@@ -8,7 +8,7 @@ interface AboutProps {
 
 export default function About({ config }: AboutProps) {
   return (
-    <section className="py-16">
+    <section className="pt-8 pb-16">
       <div className="container-main">
         <div className="section-title-editorial">About</div>
 

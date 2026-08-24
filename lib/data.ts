@@ -5,7 +5,7 @@ const defaultConfig: SiteConfig = {
   name: 'Dan Bennett',
   title: 'Partner Program Manager, PUBG WEST',
   tagline:
-    'Creator partnerships, partner operations and community-led events across Western markets.',
+    'Creator partnerships, partner program operations and community events for PUBG: BATTLEGROUNDS across Western markets.',
   email: 'dan@danbennett.me',
   website: 'https://danbennett.me',
   twitter_username: 'DanBennettUK',
@@ -13,11 +13,11 @@ const defaultConfig: SiteConfig = {
   instagram_username: 'danbennettuk',
   linkedin_username: 'danbennettuk',
   about_profile_image: 'assets/dan.jpg',
-  about_content: `I manage the PUBG WEST Partner Program at KRAFTON, working with creators and community partners across Western markets. My work covers partner relationships, campaign and event delivery, cross-team coordination, support and program improvement.
+  about_content: `I manage the partner and operational side of the PUBG WEST Partner Program at KRAFTON, working with creators and community Partners across Western markets. The role covers relationship management, campaign delivery, event coordination, reporting, issue resolution and improvements to the systems and guidance Partners use.
 
 I came into the role through years of PUBG community work, including a 100k+ member Reddit community, tournaments, live broadcasts and structured player feedback for the game team. I also bring a technical support background, which helps me turn messy operational problems into clear next steps.`,
   current_focus:
-    'Partner relationships, campaign delivery, community events, cross-team operations, reporting and process improvement.',
+    'Partner relationships, program operations, campaign delivery, community events, cross-team coordination, reporting and process improvement.',
   experience_title: 'Experience',
   footer_show_references: false,
 };
@@ -33,100 +33,58 @@ export function getExperience(): Experience[] {
       link: 'https://www.krafton.com',
       job_title: 'Partner Program Manager, PUBG WEST',
       dates: '2022 - Present',
-      quote: 'The games company behind PUBG: BATTLEGROUNDS.',
-      description: `Manage relationships with PUBG WEST Partners and creators across Western markets.
+      description: `I manage relationships and day-to-day program operations for PUBG WEST Partners and creators across Western markets. I support Partners through campaigns, activations and events while coordinating delivery with marketing, esports, product, community and regional teams.
 
-- Coordinate partner campaigns, community activations and events with marketing, esports, product and regional teams
-- Turn Partner feedback and performance data into clear recommendations for internal teams
-- Improve campaign guidance, support routes and operational workflows so Partners know what is expected and how to get help
-- Handle partner issues and escalations with clear communication, documentation and follow-through`,
+- Manage ongoing relationships with PUBG WEST Partners and creators across Western markets, providing day-to-day support and keeping communication clear from onboarding through ongoing participation
+- Coordinate partner campaigns and activations from briefing and requirements through content submission, review, completion tracking and follow-up
+- Work with marketing, esports, product, community and regional teams to align campaign plans, partner needs, assets, announcements and delivery timelines
+- Create and improve Partner-facing guidance, campaign instructions and support routes so requirements are clear and easy to follow
+- Turn Partner feedback, recurring questions and operational issues into clear recommendations for internal teams
+- Maintain reporting and operational trackers used to monitor Partner activity, campaign progress, completion and follow-up actions
+- Support community events and creator activations by coordinating people, information, timelines and post-event actions
+- Handle Partner issues and escalations with calm communication, accurate documentation and clear ownership through to resolution
+- Identify repeated manual tasks and unclear handoffs, then improve the workflow, documentation or tracker behind them
+- Balance Partner experience, program requirements and internal delivery needs when making day-to-day decisions`,
     },
     {
       company: 'PUBG Reddit (r/PUBATTLEGROUNDS)',
       link: 'https://www.reddit.com/r/pubattlegrounds',
       job_title: 'Volunteer Community Manager & Community Games Host',
       dates: '2018 - 2022',
-      quote: "The biggest community for PLAYERUNKNOWN'S BATTLEGROUNDS on PC, Xbox and PlayStation.",
-      description: `Started as a community member, got invited to join the mod team, ended up doing a lot more than just moderation.
+      description: `Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.
 
-The day-to-day involves keeping an eye on our 100k+ members - making sure people follow the rules, helping resolve conflicts between users, and generally keeping things civil. I deal with toxic behaviour quickly and fairly.
-
-A big part of the job is turning player feedback into structured discussions with the game team - planning Reddit and Twitter conversations and giving players a direct channel to PUBG Corp, while keeping the conversation constructive.
-
-I also run our Community Custom Games - fun tournaments with custom modes we invent ourselves. I host these, manage the leaderboards, and stream everything live on Twitch while casting the matches to make it entertaining for viewers.
-
-On top of that, I work directly with PUBG Corp staff on subreddit stuff - coordinating community events, running giveaways, passing on bug reports and feedback. I also joined their Community Reporting team to gather evidence on cheaters and send it straight to the devs so they can ban them quickly, and I manage the PUBG Reddit Twitter account.
-
-- Discord Community Management
-- Subreddit moderation for 100k+ members
-- Social media management
-- PUBG Games Host & Observer
-- Twitch casting and streaming
-- Self-taught Python to build Discord bots`,
+- Helped manage the community, including moderation, conflict resolution and enforcement of community standards
+- Turned player feedback into structured discussions with the game team, planning Reddit and Twitter conversations and giving players a direct channel to PUBG Corp
+- Coordinated community events, giveaways, bug reports and player feedback with PUBG Corp staff
+- Gathered evidence for the Community Reporting team and submitted cases to the development team
+- Ran Community Custom Games - hosted tournaments, managed leaderboards, streamed and cast matches live on Twitch
+- Managed the PUBG Reddit Twitter account and built Discord bots in Python`,
     },
     {
       company: 'APT Solutions',
       job_title: 'Service Desk Agent',
       dates: '2019 - 2022',
-      quote: 'Membership software for unions, professional bodies, charities and sporting organisations - anywhere from 1,000 to 1.5 million members.',
-      description: `One of three Service Desk Agents supporting customers with their membership software. Deals with everyone from tiny taxi firms to massive unions.
+      description: `One of three Service Desk Agents supporting customers with their membership software - from small taxi firms to large unions. Worked three shift patterns, including nights, to cover UK, Australian and New Zealand customers around the clock.
 
-I work three different shift patterns including a night shift, so we can cover support for UK, Australian and New Zealand customers around the clock.
-
-Beyond just answering tickets, I dig into problems properly - figuring out what went wrong, how it happened, and how to stop it happening again. I write incident reports that are honest and clear.
-
-- Supporting membership software across multiple time zones
-- Writing clear, honest incident reports
-- Helping customers from small businesses to huge organisations`,
-    },
-    {
-      company: 'EGX & epic.LAN',
-      link: 'https://www.egx.net/egx/2019/watch-and-learn',
-      job_title: 'Watch & Learn PUBG Professional',
-      dates: '17th October - 20th October 2019',
-      quote: "UK's biggest gaming show.",
-      description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG and giving console players a chance to try the PC version.
-
-- Ran my own dedicated Watch & Learn station for all four days
-- Helped set up and pack down multiple EGX stages managed by epic.LAN
-- Promoted the sessions on my own social media to drive interest`,
-    },
-    {
-      company: 'Chicken4Charity - SpecialEffect',
-      link: 'https://www.specialeffect.org.uk',
-      job_title: 'PUBG Observer',
-      dates: '26th July 2019',
-      quote: "SpecialEffect's charity PUBG tournament - 20 teams from the UK games industry competing to raise money.",
-      description: `SpecialEffect run charity tournaments to raise money for helping disabled gamers play. Their Chicken4Charity 2019 event had 20 teams from across the UK games industry battling it out in PUBG.
-
-I volunteered to set up and observe each game, using the in-game camera controls to capture the action so the matches could be streamed on Steam, Twitch and Facebook. The event raised over £14,000 for the charity.
-
-- Setting up and managing the observer cameras during matches
-- Capturing gameplay for live streaming across multiple platforms
-- Helping run a charity event that raised £14k+`,
+- Investigated incidents to find root causes and wrote clear, honest incident reports
+- Supported customers from small businesses to huge organisations`,
     },
     {
       company: 'PriorsVLE',
       link: 'https://priorsvle.com',
       job_title: 'Director & VLE Technical Consultant',
       dates: '2017 - 2019',
-      quote: 'VLE (Virtual Learning Environment) specialists with 15+ years combined experience supporting, managing and hosting Moodle sites for schools, colleges and businesses.',
       description: `Co-founded PriorsVLE - technical support, hosting and development services around Moodle, from custom plugin development to site migrations and upgrades.
 
-I was the main contact for clients, making sure I understood what they needed and that we delivered on time. Built internal systems to keep processes efficient, handled first-line support, managed invoicing, and ran the social media accounts.
-
-- Talking to clients to understand their requirements
-- Building internal systems for efficient workflows
-- First-line customer support
-- Invoice management and chasing payments
-- Social media marketing and content`,
+- Main contact for clients; captured requirements and ensured delivery on time
+- Built internal systems for efficient workflows, handled first-line support and invoicing
+- Ran social media marketing and content`,
     },
     {
       company: 'HowToMoodle',
       link: 'https://howtomoodle.com',
       job_title: 'Support Technician',
       dates: '2012 - 2018',
-      quote: 'End-to-end learning solutions for UK and European organisations - helping them create engaging learning experiences.',
       description: `Six years supporting Moodle and Totara customers - from site setups, upgrades and migrations to day-to-day troubleshooting and long-term client relationships.
 
 - Site setups, upgrades and migrations to the Moodle/Totara platform
@@ -136,28 +94,42 @@ I was the main contact for clients, making sure I understood what they needed an
 - Company IT: Windows Server 2012 domain rollout, desktop and laptop management, technical documentation`,
     },
     {
-      company: 'NovaFM',
-      job_title: 'Volunteer Presenter / Producer',
-      dates: '2012 - 2014',
-      quote: "Newport's local community radio station.",
-      description: `Hosted two weekly shows at Newport's community radio station - one for new and upcoming artists, one for dance, trance and UK hardcore music. Produced both shows myself every week, wrote and produced the weekend news bulletins, and helped with outside broadcasts at local festivals.
-
-- Hosting two weekly specialist music shows
-- Producing shows including news bulletins
-- Outside broadcast support at festivals`,
-    },
-    {
       company: 'Capita ITS (ex-i2Q Education)',
       job_title: 'Junior Technical Support',
       dates: '2008 - 2012',
-      description: `Started at i2Q which later became Capita ITS. My main job was supporting schools and colleges with their Moodle platform - helping with any issues or questions that came up during term time, and running the yearly school rollovers.
+      description: `Supported schools and colleges with their Moodle platform - helping with issues during term time and running the yearly school rollovers.
 
-I also worked with the development team on QA testing for their new learning platform, OpenHive, using automated scripting and writing test plans.
+- QA testing for the OpenHive learning platform, using automated scripting and writing test plans`,
+    },
+    {
+      group: 'Selected community, events and media work',
+      company: 'EGX & epic.LAN',
+      link: 'https://www.egx.net/egx/2019/watch-and-learn',
+      job_title: 'Watch & Learn PUBG Professional',
+      dates: '17th October - 20th October 2019',
+      description: `Taught new players in epic.LAN's Watch & Learn area across all four days of EGX 2019 - 30-minute sessions covering the basics of PUBG and giving console players a taste of the PC version.
 
-- Supporting schools and colleges with Moodle
-- Yearly school rollovers before term starts
-- QA testing for new learning platform development
-- Writing test plans and automated testing scripts`,
+- Ran my own dedicated Watch & Learn station for all four days
+- Helped set up and pack down EGX stages managed by epic.LAN`,
+    },
+    {
+      company: 'Chicken4Charity - SpecialEffect',
+      link: 'https://www.specialeffect.org.uk',
+      job_title: 'PUBG Observer',
+      dates: '26th July 2019',
+      description: `Volunteered as an in-game observer for SpecialEffect's charity PUBG tournament - 20 teams from the UK games industry. Used the camera controls to capture the action for streaming on Steam, Twitch and Facebook. The event raised over £14,000.
+
+- Captured gameplay for live streaming across multiple platforms
+- Helped run a charity event that raised £14k+`,
+    },
+    {
+      company: 'NovaFM',
+      job_title: 'Volunteer Presenter / Producer',
+      dates: '2012 - 2014',
+      description: `Hosted and produced two weekly shows at Newport's community radio station - one for new and upcoming artists, one for dance, trance and UK hardcore music. Wrote and produced the weekend news bulletins and supported outside broadcasts at local festivals.
+
+- Produced two weekly specialist music shows including news bulletins
+- Outside broadcast support at festivals`,
     },
   ];
 }

@@ -24,7 +24,7 @@ export default function About({ config }: AboutProps) {
                 className="w-full aspect-square object-cover border border-[var(--border)]"
               />
               <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mt-3">
-                Dan Bennett — Amsterdam, NL
+                Dan Bennett - Amsterdam, NL
               </p>
             </div>
           )}

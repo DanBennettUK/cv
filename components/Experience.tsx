@@ -16,7 +16,16 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
 
         <div>
           {experiences.map((exp, index) => (
-            <ExperienceItem key={index} experience={exp} />
+            <div key={index}>
+              {exp.group && (
+                <div className="border-t border-[var(--border-light)] pt-8 pb-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                    {exp.group}
+                  </p>
+                </div>
+              )}
+              <ExperienceItem experience={exp} />
+            </div>
           ))}
         </div>
       </div>
@@ -28,7 +37,13 @@ function ExperienceItem({ experience }: { experience: Experience }) {
   const { company, link, job_title, dates, quote, description } = experience;
 
   return (
-    <article className="experience-item py-10 border-t border-[var(--border-light)] first:border-t-0 first:pt-0 last:pb-0">
+    <article
+      className={`experience-item pb-10 last:pb-0 ${
+        experience.group
+          ? 'pt-2'
+          : 'border-t border-[var(--border-light)] first:border-t-0 first:pt-0 pt-10'
+      }`}
+    >
       <div className="grid lg:grid-cols-12 gap-6">
         {/* Left - Company & Meta */}
         <div className="lg:col-span-4">

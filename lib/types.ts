@@ -23,4 +23,5 @@ export interface Experience {
   dates: string;
   quote?: string;
   description: string;
+  group?: string;
 }

@@ -1,5 +1,4 @@
-import yaml from 'js-yaml';
-import { SiteConfig, Experience, Education, Project } from './types';
+import { SiteConfig, Experience } from './types';
 
 // Default config based on the original _config.yml
 const defaultConfig: SiteConfig = {
@@ -7,12 +6,11 @@ const defaultConfig: SiteConfig = {
   title: 'Partner Program Manager - PUBG WEST at KRAFTON',
   email: 'dan@danbennett.me',
   website: 'https://danbennett.me',
-  darkmode: false,
   twitter_username: 'DanBennettUK',
   github_username: 'DanBennettUK',
   instagram_username: 'danbennettuk',
   linkedin_username: 'danbennettuk',
-  about_profile_image: 'assets/dan.jpg',
+  about_profile_image: '/assets/dan.jpg',
   about_content: `Hi! I'm Dan 👋
 
 I work at KRAFTON on PUBG WEST, handling creator partnerships and community stuff. Basically I work with streamers, content creators, and help run community events.
@@ -35,12 +33,11 @@ export function getConfig(): SiteConfig {
 export function getExperience(): Experience[] {
   return [
     {
-      layout: 'left',
       company: 'KRAFTON',
       link: 'https://www.krafton.com',
       job_title: 'Partner Program Manager - PUBG WEST',
       dates: '2022 - Present',
-      quote: 'Creators of PUBG: BATTLEGROUNDS.',
+      quote: 'The games company behind PUBG: BATTLEGROUNDS.',
       description: `I work on the PUBG WEST partner program - basically handling creator partnerships and community stuff across Western markets.
 
 - Working with creators, streamers, and content makers
@@ -49,12 +46,11 @@ export function getExperience(): Experience[] {
 - Managing partner relationships and support`,
     },
     {
-      layout: 'left',
       company: 'PUBG Reddit (r/PUBATTLEGROUNDS)',
       link: 'https://www.reddit.com/r/pubattlegrounds',
       job_title: 'Volunteer Community Manager & Community Games Host',
       dates: '2018 - 2022',
-      quote: 'The biggest community for PLAYERUNKNOWN\'S BATTLEGROUNDS on PC, Xbox and PlayStation.',
+      quote: "The biggest community for PLAYERUNKNOWN'S BATTLEGROUNDS on PC, Xbox and PlayStation.",
       description: `Started as a community member, got invited to join the mod team, ended up doing a lot more than just moderation.
 
 The day-to-day involves keeping an eye on our 100k+ members - making sure people follow the rules, helping resolve conflicts between users, and generally keeping things civil. I deal with toxic behaviour quickly and fairly.
@@ -75,11 +71,9 @@ I also manage the PUBG Reddit Twitter account - posting relevant content, starti
 - Self-taught Python to build Discord bots`,
     },
     {
-      layout: 'left',
       company: 'APT Solutions',
-      link: '',
       job_title: 'Service Desk Agent',
-      dates: 'November 2019 - 2022',
+      dates: '2019 - 2022',
       quote: 'Membership software for unions, professional bodies, charities and sporting organisations - anywhere from 1,000 to 1.5 million members.',
       description: `One of three Service Desk Agents supporting customers with their membership software. Deals with everyone from tiny taxi firms to massive unions.
 
@@ -90,28 +84,26 @@ Beyond just answering tickets, I dig into problems properly - figuring out what 
 - Supporting membership software across multiple time zones
 - Writing clear, honest incident reports
 - Helping customers from small businesses to huge organisations`,
-      old_string: 
+    },
     {
-      layout: 'left',
       company: 'EGX & epic.LAN',
       link: 'https://www.egx.net/egx/2019/watch-and-learn',
       job_title: 'Watch & Learn PUBG Professional',
       dates: '17th October - 20th October 2019',
-      quote: 'UK\'s biggest gaming show.',
+      quote: "UK's biggest gaming show.",
       description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG, showing them how to improve, and giving console players a chance to try the PC version.
 
 - Helped set up and pack down multiple EGX stages managed by epic.LAN
 - Ran my own dedicated Watch & Learn station for all four days
 - Developed teaching skills showing complete beginners the ropes
 - Promoted the sessions on my own social media to drive interest`,
-      old_string: 
+    },
     {
-      layout: 'left',
       company: 'Chicken4Charity - SpecialEffect',
       link: 'https://www.specialeffect.org.uk',
       job_title: 'PUBG Observer',
       dates: '26th July 2019',
-      quote: 'SpecialEffect\'s charity PUBG tournament - 20 teams from the UK games industry competing to raise money.',
+      quote: "SpecialEffect's charity PUBG tournament - 20 teams from the UK games industry competing to raise money.",
       description: `SpecialEffect run charity tournaments to raise money for helping disabled gamers play. Their Chicken4Charity 2019 event had 20 teams from across the UK games industry battling it out in PUBG.
 
 I volunteered my time to help set up and observe each game. Used the in-game camera controls to capture the action as it happened, so the matches could be streamed and enjoyed on Steam, Twitch and Facebook. The event raised over £14,000 for the charity.
@@ -119,9 +111,8 @@ I volunteered my time to help set up and observe each game. Used the in-game cam
 - Setting up and managing the observer cameras during matches
 - Capturing gameplay for live streaming across multiple platforms
 - Helping run a charity event that raised £14k+`,
-      old_string: 
+    },
     {
-      layout: 'left',
       company: 'PriorsVLE',
       link: 'https://priorsvle.com',
       job_title: 'Director & VLE Technical Consultant',
@@ -138,9 +129,8 @@ Also handled first-line support for client users when they had issues, and manag
 - First-line customer support
 - Invoice management and chasing payments
 - Social media marketing and content`,
-      old_string: 
+    },
     {
-      layout: 'left',
       company: 'HowToMoodle',
       link: 'https://howtomoodle.com',
       job_title: 'Support Technician',
@@ -169,14 +159,12 @@ When I wasn't doing Moodle stuff, I was managing the company's IT - rolled us ou
 - Windows Server 2012 domain rollout
 - Desktop and laptop management
 - Technical documentation`,
-      old_string: 
+    },
     {
-      layout: 'left',
       company: 'NovaFM',
-      link: '',
       job_title: 'Volunteer Presenter / Producer',
       dates: '2012 - 2014',
-      quote: 'Newport\'s local community radio station.',
+      quote: "Newport's local community radio station.",
       description: `Hosted two weekly shows at Newport's community radio station. One focused on new, upcoming and rarely heard artists. The other was all about dance, trance and UK hardcore music. I produced both shows myself every week.
 
 Also wrote and produced the Friday and Saturday news bulletins for every hour. Helped with outside broadcasts at local festivals including Newfest and The Pheztival.
@@ -184,14 +172,11 @@ Also wrote and produced the Friday and Saturday news bulletins for every hour. H
 - Hosting two weekly specialist music shows
 - Producing shows including news bulletins
 - Outside broadcast support at festivals`,
-      old_string: 
+    },
     {
-      layout: 'left',
       company: 'Capita ITS (ex-i2Q Education)',
-      link: '',
       job_title: 'Junior Technical Support',
       dates: '2008 - 2012',
-      quote: '',
       description: `Started at i2Q which later became Capita ITS. My main job was supporting schools and colleges with their Moodle platform - helping them with any issues or questions that came up during term time.
 
 Every year I handled the school rollovers - getting all the data ready for the new academic year in their custom Moodle environment.
@@ -202,14 +187,6 @@ Also worked with the development team on QA testing for their new learning platf
 - Yearly school rollovers before term starts
 - QA testing for new learning platform development
 - Writing test plans and automated testing scripts`,
-      old_string: 
+    },
   ];
-}
-
-export function getEducation(): Education[] {
-  return [];
-}
-
-export function getProjects(): Project[] {
-  return [];
 }

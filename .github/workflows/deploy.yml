@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [modern-rewrite]
+    branches: [master, modern-rewrite]
   workflow_dispatch:
 
 permissions:

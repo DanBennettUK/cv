@@ -1,62 +1,41 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import './globals.css';
+import ThemeToggle from '@/components/ThemeToggle';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [isDark, setIsDark] = useState(false);
+export const metadata = {
+  title: 'Dan Bennett | Partner Program Manager - PUBG WEST at KRAFTON',
+  description:
+    'Partner Program Manager at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST.',
+};
 
-  useEffect(() => {
-    // Check for saved preference or system preference
-    const saved = localStorage.getItem('darkMode');
-    if (saved !== null) {
-      setIsDark(saved === 'true');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true);
-    }
-  }, []);
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('darkMode', String(isDark));
-  }, [isDark]);
+// Apply the saved/system theme before first paint to avoid a flash of the wrong theme.
+const darkModeScript = `(function () {
+  try {
+    var saved = localStorage.getItem('darkMode');
+    var dark = saved !== null ? saved === 'true' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (dark) document.documentElement.classList.add('dark');
+  } catch (e) {}
+})();`;
 
-  const toggleDark = () => setIsDark(!isDark);
-
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={isDark ? 'dark' : ''}>
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Dan Bennett | Partner Program Manager - PUBG WEST at KRAFTON</title>
-        <meta name="description" content="Partner Program Manager at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
       </head>
       <body>
-        <button
-          onClick={toggleDark}
-          className="fixed top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-[var(--bg-secondary)] border-2 border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-300 no-print"
-          aria-label="Toggle dark mode"
-        >
-          {isDark ? (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-          ) : (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-          )}
-        </button>
+        <ThemeToggle />
         {children}
       </body>
     </html>

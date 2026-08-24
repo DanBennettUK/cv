@@ -27,12 +27,13 @@ npm run build
 │   ├── Header.tsx          # Name, title, social links
 │   ├── About.tsx           # Profile image and bio
 │   ├── Experience.tsx      # Work history
-│   └── Footer.tsx          # Contact footer
+│   ├── Footer.tsx          # Contact footer
+│   └── ThemeToggle.tsx     # Dark mode toggle button
 ├── lib/                    # Utilities and data
 │   ├── data.ts             # Resume content (edit this!)
 │   └── types.ts            # TypeScript types
 ├── public/                 # Static assets
-│   └── assets/             # Images (dan.jpg, etc.)
+│   └── assets/             # Images (dan.jpg)
 └── dist/                   # Build output (GitHub Pages)
 ```
 
@@ -45,13 +46,11 @@ All resume content is in `lib/data.ts`. Edit this file to update:
 - Personal info (name, title, email, social links)
 - About section content
 - Work experience
-- Education (add to the file)
-- Projects (add to the file)
 
 ### Styling
 
 - **Colors**: Edit CSS variables in `app/globals.css`
-- **Typography**: Uses Roboto font from Google Fonts
+- **Typography**: Space Grotesk (display) and Plus Jakarta Sans (body), loaded from Google Fonts in `app/layout.tsx`
 - **Dark mode**: Automatic via CSS variables + localStorage
 
 ## 🌙 Dark Mode
@@ -68,9 +67,8 @@ Toggle with the sun/moon button in the top-right corner.
 
 1. Push to GitHub
 2. Go to Settings > Pages
-3. Set source to "Deploy from a branch"
-4. Select the `modern-rewrite` branch and `/ (root)` folder
-5. Save and wait for deployment
+3. Set source to "GitHub Actions"
+4. Push to `master` or `modern-rewrite` — the workflow in `.github/workflows/deploy.yml` builds the site and deploys it automatically
 
 ### Build Output
 

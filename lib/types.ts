@@ -14,7 +14,6 @@ export interface SiteConfig {
   experience_title?: string;
   more_content?: string;
   footer_show_references?: boolean;
-  stats?: { value: string; label: string }[];
 }
 
 export interface Experience {

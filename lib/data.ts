@@ -20,12 +20,6 @@ I came into the role through years of PUBG community work, including a 100k+ mem
     'Partner relationships, campaign delivery, community events, cross-team operations, reporting and process improvement.',
   experience_title: 'Experience',
   footer_show_references: false,
-  stats: [
-    { value: '2022—present', label: 'KRAFTON, PUBG WEST' },
-    { value: '100k+', label: 'PUBG Reddit community' },
-    { value: '20 teams', label: 'charity PUBG tournament supported' },
-    { value: 'Western markets', label: 'creator & partner operations' },
-  ],
 };
 
 export function getConfig(): SiteConfig {

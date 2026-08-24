@@ -10,7 +10,7 @@ const defaultConfig: SiteConfig = {
   github_username: 'DanBennettUK',
   instagram_username: 'danbennettuk',
   linkedin_username: 'danbennettuk',
-  about_profile_image: '/assets/dan.jpg',
+  about_profile_image: 'assets/dan.jpg',
   about_content: `Hi! I'm Dan 👋
 
 I work at KRAFTON on PUBG WEST, handling creator partnerships and community stuff. Basically I work with streamers, content creators, and help run community events.

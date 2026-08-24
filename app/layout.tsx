@@ -18,23 +18,31 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: 'swap',
 });
 
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+const repo = process.env.GITHUB_REPOSITORY || '';
+const repoName = repo.split('/')[1] || 'cv';
+const siteUrl = isGithubActions
+  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${repoName}`
+  : 'http://localhost:3000';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Dan Bennett | Partner Program Manager - PUBG WEST at KRAFTON',
   description:
     'Partner Program Manager at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST.',
   icons: {
-    icon: '/favicon.svg',
+    icon: 'favicon.svg',
   },
   openGraph: {
     title: 'Dan Bennett | CV',
     description:
       'Partner Program Manager - PUBG WEST at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST.',
-    url: 'https://danbennett.me',
+    url: siteUrl,
     siteName: 'Dan Bennett',
     type: 'website',
     images: [
       {
-        url: '/assets/dan.jpg',
+        url: 'assets/dan.jpg',
         alt: 'Dan Bennett',
       },
     ],
@@ -44,7 +52,7 @@ export const metadata: Metadata = {
     title: 'Dan Bennett | CV',
     description:
       'Partner Program Manager - PUBG WEST at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST.',
-    images: ['/assets/dan.jpg'],
+    images: ['assets/dan.jpg'],
   },
 };
 

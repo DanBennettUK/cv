@@ -35,7 +35,7 @@ export function getExperience(): Experience[] {
       dates: 'December 2020 - Present',
       description: `I joined KRAFTON in December 2020 and manage creator relationships, campaign delivery and day-to-day program operations for the PUBG Partner Program across Western markets. I coordinate delivery with HQ, regional teams, Marketing, Media Ops, agencies and creators, and keep improving the workflows and support routes Partners use.
 
-- Manage creator and Partner relationships, communications, support, feedback and campaign participation across the Partner Program
+- Act as the day-to-day point of contact for PUBG WEST Partners, helping them understand program requirements, campaign expectations and available support
 - Plan, launch and report on creator campaigns across streaming and short-form content, coordinating with HQ, regional teams, Marketing, Media Ops, agencies and creators
 - Coordinate partner campaigns and activations from briefing and requirements through content submission, review, completion tracking and follow-up
 - Work with marketing, esports, product, community and regional teams to align campaign plans, partner needs, assets, announcements and delivery timelines

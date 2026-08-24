@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  CALM MINIMAL RESTYLE
+  Clean, readable, single accent.
+  Light mode default, dark mode toggle.
+*/
+
+:root {
+  /* Light mode */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f5;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --accent: #c75b39;
+  --accent-hover: #a8482a;
+  --border: #e2e0db;
+  --border-light: #ecebe7;
+}
+
+.dark {
+  /* Dark mode */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --accent: #e07a5f;
+  --accent-hover: #f2a488;
+  --border: #374151;
+  --border-light: #2a3342;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--accent);
+  color: white;
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-5xl mx-auto px-6 sm:px-8;
+  }
+
+  /* Headline style */
+  .headline-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  /* Section title */
+  .section-title-editorial {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.75rem;
+  }
+
+  /* Social button style */
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .social-button:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Quote styling */
+  .quote-editorial {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0 0 1.25rem;
+  }
+}
+
+/* Print styles - compact single-page CV */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  header {
+    padding: 1.5rem 0 0.5rem !important;
+  }
+
+  header .headline-display {
+    font-size: 2rem !important;
+    margin-bottom: 0.25rem;
+  }
+
+  header .text-lg {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.5rem;
+  }
+
+  section {
+    padding: 0.75rem 0 !important;
+  }
+
+  .section-title-editorial {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .experience-item {
+    break-inside: avoid;
+    padding: 0.9rem 0 !important;
+  }
+
+  .quote-editorial {
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    display: none !important;
+  }
+}

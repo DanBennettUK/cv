@@ -1,32 +1,125 @@
-# Dan Bennett - CV
+# Dan Bennett CV
 
-The source for [cv.danbennett.me](https://cv.danbennett.me), my public CV site.
+A modern, static resume site built with Next.js 14, React, TypeScript, and Tailwind CSS. Deploys to GitHub Pages.
 
-Built with Jekyll and the [modern-resume-theme](https://github.com/sproogen/modern-resume-theme).
+## 🚀 Quick Start
 
-## Structure
+```bash
+# Install dependencies
+npm install
 
-- `_config.yml` - site config: name, headline, about content and section titles
-- `_data/experience.yml` - work experience entries (one per role)
-- `_data/education.yml` - education entries
-- `_data/projects.yml` - project entries
-- `_layouts/`, `_includes/`, `_sass/`, `assets/` - theme files, no need to touch for content changes
+# Run development server
+npm run dev
 
-## Running locally
-
-Requires Ruby and Jekyll.
-
-```sh
-bundle install
-bundle exec jekyll serve
+# Build for production
+npm run build
 ```
 
-Then open http://localhost:4000. Changes rebuild automatically; re-run the serve command after editing `_config.yml`.
+## 📁 Project Structure
 
-## Deployment
+```
+.
+├── app/                    # Next.js App Router
+│   ├── globals.css         # Global styles with CSS variables
+│   ├── layout.tsx          # Root layout with dark mode toggle
+│   └── page.tsx            # Main resume page
+├── components/             # React components
+│   ├── Header.tsx          # Name, title, social links
+│   ├── About.tsx           # Profile image and bio
+│   ├── Experience.tsx      # Work history
+│   ├── Footer.tsx          # Contact footer
+│   └── ThemeToggle.tsx     # Dark mode toggle button
+├── lib/                    # Utilities and data
+│   ├── data.ts             # Resume content (edit this!)
+│   └── types.ts            # TypeScript types
+├── public/                 # Static assets
+│   └── assets/             # Images (dan.jpg)
+└── dist/                   # Build output (GitHub Pages)
+```
 
-Hosted on Vercel. Merging to `master` triggers a production deployment; PR branches get preview deployments.
+## 🎨 Customization
 
-## License
+### Edit Your Content
 
-The theme is MIT licensed. Site content is my own.
+All resume content is in `lib/data.ts`. Edit this file to update:
+
+- Personal info (name, title, email, social links)
+- About section content
+- Work experience
+
+### Styling
+
+- **Colors**: Edit CSS variables in `app/globals.css`
+- **Typography**: Space Grotesk (display) and Plus Jakarta Sans (body), loaded from Google Fonts in `app/layout.tsx`
+- **Dark mode**: Automatic via CSS variables + localStorage
+
+## 🌙 Dark Mode
+
+Dark mode is automatically enabled based on:
+1. Saved user preference (localStorage)
+2. System preference (prefers-color-scheme)
+
+Toggle with the sun/moon button in the top-right corner.
+
+## 📦 Deployment
+
+### GitHub Pages
+
+1. Push to GitHub
+2. Go to Settings > Pages
+3. Set source to "GitHub Actions"
+4. Push to `master` or `modern-rewrite` — the workflow in `.github/workflows/deploy.yml` builds the site and deploys it automatically
+
+### Build Output
+
+The `dist/` folder contains the static export ready for deployment:
+
+```bash
+npm run build
+# Output goes to dist/
+```
+
+## 🔧 Tech Stack
+
+| Feature | Technology |
+|---------|------------|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| Markdown | react-markdown |
+
+## 📝 Migration from Jekyll
+
+This is a complete rewrite of the original Jekyll-based `modern-resume-theme`:
+
+### What's Different
+
+- **No Ruby/Jekyll**: Pure JavaScript/TypeScript
+- **Modern tooling**: Next.js 14, React 18, Tailwind CSS
+- **Better dev experience**: Fast HMR, TypeScript support
+- **Cleaner build**: Single `npm run build` command
+- **Smaller output**: Optimized static export
+
+### What's Preserved
+
+- Same visual design and layout
+- Dark mode support
+- Print-friendly styles
+- Responsive design
+- All original content migrated
+
+### File Mapping
+
+| Jekyll (Old) | Next.js (New) |
+|--------------|---------------|
+| `_config.yml` | `lib/data.ts` |
+| `_data/experience.yml` | `lib/data.ts` - `getExperience()` |
+| `_layouts/default.html` | `app/layout.tsx` |
+| `_includes/*.html` | `components/*.tsx` |
+| `_sass/*.scss` | `app/globals.css` (Tailwind) |
+| `assets/main.scss` | `app/globals.css` |
+
+## 📄 License
+
+MIT

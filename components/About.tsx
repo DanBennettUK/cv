@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SiteConfig } from '@/lib/types';
 import ReactMarkdown from 'react-markdown';
 
@@ -15,9 +16,11 @@ export default function About({ config }: AboutProps) {
           {/* Profile Image */}
           {config.about_profile_image && (
             <div className="lg:col-span-4 no-print">
-              <img
+              <Image
                 src={config.about_profile_image}
                 alt="Portrait of Dan Bennett"
+                width={400}
+                height={400}
                 className="w-full aspect-square object-cover border border-[var(--border)]"
               />
               <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mt-3">

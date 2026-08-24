@@ -1,11 +1,51 @@
+import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import ThemeToggle from '@/components/ThemeToggle';
 
-export const metadata = {
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
   title: 'Dan Bennett | Partner Program Manager - PUBG WEST at KRAFTON',
   description:
     'Partner Program Manager at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST.',
+  icons: {
+    icon: '/favicon.svg',
+  },
+  openGraph: {
+    title: 'Dan Bennett | CV',
+    description:
+      'Partner Program Manager - PUBG WEST at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST.',
+    url: 'https://danbennett.me',
+    siteName: 'Dan Bennett',
+    type: 'website',
+    images: [
+      {
+        url: '/assets/dan.jpg',
+        alt: 'Dan Bennett',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Dan Bennett | CV',
+    description:
+      'Partner Program Manager - PUBG WEST at KRAFTON. Creator partnerships, content strategy, and community initiatives for PUBG WEST.',
+    images: ['/assets/dan.jpg'],
+  },
 };
 
 export const viewport = {
@@ -24,14 +64,8 @@ const darkModeScript = `(function () {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
         <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
       </head>
       <body>

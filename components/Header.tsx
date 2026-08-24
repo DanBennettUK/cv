@@ -17,7 +17,7 @@ export default function Header({ config }: HeaderProps) {
     <header className="py-20 sm:py-24">
       <div className="container-main">
         {/* Eyebrow */}
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] mb-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] mb-5 no-print">
           Curriculum Vitae
         </p>
 
@@ -56,7 +56,7 @@ export default function Header({ config }: HeaderProps) {
         </div>
 
         {/* Social links */}
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+        <div className="mt-8 flex flex-wrap items-center gap-3 no-print">
           {socialLinks.map((link) => (
             <a
               key={link.name}

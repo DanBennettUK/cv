@@ -19,10 +19,6 @@
   --accent-hover: #a8482a;
   --border: #e2e0db;
   --border-light: #ecebe7;
-
-  /* Typography */
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 .dark {
@@ -115,7 +111,7 @@ body {
   }
 }
 
-/* Print styles */
+/* Print styles - compact single-page CV */
 @media print {
   .no-print {
     display: none !important;
@@ -126,7 +122,39 @@ body {
     color: black !important;
   }
 
+  header {
+    padding: 1.5rem 0 0.5rem !important;
+  }
+
+  header .headline-display {
+    font-size: 2rem !important;
+    margin-bottom: 0.25rem;
+  }
+
+  header .text-lg {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.5rem;
+  }
+
+  section {
+    padding: 0.75rem 0 !important;
+  }
+
+  .section-title-editorial {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.75rem;
+  }
+
   .experience-item {
     break-inside: avoid;
+    padding: 0.9rem 0 !important;
+  }
+
+  .quote-editorial {
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    display: none !important;
   }
 }

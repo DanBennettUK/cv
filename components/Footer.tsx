@@ -7,7 +7,7 @@ interface FooterProps {
 
 export default function Footer({ config }: FooterProps) {
   return (
-    <footer className="py-20 mt-20 border-t border-[var(--border)]">
+    <footer className="py-20 mt-20 border-t border-[var(--border)] no-print">
       <div className="container-main">
         <div className="grid lg:grid-cols-12 gap-8 items-end">
           {/* Left - Brand */}

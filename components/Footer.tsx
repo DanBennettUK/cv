@@ -13,10 +13,10 @@ export default function Footer({ config }: FooterProps) {
           {/* Left - Brand */}
           <div className="lg:col-span-6">
             <p className="headline-display text-3xl sm:text-4xl mb-4">
-              Let&apos;s work together.
+              Contact
             </p>
             <p className="text-[var(--text-muted)] max-w-md">
-              Currently based in Amsterdam. Open to remote opportunities and collaborations.
+              Currently based in Amsterdam.
             </p>
           </div>
 

@@ -10,7 +10,7 @@ export default function About({ config }: AboutProps) {
   return (
     <section className="pt-8 pb-16">
       <div className="container-main">
-        <div className="section-title-editorial">About</div>
+        <div className="section-title-editorial">Profile</div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           {/* Profile Image */}
@@ -47,6 +47,15 @@ export default function About({ config }: AboutProps) {
                 {config.about_content}
               </ReactMarkdown>
             </div>
+
+            {config.current_focus && (
+              <p className="mt-8 text-sm text-[var(--text-muted)]">
+                <span className="font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+                  Current focus:
+                </span>{' '}
+                {config.current_focus}
+              </p>
+            )}
           </div>
         </div>
       </div>

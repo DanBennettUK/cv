@@ -18,7 +18,7 @@ export default function Header({ config }: HeaderProps) {
       <div className="container-main">
         {/* Eyebrow */}
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] mb-5 no-print">
-          Curriculum Vitae
+          KRAFTON | PUBG WEST
         </p>
 
         {/* Name */}
@@ -27,9 +27,32 @@ export default function Header({ config }: HeaderProps) {
         </h1>
 
         {/* Title */}
-        <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl leading-relaxed mb-8">
+        <p className="text-2xl sm:text-3xl font-medium text-[var(--text-primary)] mb-2">
           {config.title}
         </p>
+
+        {/* Tagline */}
+        {config.tagline && (
+          <p className="text-lg text-[var(--text-secondary)] max-w-2xl leading-relaxed mb-6">
+            {config.tagline}
+          </p>
+        )}
+
+        {/* Proof strip */}
+        {config.stats && config.stats.length > 0 && (
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4 max-w-2xl border-t border-[var(--border-light)] pt-6 no-print">
+            {config.stats.map((stat) => (
+              <div key={stat.label}>
+                <p className="headline-display text-xl sm:text-2xl text-[var(--text-primary)]">
+                  {stat.value}
+                </p>
+                <p className="text-xs uppercase tracking-wider text-[var(--text-muted)] mt-1">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Contact strip */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-[var(--text-muted)]">

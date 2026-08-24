@@ -1,6 +1,8 @@
 export interface SiteConfig {
   name: string;
   title: string;
+  tagline?: string;
+  current_focus?: string;
   email: string;
   website: string;
   twitter_username?: string;
@@ -12,6 +14,7 @@ export interface SiteConfig {
   experience_title?: string;
   more_content?: string;
   footer_show_references?: boolean;
+  stats?: { value: string; label: string }[];
 }
 
 export interface Experience {

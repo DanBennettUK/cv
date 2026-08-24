@@ -12,7 +12,7 @@ export default function Footer({ config }: FooterProps) {
         <div className="grid lg:grid-cols-12 gap-8 items-end">
           {/* Left - Brand */}
           <div className="lg:col-span-6">
-            <p className="headline-display text-4xl sm:text-5xl mb-4">
+            <p className="headline-display text-3xl sm:text-4xl mb-4">
               Let&apos;s work together.
             </p>
             <p className="text-[var(--text-muted)] max-w-md">

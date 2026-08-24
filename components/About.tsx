@@ -10,38 +10,29 @@ export default function About({ config }: AboutProps) {
     <section className="py-16">
       <div className="container-main">
         <div className="section-title-editorial">About</div>
-        
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          {/* Profile Image - asymmetric placement */}
+
+        <div className="grid lg:grid-cols-12 gap-10 items-start">
+          {/* Profile Image */}
           {config.about_profile_image && (
             <div className="lg:col-span-4 no-print">
-              <div className="relative">
-                {/* Decorative frame */}
-                <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[var(--accent)] -z-10" />
-                
-                {/* Image */}
-                <div
-                  className="aspect-square bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500"
-                  style={{
-                    backgroundImage: `url(${config.about_profile_image})`,
-                  }}
-                />
-                
-                {/* Caption */}
-                <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mt-4">
-                  Dan Bennett — Amsterdam, NL
-                </p>
-              </div>
+              <img
+                src={config.about_profile_image}
+                alt="Portrait of Dan Bennett"
+                className="w-full aspect-square object-cover border border-[var(--border)]"
+              />
+              <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mt-3">
+                Dan Bennett — Amsterdam, NL
+              </p>
             </div>
           )}
 
           {/* Content */}
           <div className={`${config.about_profile_image ? 'lg:col-span-8' : 'lg:col-span-12'}`}>
             <div className="prose prose-lg max-w-none text-[var(--text-primary)] leading-relaxed">
-              <ReactMarkdown 
+              <ReactMarkdown
                 components={{
                   p: ({ children }) => (
-                    <p className="text-lg leading-relaxed mb-4 text-[var(--text-secondary)] first:text-[var(--text-primary)] first:text-xl first:font-medium">
+                    <p className="text-lg leading-relaxed mb-4 text-[var(--text-secondary)]">
                       {children}
                     </p>
                   ),

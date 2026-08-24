@@ -13,10 +13,10 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
     <section className="py-16">
       <div className="container-main">
         <div className="section-title-editorial">{title}</div>
-        
-        <div className="space-y-0">
+
+        <div>
           {experiences.map((exp, index) => (
-            <ExperienceItem key={index} experience={exp} index={index} />
+            <ExperienceItem key={index} experience={exp} />
           ))}
         </div>
       </div>
@@ -24,22 +24,21 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
   );
 }
 
-function ExperienceItem({ experience, index }: { experience: Experience; index: number }) {
+function ExperienceItem({ experience }: { experience: Experience }) {
   const { company, link, job_title, dates, quote, description } = experience;
-  
+
   return (
-    <article className="experience-card group">
+    <article className="experience-item py-10 border-t border-[var(--border-light)] first:border-t-0 first:pt-0 last:pb-0">
       <div className="grid lg:grid-cols-12 gap-6">
         {/* Left - Company & Meta */}
         <div className="lg:col-span-4">
-          {/* Company name */}
-          <h3 className="headline-display text-2xl sm:text-3xl mb-2">
+          <h3 className="headline-display text-2xl mb-1.5">
             {link ? (
-              <a 
-                href={link} 
-                target="_blank" 
+              <a
+                href={link}
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors border-b-2 border-transparent hover:border-[var(--accent)]"
+                className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
               >
                 {company}
               </a>
@@ -47,31 +46,24 @@ function ExperienceItem({ experience, index }: { experience: Experience; index: 
               company
             )}
           </h3>
-          
-          {/* Job title */}
-          <p className="text-[var(--accent)] font-medium mb-3">
+
+          <p className="text-sm font-medium text-[var(--accent)] mb-2">
             {job_title}
           </p>
-          
-          {/* Dates as tag */}
-          <span className="tag">
+
+          <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
             {dates}
-          </span>
-          
-          {/* Index number - editorial touch */}
-          <div className="mt-6 text-6xl font-light text-[var(--border)] opacity-50 leading-none">
-            {String(index + 1).padStart(2, '0')}
-          </div>
+          </p>
         </div>
 
         {/* Right - Description */}
         <div className="lg:col-span-8">
           {quote && (
-            <blockquote className="quote-editorial">
-              &ldquo;{quote}&rdquo;
-            </blockquote>
+            <p className="quote-editorial">
+              {quote}
+            </p>
           )}
-          
+
           <div className="prose prose-lg max-w-none text-[var(--text-secondary)]">
             <ReactMarkdown
               components={{
@@ -79,15 +71,10 @@ function ExperienceItem({ experience, index }: { experience: Experience; index: 
                   <p className="mb-4 leading-relaxed">{children}</p>
                 ),
                 ul: ({ children }) => (
-                  <ul className="space-y-2 mt-4 ml-0 pl-0 list-none">
-                    {children}
-                  </ul>
+                  <ul className="mt-4 space-y-1.5 pl-5 list-disc">{children}</ul>
                 ),
                 li: ({ children }) => (
-                  <li className="flex items-start gap-3">
-                    <span className="text-[var(--accent)] mt-1.5">—</span>
-                    <span>{children}</span>
-                  </li>
+                  <li className="pl-1">{children}</li>
                 ),
                 strong: ({ children }) => (
                   <strong className="font-semibold text-[var(--text-primary)]">{children}</strong>

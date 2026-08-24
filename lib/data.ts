@@ -3,7 +3,7 @@ import { SiteConfig, Experience } from './types';
 // Default config based on the original _config.yml
 const defaultConfig: SiteConfig = {
   name: 'Dan Bennett',
-  title: 'Partner Program Manager, PUBG WEST',
+  title: 'Associate Creator Partnerships Manager, PUBG West',
   tagline:
     'Creator partnerships, partner program operations and community events for PUBG: BATTLEGROUNDS across Western markets.',
   email: 'dan@danbennett.me',
@@ -31,26 +31,26 @@ export function getExperience(): Experience[] {
     {
       company: 'KRAFTON',
       link: 'https://www.krafton.com',
-      job_title: 'Partner Program Manager, PUBG WEST',
-      dates: '2022 - Present',
-      description: `I manage relationships and day-to-day program operations for PUBG WEST Partners and creators across Western markets. I support Partners through campaigns, activations and events while coordinating delivery with marketing, esports, product, community and regional teams.
+      job_title: 'Associate Creator Partnerships Manager, PUBG West',
+      dates: 'December 2020 - Present',
+      description: `I joined KRAFTON in December 2020 and manage creator relationships, campaign delivery and day-to-day program operations for the PUBG Partner Program across Western markets. I coordinate delivery with HQ, regional teams, Marketing, Media Ops, agencies and creators, and keep improving the workflows and support routes Partners use.
 
-- Manage ongoing relationships with PUBG WEST Partners and creators across Western markets, providing day-to-day support and keeping communication clear from onboarding through ongoing participation
+- Manage creator and Partner relationships, communications, support, feedback and campaign participation across the Partner Program
+- Plan, launch and report on creator campaigns across streaming and short-form content, coordinating with HQ, regional teams, Marketing, Media Ops, agencies and creators
 - Coordinate partner campaigns and activations from briefing and requirements through content submission, review, completion tracking and follow-up
 - Work with marketing, esports, product, community and regional teams to align campaign plans, partner needs, assets, announcements and delivery timelines
 - Create and improve Partner-facing guidance, campaign instructions and support routes so requirements are clear and easy to follow
-- Turn Partner feedback, recurring questions and operational issues into clear recommendations for internal teams
+- Turn creator and campaign activity into clear performance reporting and recommendations, separating program-controlled actions from wider product and market factors
 - Maintain reporting and operational trackers used to monitor Partner activity, campaign progress, completion and follow-up actions
-- Support community events and creator activations by coordinating people, information, timelines and post-event actions
-- Handle Partner issues and escalations with calm communication, accurate documentation and clear ownership through to resolution
-- Identify repeated manual tasks and unclear handoffs, then improve the workflow, documentation or tracker behind them
-- Balance Partner experience, program requirements and internal delivery needs when making day-to-day decisions`,
+- Improve Partner operations through better reporting workflows, data quality and automation, moving manual processes towards scalable, data-backed tools
+- Design practical feedback and escalation routes so creators can raise issues, provide evidence and receive follow-up
+- Lead cross-functional reviews that turn campaign, Partner and community evidence into prioritised actions for PUBG WEST`,
     },
     {
       company: 'PUBG Reddit (r/PUBATTLEGROUNDS)',
       link: 'https://www.reddit.com/r/pubattlegrounds',
       job_title: 'Volunteer Community Manager & Community Games Host',
-      dates: '2018 - 2022',
+      dates: '2018 - December 2020',
       description: `Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.
 
 - Helped manage the community, including moderation, conflict resolution and enforcement of community standards
@@ -63,7 +63,7 @@ export function getExperience(): Experience[] {
     {
       company: 'APT Solutions',
       job_title: 'Service Desk Agent',
-      dates: '2019 - 2022',
+      dates: 'November 2019 - December 2020',
       description: `One of three Service Desk Agents supporting customers with their membership software - from small taxi firms to large unions. Worked three shift patterns, including nights, to cover UK, Australian and New Zealand customers around the clock.
 
 - Investigated incidents to find root causes and wrote clear, honest incident reports

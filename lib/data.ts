@@ -64,42 +64,76 @@ export function getExperience(): Experience[] {
       company: 'APT Solutions',
       job_title: 'Service Desk Agent',
       dates: 'November 2019 - December 2020',
-      description: `One of three Service Desk Agents supporting customers with their membership software - from small taxi firms to large unions. Worked three shift patterns, including nights, to cover UK, Australian and New Zealand customers around the clock.
+      description: `One of three Service Desk Agents supporting customers with their membership software. Deals with everyone from tiny taxi firms to massive unions.
 
-- Investigated incidents to find root causes and wrote clear, honest incident reports
-- Supported customers from small businesses to huge organisations`,
+I work three different shift patterns including a night shift, so we can cover support for UK, Australian and New Zealand customers around the clock.
+
+Beyond just answering tickets, I dig into problems properly - figuring out what went wrong, how it happened, and how to stop it happening again. I write incident reports that are honest and clear, not full of corporate waffle.
+
+- Supporting membership software across multiple time zones
+- Writing clear, honest incident reports
+- Helping customers from small businesses to huge organisations`,
     },
     {
       company: 'PriorsVLE',
       link: 'https://priorsvle.com',
       job_title: 'Director & VLE Technical Consultant',
       dates: '2017 - 2019',
-      description: `Co-founded PriorsVLE - technical support, hosting and development services around Moodle, from custom plugin development to site migrations and upgrades.
+      description: `Co-founded PriorsVLE - we provided technical support, hosting, and development services around Moodle. Handled everything from custom plugin development to site migrations and upgrades.
 
-- Main contact for clients; captured requirements and ensured delivery on time
-- Built internal systems for efficient workflows, handled first-line support and invoicing
-- Ran social media marketing and content`,
+My role covered a bit of everything. I was the main contact for clients, making sure I understood what they actually needed and that we delivered on time. Built internal systems to keep our processes efficient and running smooth.
+
+Also handled first-line support for client users when they had issues, and managed invoicing to make sure we actually got paid. Ran the social media accounts too - advertising what we offered while posting Moodle tips and news to build our reputation.
+
+- Talking to clients to understand their requirements
+- Building internal systems for efficient workflows
+- First-line customer support
+- Invoice management and chasing payments
+- Social media marketing and content`,
     },
     {
       company: 'HowToMoodle',
       link: 'https://howtomoodle.com',
       job_title: 'Support Technician',
       dates: '2012 - 2018',
-      description: `Six years supporting Moodle and Totara customers - from site setups, upgrades and migrations to day-to-day troubleshooting and long-term client relationships.
+      description: `Six years of making sure Moodle and Totara customers got the best support possible. Did everything from initial setup to ongoing support, and built solid relationships with clients so they knew what was happening and when.
 
-- Site setups, upgrades and migrations to the Moodle/Totara platform
-- 24/7 on-call for hosting servers, monitored with Nagios/Icinga
-- Managed internal hosting servers (CentOS, Apache, PHP, MySQL/MariaDB, DirectAdmin) and external client servers (CentOS, Ubuntu, Gentoo, Windows Server)
-- QA testing of plugins using JIRA; managed Git repos for Moodle/Totara code and custom themes
-- Company IT: Windows Server 2012 domain rollout, desktop and laptop management, technical documentation`,
+The technical side was pretty broad. I handled site setups, upgrades, and migrations to the Moodle/Totara platform. Automated a load of manual tasks with scripts to save time. Answered support calls through our Helpspot system. Troubleshot platform issues and guided clients through their Moodle journey.
+
+On the server side, I was on-call 24/7 to make sure hosting stayed up, keeping clients informed when things went wrong. Managed all our internal hosting servers running CentOS (versions 5, 6, and 7), Apache, PHP, MySQL/MariaDB with DirectAdmin. Also looked after external client servers running CentOS, Ubuntu, Gentoo and Windows Server with various web servers.
+
+Monitored everything with Icinga (based on Nagios) so we knew about problems before customers did. Ran local Git repos for Moodle/Totara code, custom plugins and themes. Did QA testing on new plugins using JIRA to track issues.
+
+When I wasn't doing Moodle stuff, I was managing the company's IT - rolled us out to a Windows Server 2012 Domain Controller, managed all the desktops and laptops (troubleshooting, patches, hardware upgrades, asset tracking), and wrote proper documentation for all the technical changes to our hosting platform.
+
+- Site setups, upgrades and migrations
+- Automating manual tasks with scripts
+- First-line support via Helpspot
+- Troubleshooting platform issues
+- 24/7 on-call for server monitoring
+- Internal hosting server management (CentOS, Apache, PHP, MySQL, DirectAdmin)
+- External client server support (CentOS, Ubuntu, Gentoo, Windows Server)
+- Nagios/Icinga monitoring
+- Git repository management
+- JIRA QA testing and bug tracking
+- Windows Server 2012 domain rollout
+- Desktop and laptop management
+- Technical documentation`,
     },
     {
       company: 'Capita ITS (ex-i2Q Education)',
       job_title: 'Junior Technical Support',
       dates: '2008 - 2012',
-      description: `Supported schools and colleges with their Moodle platform - helping with issues during term time and running the yearly school rollovers.
+      description: `Started at i2Q which later became Capita ITS. My main job was supporting schools and colleges with their Moodle platform - helping them with any issues or questions that came up during term time.
 
-- QA testing for the OpenHive learning platform, using automated scripting and writing test plans`,
+Every year I handled the school rollovers - getting all the data ready for the new academic year in their custom Moodle environment.
+
+Also worked with the development team on QA testing for their new learning platform, OpenHive. Used automated scripting and wrote test plans to make sure things worked properly.
+
+- Supporting schools and colleges with Moodle
+- Yearly school rollovers before term starts
+- QA testing for new learning platform development
+- Writing test plans and automated testing scripts`,
     },
     {
       group: 'Selected community, events and media work',
@@ -107,28 +141,36 @@ export function getExperience(): Experience[] {
       link: 'https://www.egx.net/egx/2019/watch-and-learn',
       job_title: 'Watch & Learn PUBG Professional',
       dates: '17th October - 20th October 2019',
-      description: `Taught new players in epic.LAN's Watch & Learn area across all four days of EGX 2019 - 30-minute sessions covering the basics of PUBG and giving console players a taste of the PC version.
+      description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG, showing them how to improve, and giving console players a chance to try the PC version.
 
+- Helped set up and pack down multiple EGX stages managed by epic.LAN
 - Ran my own dedicated Watch & Learn station for all four days
-- Helped set up and pack down EGX stages managed by epic.LAN`,
+- Developed teaching skills showing complete beginners the ropes
+- Promoted the sessions on my own social media to drive interest`,
     },
     {
       company: 'Chicken4Charity - SpecialEffect',
       link: 'https://www.specialeffect.org.uk',
       job_title: 'PUBG Observer',
       dates: '26th July 2019',
-      description: `Volunteered as an in-game observer for SpecialEffect's charity PUBG tournament - 20 teams from the UK games industry. Used the camera controls to capture the action for streaming on Steam, Twitch and Facebook. The event raised over £14,000.
+      description: `SpecialEffect run charity tournaments to raise money for helping disabled gamers play. Their Chicken4Charity 2019 event had 20 teams from across the UK games industry battling it out in PUBG.
 
-- Captured gameplay for live streaming across multiple platforms
-- Helped run a charity event that raised £14k+`,
+I volunteered my time to help set up and observe each game. Used the in-game camera controls to capture the action as it happened, so the matches could be streamed and enjoyed on Steam, Twitch and Facebook. The event raised over £14,000 for the charity.
+
+- Setting up and managing the observer cameras during matches
+- Capturing gameplay for live streaming across multiple platforms
+- Helping run a charity event that raised £14k+`,
     },
     {
       company: 'NovaFM',
       job_title: 'Volunteer Presenter / Producer',
       dates: '2012 - 2014',
-      description: `Hosted and produced two weekly shows at Newport's community radio station - one for new and upcoming artists, one for dance, trance and UK hardcore music. Wrote and produced the weekend news bulletins and supported outside broadcasts at local festivals.
+      description: `Hosted two weekly shows at Newport's community radio station. One focused on new, upcoming and rarely heard artists. The other was all about dance, trance and UK hardcore music. I produced both shows myself every week.
 
-- Produced two weekly specialist music shows including news bulletins
+Also wrote and produced the Friday and Saturday news bulletins for every hour. Helped with outside broadcasts at local festivals including Newfest and The Pheztival.
+
+- Hosting two weekly specialist music shows
+- Producing shows including news bulletins
 - Outside broadcast support at festivals`,
     },
   ];

@@ -18,13 +18,13 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
           {experiences.map((exp, index) => (
             <div key={index}>
               {exp.group && (
-                <div className="border-t border-[var(--border-light)] pt-8 pb-4">
+                <div className="pt-8 pb-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
                     {exp.group}
                   </p>
                 </div>
               )}
-              <ExperienceItem experience={exp} />
+              <ExperienceItem experience={exp} first={index === 0} />
             </div>
           ))}
         </div>
@@ -33,15 +33,15 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
   );
 }
 
-function ExperienceItem({ experience }: { experience: Experience }) {
+function ExperienceItem({ experience, first = false }: { experience: Experience; first?: boolean }) {
   const { company, link, job_title, dates, quote, description } = experience;
 
   return (
     <article
       className={`experience-item pb-10 last:pb-0 ${
-        experience.group
-          ? 'pt-2'
-          : 'border-t border-[var(--border-light)] first:border-t-0 first:pt-0 pt-10'
+        first
+          ? 'pt-0'
+          : 'border-t-2 border-[var(--border)] pt-10'
       }`}
     >
       <div className="grid lg:grid-cols-12 gap-6">

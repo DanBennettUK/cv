@@ -39,28 +39,28 @@ export function getExperience(): Experience[] {
           title: 'Partner relationships and guidance',
           bullets: [
             'Act as the day-to-day contact for PUBG WEST Partners, clarifying programme requirements, campaign expectations and available support.',
-            'Create and improve Partner-facing guidance, campaign instructions and support routes.',
+            'Turn recurring questions and requirements into Partner-facing guidance, campaign instructions and clear support routes.',
           ],
         },
         {
           title: 'Campaigns and activations',
           bullets: [
             'Plan, launch and report on streaming and short-form creator campaigns with HQ, regional teams, Marketing, Media Ops, agencies and creators.',
-            'Coordinate briefing, requirements, content submission, review, completion tracking and follow-up. Align Partner needs, assets, announcements and timelines with marketing, esports, product and community teams.',
+            'Coordinate briefing, requirements, content submission, review, completion tracking and follow-up, keeping Partner needs, assets, announcements and timelines aligned with marketing, esports, product and community teams.',
           ],
         },
         {
           title: 'Reporting and data quality',
           bullets: [
-            'Turn creator and campaign activity into performance reporting and recommendations, separating programme-controlled actions from wider product and market factors.',
-            'Maintain operational trackers for Partner activity, campaign progress, completion and follow-up. Improve reporting workflows, data quality and automation.',
+            'Maintain operational trackers that give teams a shared view of Partner activity, campaign progress, completion and next actions.',
+            'Turn creator and campaign activity into performance reporting and recommendations, separating programme-controlled actions from wider product and market factors, and improve reporting workflows, data quality and automation.',
           ],
         },
         {
           title: 'Feedback and evidence-led reviews',
           bullets: [
             'Design feedback and escalation routes so creators can raise issues, provide evidence and receive follow-up.',
-            'Lead cross-functional reviews that turn campaign, Partner and community evidence into prioritised actions for PUBG WEST.',
+            'Lead cross-functional evidence reviews that turn campaign, Partner and community feedback into prioritised actions for PUBG WEST.',
           ],
         },
       ],

@@ -18,25 +18,21 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: 'swap',
 });
 
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-const repo = process.env.GITHUB_REPOSITORY || '';
-const repoName = repo.split('/')[1] || 'cv';
-const siteUrl = isGithubActions
-  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${repoName}`
-  : 'http://localhost:3000';
+const siteUrl = 'https://cv.danbennett.me/';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: siteUrl },
   title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
   description:
-    'Associate Creator Partnerships Manager for the PUBG Partner Program at KRAFTON. Creator partnerships, campaign operations and community events across Western markets.',
+    'Associate Creator Partnerships Manager at KRAFTON. Creator partnerships, Partner Programme operations and practical reporting workflows for PUBG: BATTLEGROUNDS across Western markets.',
   icons: {
     icon: 'favicon.svg',
   },
   openGraph: {
     title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
     description:
-      'Creator partnerships, campaign operations and community events across Western markets.',
+      'Creator partnerships, Partner Programme operations and practical reporting workflows across Western markets.',
     url: siteUrl,
     siteName: 'Dan Bennett',
     type: 'website',
@@ -51,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
     description:
-      'Creator partnerships, campaign operations and community events across Western markets.',
+      'Creator partnerships, Partner Programme operations and practical reporting workflows across Western markets.',
     images: ['assets/dan.jpg'],
   },
 };
@@ -72,7 +68,7 @@ const darkModeScript = `(function () {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
+    <html lang="en-GB" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
       </head>

@@ -78,6 +78,20 @@ export default function Header({ config }: HeaderProps) {
             </a>
           ))}
         </div>
+        <nav aria-label="CV sections" className="mt-8 border-t border-[var(--border)] pt-4 no-print">
+          <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-[var(--text-secondary)]">
+            {[
+              ['profile', 'Profile'],
+              ['current-role', 'Current role'],
+              ['capabilities', 'Workflow examples'],
+              ['earlier-employment', 'Earlier employment'],
+              ['community', 'Community and events'],
+              ['contact', 'Contact'],
+            ].map(([id, label]) => (
+              <li key={id}><a href={`#${id}`} className="inline-block py-2 hover:text-[var(--accent)] underline underline-offset-4">{label}</a></li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );

@@ -8,9 +8,9 @@ interface AboutProps {
 
 export default function About({ config }: AboutProps) {
   return (
-    <section className="pt-8 pb-16">
+    <section id="profile" aria-labelledby="profile-heading" className="pt-8 pb-16">
       <div className="container-main">
-        <div className="section-title-editorial">Profile</div>
+        <h2 id="profile-heading" className="section-title-editorial">Profile</h2>
 
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           {/* Profile Image */}

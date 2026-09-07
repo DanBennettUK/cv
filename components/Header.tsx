@@ -83,7 +83,6 @@ export default function Header({ config }: HeaderProps) {
             {[
               ['profile', 'Profile'],
               ['current-role', 'Current role'],
-              ['capabilities', 'Workflow examples'],
               ['earlier-employment', 'Earlier employment'],
               ['community', 'Community and events'],
               ['contact', 'Contact'],

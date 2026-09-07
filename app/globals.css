@@ -143,7 +143,6 @@ a:focus-visible, button:focus-visible {
 
   .container-main { max-width: none; padding: 0; }
   .grid { display: block; }
-  body { font-size: 10pt; }
   h2, h3, h4 { break-after: avoid; }
   p, li { orphans: 3; widows: 3; }
   .role-cluster, .practice-card { break-inside: avoid; }
@@ -151,6 +150,7 @@ a:focus-visible, button:focus-visible {
   .experience-item .prose { margin-top: 0.75rem; }
 
   body {
+    font-size: 10pt;
     background: white !important;
     color: black !important;
   }

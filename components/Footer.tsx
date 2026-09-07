@@ -7,14 +7,14 @@ interface FooterProps {
 
 export default function Footer({ config }: FooterProps) {
   return (
-    <footer className="py-20 mt-20 border-t border-[var(--border)] no-print">
+    <footer id="contact" aria-labelledby="contact-heading" className="py-20 mt-20 border-t border-[var(--border)] no-print">
       <div className="container-main">
         <div className="grid lg:grid-cols-12 gap-8 items-end">
           {/* Left - Brand */}
           <div className="lg:col-span-6">
-            <p className="headline-display text-3xl sm:text-4xl mb-4">
+            <h2 id="contact-heading" className="headline-display text-3xl sm:text-4xl mb-4">
               Contact
-            </p>
+            </h2>
             <p className="text-[var(--text-muted)] max-w-md">
               Currently based in Amsterdam.
             </p>

@@ -3,29 +3,21 @@ import ReactMarkdown from 'react-markdown';
 
 interface ExperienceProps {
   experiences: Experience[];
-  title?: string;
+  title: string;
+  id: string;
 }
 
-export default function ExperienceSection({ experiences, title = 'Experience' }: ExperienceProps) {
+export default function ExperienceSection({ experiences, title, id }: ExperienceProps) {
   if (experiences.length === 0) return null;
 
   return (
-    <section className="py-16">
+    <section id={id} aria-labelledby={`${id}-heading`} className="py-12 sm:py-16">
       <div className="container-main">
-        <div className="section-title-editorial">{title}</div>
+        <h2 id={`${id}-heading`} className="section-title-editorial">{title}</h2>
 
         <div>
           {experiences.map((exp, index) => (
-            <div key={index}>
-              {exp.group && (
-                <div className="pt-8 pb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
-                    {exp.group}
-                  </p>
-                </div>
-              )}
-              <ExperienceItem experience={exp} first={index === 0} />
-            </div>
+            <ExperienceItem key={exp.company} experience={exp} first={index === 0} />
           ))}
         </div>
       </div>
@@ -34,7 +26,7 @@ export default function ExperienceSection({ experiences, title = 'Experience' }:
 }
 
 function ExperienceItem({ experience, first = false }: { experience: Experience; first?: boolean }) {
-  const { company, link, job_title, dates, quote, description } = experience;
+  const { company, link, job_title, dates, tenure, quote, description, clusters } = experience;
 
   return (
     <article
@@ -69,6 +61,7 @@ function ExperienceItem({ experience, first = false }: { experience: Experience;
           <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
             {dates}
           </p>
+          {tenure && <p className="mt-3 text-sm text-[var(--text-secondary)]">{tenure}</p>}
         </div>
 
         {/* Right - Description */}
@@ -99,6 +92,14 @@ function ExperienceItem({ experience, first = false }: { experience: Experience;
               {description}
             </ReactMarkdown>
           </div>
+          {clusters?.map((cluster) => (
+            <div key={cluster.title} className="role-cluster mt-7">
+              <h4 className="font-semibold text-[var(--text-primary)] mb-2">{cluster.title}</h4>
+              <ul className="list-disc pl-5 space-y-2 text-[var(--text-secondary)]">
+                {cluster.bullets.map((bullet) => <li key={bullet} className="pl-1">{bullet}</li>)}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </article>

@@ -111,11 +111,44 @@ body {
   }
 }
 
-/* Print styles - compact single-page CV */
+section[id], footer[id] { scroll-margin-top: 2rem; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* Print as a readable document, without forcing a single page. */
 @media print {
   .no-print {
     display: none !important;
   }
+
+  @page { size: A4; margin: 15mm; }
+
+  :root, .dark {
+    --bg-primary: #fff;
+    --bg-secondary: #fff;
+    --text-primary: #000;
+    --text-secondary: #222;
+    --text-muted: #444;
+    --accent: #333;
+    --border: #ccc;
+  }
+
+  .container-main { max-width: none; padding: 0; }
+  .grid { display: block; }
+  body { font-size: 10pt; }
+  h2, h3, h4 { break-after: avoid; }
+  p, li { orphans: 3; widows: 3; }
+  .role-cluster, .practice-card { break-inside: avoid; }
+  .experience-item h3 { margin-bottom: 0.4rem; }
+  .experience-item .prose { margin-top: 0.75rem; }
 
   body {
     background: white !important;
@@ -146,7 +179,7 @@ body {
   }
 
   .experience-item {
-    break-inside: avoid;
+    break-inside: auto;
     padding: 0.9rem 0 !important;
   }
 

@@ -83,6 +83,7 @@ export default function Header({ config }: HeaderProps) {
             {[
               ['profile', 'Profile'],
               ['current-role', 'Current role'],
+              ['ai-systems', 'AI and systems'],
               ['earlier-employment', 'Earlier employment'],
               ['community', 'Community and events'],
               ['contact', 'Contact'],

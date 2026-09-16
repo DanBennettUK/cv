@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   alternates: { canonical: siteUrl },
   title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
   description:
-    'Associate Creator Partnerships Manager at KRAFTON. Creator partnerships, Partner Programme operations and practical reporting workflows for PUBG: BATTLEGROUNDS across Western markets.',
+    'Associate Creator Partnerships Manager at KRAFTON. Creator partnerships, Partner Program operations and practical reporting workflows for PUBG: BATTLEGROUNDS across Western markets.',
   icons: {
     icon: 'favicon.svg',
   },
   openGraph: {
     title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
     description:
-      'Creator partnerships, Partner Programme operations and practical reporting workflows across Western markets.',
+      'Creator partnerships, Partner Program operations and practical reporting workflows across Western markets.',
     url: siteUrl,
     siteName: 'Dan Bennett',
     type: 'website',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
     description:
-      'Creator partnerships, Partner Programme operations and practical reporting workflows across Western markets.',
+      'Creator partnerships, Partner Program operations and practical reporting workflows across Western markets.',
     images: ['assets/dan.jpg'],
   },
 };

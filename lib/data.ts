@@ -5,7 +5,7 @@ const defaultConfig: SiteConfig = {
   name: 'Dan Bennett',
   title: 'Associate Creator Partnerships Manager, PUBG West',
   tagline:
-    'Creator partnerships and Partner Programme operations for PUBG: BATTLEGROUNDS, supported by practical reporting and delivery workflows.',
+    'Creator partnerships and Partner Program operations for PUBG: BATTLEGROUNDS, supported by practical reporting, workflow design and applied AI systems.',
   email: 'dan@danbennett.me',
   website: 'https://danbennett.me',
   twitter_username: 'DanBennettUK',
@@ -13,9 +13,11 @@ const defaultConfig: SiteConfig = {
   instagram_username: 'danbennettuk',
   linkedin_username: 'danbennettuk',
   about_profile_image: 'assets/dan.jpg',
-  about_content: `I manage creator relationships and day-to-day Partner Programme operations for PUBG WEST at KRAFTON. Working across Western markets, I coordinate campaigns and community events with creators, agencies and internal teams, and help Partners navigate requirements, resolve issues and get clear follow-up.
+  about_content: `I manage creator relationships and day-to-day Partner Program operations for PUBG WEST at KRAFTON. Working across Western markets, I coordinate campaigns and community events with creators, agencies and internal teams, and help Partners navigate requirements, resolve issues and get clear follow-up.
 
-My community and technical support background shapes the way I work. Alongside the relationships, I improve the reporting, guidance and workflows that support delivery, turning campaign activity and feedback into practical next steps.`,
+My community and technical support background shapes the way I work. Alongside relationships and delivery, I improve the reporting, guidance and workflows that support the work, turning campaign activity and feedback into practical next steps.
+
+Alongside my role, I build practical AI and operational systems for research, documentation, coding and task coordination. I am interested in the useful layer around the model: clear inputs, reliable sources, safe handovers, human review and work that can be inspected after it is done.`,
   experience_title: 'Experience',
   footer_show_references: false,
 };
@@ -33,33 +35,35 @@ export function getExperience(): Experience[] {
       category: 'current',
       dates: 'February 2024 to present',
       tenure: 'At KRAFTON since December 2020',
-      description: `Manage creator relationships, campaign delivery and day-to-day Partner Programme operations for PUBG: BATTLEGROUNDS across Western markets. Previously EMEA Streamer Partnership Coordinator in 2022.`,
+      description: `Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions. Previously EMEA Streamer Partnership Coordinator in 2022.`,
       clusters: [
         {
-          title: 'Partner relationships and guidance',
+          title: 'Partner relationships and support',
           bullets: [
-            'Act as the day-to-day contact for PUBG WEST Partners, clarifying programme requirements, campaign expectations and available support.',
-            'Turn recurring questions and requirements into Partner-facing guidance, campaign instructions and clear support routes.',
+            'Act as the day-to-day contact for PUBG WEST Partners, clarifying program requirements, campaign expectations and available support.',
+            'Translate recurring questions and requirements into Partner-facing guidance, campaign instructions and clear support routes, and coordinate follow-up when issues depend on multiple teams.',
           ],
         },
         {
           title: 'Campaigns and activations',
           bullets: [
             'Plan, launch and report on streaming and short-form creator campaigns with HQ, regional teams, Marketing, Media Ops, agencies and creators.',
-            'Coordinate briefing, requirements, content submission, review, completion tracking and follow-up, keeping Partner needs, assets, announcements and timelines aligned with marketing, esports, product and community teams.',
+            'Coordinate briefing, requirements, content submission, review, completion tracking and follow-up across the full campaign lifecycle.',
+            'Align Partner needs, assets, announcements and timelines across marketing, esports, product and community teams, including creator and community activations.',
           ],
         },
         {
           title: 'Reporting and data quality',
           bullets: [
             'Maintain operational trackers that give teams a shared view of Partner activity, campaign progress, completion and next actions.',
-            'Turn creator and campaign activity into performance reporting and recommendations, separating programme-controlled actions from wider product and market factors, and improve reporting workflows, data quality and automation.',
+            'Turn creator and campaign activity into performance reporting and recommendations, separating program-controlled actions from wider product and market factors.',
+            'Improve reporting workflows, data quality and automation so repeatable operational checks are easier to maintain and review.',
           ],
         },
         {
           title: 'Feedback and evidence-led reviews',
           bullets: [
-            'Design feedback and escalation routes so creators can raise issues, provide evidence and receive follow-up.',
+            'Design practical feedback and escalation routes so creators can raise issues, provide evidence and receive follow-up.',
             'Lead cross-functional evidence reviews that turn campaign, Partner and community feedback into prioritised actions for PUBG WEST.',
           ],
         },
@@ -73,22 +77,23 @@ export function getExperience(): Experience[] {
       dates: '2018 - December 2020',
       description: `Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.
 
-- Helped manage the community, including moderation, conflict resolution and enforcement of community standards
-- Turned player feedback into structured discussions with the game team, planning Reddit and Twitter conversations and giving players a direct channel to PUBG Corp
-- Coordinated community events, giveaways, bug reports and player feedback with PUBG Corp staff
+- Moderated the community, resolving conflicts and applying community standards fairly
+- Turned player feedback into structured discussions with the game team through Reddit and Twitter
+- Worked with PUBG Corp staff on community events, giveaways, bug reports and player feedback
 - Gathered evidence for the Community Reporting team and submitted cases to the development team
-- Ran Community Custom Games - hosted tournaments, managed leaderboards, streamed and cast matches live on Twitch
-- Managed the PUBG Reddit Twitter account and built Discord bots in Python`,
+- Ran Community Custom Games, including tournaments, leaderboards, live streams and casting on Twitch
+- Managed the PUBG Reddit Twitter account and built Discord bots in Python to support community operations`,
     },
     {
       category: 'employment',
       company: 'APT Solutions',
       job_title: 'Service Desk Agent',
       dates: 'November 2019 - December 2020',
-      description: `Supported membership software as one of three Service Desk Agents, working with customers from small taxi firms to large unions. Covered UK, Australian and New Zealand customers across three shift patterns, including nights.
+      description: `Supported membership software as one of three Service Desk Agents, working with customers from small taxi firms to large unions.
 
-- Investigated problems, identified causes and considered how to prevent recurrence
-- Wrote clear incident reports and supported customers across multiple time zones`,
+- Covered UK, Australian and New Zealand customers across three shift patterns, including nights
+- Investigated incidents, identified causes and considered how to prevent recurrence
+- Wrote clear customer-facing incident reports and supported customers across multiple time zones`,
     },
     {
       category: 'employment',
@@ -96,10 +101,12 @@ export function getExperience(): Experience[] {
       link: 'https://priorsvle.com',
       job_title: 'Director & VLE Technical Consultant',
       dates: '2017 - 2019',
-      description: `Co-founded a Moodle technical support, hosting and development business. Managed client relationships and requirements, custom plugin development, site migrations and upgrades.
+      description: `Co-founded a Moodle technical support, hosting and development business, delivering custom plugin development, site migrations and upgrades.
 
-- Built internal systems to support day-to-day workflows and coordinated delivery with clients
-- Provided first-line user support and managed invoicing and payment follow-up
+- Managed client relationships and captured requirements through to agreed delivery
+- Built internal systems to support efficient day-to-day workflows and applied LEAN process thinking
+- Provided first-line support for client users and coordinated technical follow-up
+- Managed invoicing and payment follow-up
 - Ran social media marketing, sharing Moodle tips, news and service information`,
     },
     {
@@ -110,18 +117,20 @@ export function getExperience(): Experience[] {
       dates: '2012 - 2018',
       description: `Supported Moodle and Totara customers through setup, upgrades, migrations and ongoing troubleshooting. Maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover.
 
-- Automated manual tasks with scripts and provided first-line support through Helpspot
-- Managed internal CentOS hosting with Apache, PHP, MySQL/MariaDB and DirectAdmin, plus client servers running CentOS, Ubuntu, Gentoo and Windows Server
-- Monitored hosting with Icinga/Nagios, managed Git repositories for platform code, plugins and themes, and tested plugins using JIRA for issue tracking
-- Rolled out a Windows Server 2012 domain controller and managed desktop and laptop troubleshooting, patching, hardware upgrades and asset tracking
-- Documented technical changes to the hosting platform`,
+- Automated manual setup and support tasks with scripts and provided first-line support through Helpspot
+- Provided Moodle/Totara administrator and technical server support for customer sites hosted in-house or by third parties
+- Managed internal CentOS hosting (versions 5, 6 and 7) with Apache, PHP, MySQL/MariaDB and DirectAdmin, plus client servers running CentOS, Ubuntu, Gentoo and Windows Server with HTTPD, Apache2 and Nginx
+- Monitored sites and servers with Icinga/Nagios and kept customers informed when issues affected service
+- Debugged Moodle/Totara application issues in PHP and MySQL, raised issues against the Moodle/Totara Tracker and tested plugins with JIRA
+- Managed Git repositories for Moodle/Totara code, custom plugins and themes, and documented technical changes to the hosting platform
+- Rolled out a Windows Server 2012 domain controller and managed company desktops and laptops, including troubleshooting, patching, hardware/software upgrades and asset tracking`,
     },
     {
       category: 'employment',
       company: 'Capita ITS (ex-i2Q Education)',
       job_title: 'Junior Technical Support',
       dates: '2008 - 2012',
-      description: `Joined i2Q Education, later Capita ITS, supporting schools and colleges using Moodle. Handled annual data rollovers in their customised Moodle environment before the new academic year.
+      description: `Joined i2Q Education, later Capita ITS, supporting schools and colleges using Moodle and handling annual data rollovers in their customised environment before the new academic year.
 
 - Resolved platform questions and issues during term time
 - Worked with developers on QA for OpenHive, writing test plans and automated test scripts`,

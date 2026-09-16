@@ -1,6 +1,6 @@
 # Dan Bennett CV
 
-A modern, static resume site built with Next.js 14, React, TypeScript, and Tailwind CSS. Deploys to GitHub Pages.
+A modern, static resume site built with Next.js 15, React, TypeScript, and Tailwind CSS. It includes a full portfolio view and a compact recruiter view, with GitHub Pages as the authoritative deployment.
 
 ## 🚀 Quick Start
 
@@ -22,19 +22,24 @@ npm run build
 ├── app/                    # Next.js App Router
 │   ├── globals.css         # Global styles with CSS variables
 │   ├── layout.tsx          # Root layout with dark mode toggle
-│   └── page.tsx            # Main resume page
+│   ├── page.tsx            # Full CV page
+│   ├── resume/page.tsx     # Compact recruiter view and PDF source
+│   ├── robots.ts           # Crawler rules
+│   └── sitemap.ts          # Public routes for search engines
 ├── components/             # React components
 │   ├── Header.tsx          # Name, title, social links
 │   ├── About.tsx           # Profile image and bio
 │   ├── Experience.tsx      # Work history
 │   ├── Footer.tsx          # Contact footer
+│   ├── ImpactHighlights.tsx # Outcome-led impact cards
+│   ├── AIAndSystems.tsx    # AI practice and public projects
 │   └── ThemeToggle.tsx     # Dark mode toggle button
 ├── lib/                    # Utilities and data
-│   ├── data.ts             # Resume content (edit this!)
+│   ├── data.ts             # Shared CV, impact, capability and project content
 │   └── types.ts            # TypeScript types
 ├── public/                 # Static assets
-│   └── assets/             # Images (dan.jpg)
-└── dist/                   # Build output (GitHub Pages)
+│   ├── assets/             # Images (dan.jpg)
+│   └── Dan-Bennett-CV.pdf  # Generated recruiter PDF
 ```
 
 ## 🎨 Customization
@@ -44,8 +49,10 @@ npm run build
 All resume content is in `lib/data.ts`. Edit this file to update:
 
 - Personal info (name, title, email, social links)
-- About section content
-- Work experience
+- Profile and current-role content
+- Selected impact statements and capability map
+- Public project descriptions
+- Recruiter-view and PDF content derived from the same data
 
 ### Styling
 
@@ -63,12 +70,23 @@ Toggle with the sun/moon button in the top-right corner.
 
 ## 📦 Deployment
 
+### Recruiter PDF
+
+The compact recruiter view is available at `/resume/`. Generate the downloadable A4 PDF after a content change with:
+
+```bash
+npm run pdf
+```
+
+This runs a production build, serves the static output locally and prints `/resume/` with Chromium. Set `CHROMIUM_BIN` if Chromium is not installed at a standard path. The generated file is `public/Dan-Bennett-CV.pdf`.
+
 ### GitHub Pages
 
-1. Push to GitHub
-2. Go to Settings > Pages
-3. Set source to "GitHub Actions"
-4. Push to `master` or `modern-rewrite` — the workflow in `.github/workflows/deploy.yml` builds the site and deploys it automatically
+The custom domain is deployed from the `master` branch through `.github/workflows/deploy.yml`. GitHub Pages is the authoritative production deployment; local builds and any unrelated preview-provider status do not represent the live site.
+
+1. Push to `master` or run the workflow manually.
+2. The workflow installs dependencies, builds the static export and deploys `dist/`.
+3. Verify the live URL and a distinctive content marker after deployment.
 
 ### Build Output
 
@@ -79,15 +97,17 @@ npm run build
 # Output goes to dist/
 ```
 
+
 ## 🔧 Tech Stack
 
 | Feature | Technology |
 |---------|------------|
-| Framework | Next.js 14 (App Router) |
+| Framework | Next.js 15 (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
 | Icons | Lucide React |
 | Markdown | react-markdown |
+| PDF generation | Chromium via `scripts/generate-pdf.mjs` |
 
 ## 📝 Migration from Jekyll
 
@@ -96,7 +116,7 @@ This is a complete rewrite of the original Jekyll-based `modern-resume-theme`:
 ### What's Different
 
 - **No Ruby/Jekyll**: Pure JavaScript/TypeScript
-- **Modern tooling**: Next.js 14, React 18, Tailwind CSS
+- **Modern tooling**: Next.js 15, React 18, Tailwind CSS
 - **Better dev experience**: Fast HMR, TypeScript support
 - **Cleaner build**: Single `npm run build` command
 - **Smaller output**: Optimized static export

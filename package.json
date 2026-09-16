@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint app components lib --ext .ts,.tsx",
+    "pdf": "npm run build && node scripts/generate-pdf.mjs",
+    "pdf:generate": "node scripts/generate-pdf.mjs"
   },
   "dependencies": {
     "next": "15.5.21",

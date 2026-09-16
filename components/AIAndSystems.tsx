@@ -1,38 +1,4 @@
-const publicProjects = [
-  {
-    name: 'Open Second Brain',
-    label: 'Open-source memory system',
-    href: 'https://github.com/DanBennettUK/open-second-brain',
-    description:
-      'Built and maintain an Obsidian-native memory layer for AI agents, using plain Markdown, deterministic CLI and MCP tools, provenance, lifecycle controls and cross-runtime integrations.',
-    bullets: [
-      'Keeps memory, preferences and evidence inspectable, versionable and owned by the person using the system.',
-      'Treats source identity, trust, scoped access and recoverable writes as part of the product rather than as afterthoughts.',
-    ],
-  },
-  {
-    name: 'Hermes Todo',
-    label: 'Open-source operational tooling',
-    href: 'https://github.com/DanBennettUK/hermes-todo',
-    description:
-      'Designed a shared task board for Hermes Desktop and agents, with SQLite as the authority and a namespaced CLI and REST surface for agent-writable work.',
-    bullets: [
-      'Durable handovers carry the brief, next action, closure condition, artefacts and waiting context into the next work session.',
-      'Revision checks, append-only history and explicit completion evidence make automation safer to operate and easier to audit.',
-    ],
-  },
-  {
-    name: 'Voice Note to MIDI',
-    label: 'Machine-learning project',
-    href: 'https://github.com/DanBennettUK/voice-note-to-midi',
-    description:
-      'Built a local audio pipeline that turns humming and voice notes into quantised MIDI using harmonic/percussive separation, Spotify Basic Pitch, key detection and post-processing.',
-    bullets: [
-      'Combines key-aware correction, harmonic pruning, legato merging and configurable timing grids.',
-      'Published as a usable CLI with documented setup, workflow and limitations.',
-    ],
-  },
-];
+import { capabilityGroups, publicProjects } from '@/lib/data';
 
 export default function AIAndSystems() {
   return (
@@ -47,6 +13,20 @@ export default function AIAndSystems() {
             <p className="mt-4 text-[var(--text-secondary)]">
               The useful part is the operating model around the model: clear inputs, reliable sources, safe handovers, human review and work that can still be inspected after it is done.
             </p>
+
+            <div className="mt-8 border-t border-[var(--border)] pt-5">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)] mb-4">Capability map</h3>
+              <div className="space-y-5">
+                {capabilityGroups.map((group) => (
+                  <div key={group.title}>
+                    <h4 className="font-semibold text-[var(--text-primary)] mb-2">{group.title}</h4>
+                    <ul className="space-y-1 text-sm text-[var(--text-secondary)]">
+                      {group.items.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="lg:col-span-8">
             <article className="border border-[var(--border)] bg-[var(--bg-secondary)] p-6">

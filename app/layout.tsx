@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
@@ -23,11 +23,13 @@ const siteUrl = 'https://cv.danbennett.me/';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: { canonical: siteUrl },
+  authors: [{ name: 'Dan Bennett', url: siteUrl }],
+  creator: 'Dan Bennett',
   title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
   description:
     'Associate Creator Partnerships Manager at KRAFTON. Creator partnerships, Partner Program operations and practical reporting workflows for PUBG: BATTLEGROUNDS across Western markets.',
   icons: {
-    icon: 'favicon.svg',
+    icon: '/favicon.svg',
   },
   openGraph: {
     title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
@@ -38,23 +40,28 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'assets/dan.jpg',
+        url: '/assets/dan.jpg',
         alt: 'Dan Bennett',
       },
     ],
   },
   twitter: {
     card: 'summary',
+    creator: '@DanBennettUK',
     title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
     description:
       'Creator partnerships, Partner Program operations and practical reporting workflows across Western markets.',
-    images: ['assets/dan.jpg'],
+    images: ['/assets/dan.jpg'],
   },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#111827' },
+  ],
 };
 
 // Apply the saved/system theme before first paint to avoid a flash of the wrong theme.

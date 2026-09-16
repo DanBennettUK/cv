@@ -27,3 +27,30 @@ export interface Experience {
   tenure?: string;
   clusters?: { title: string; bullets: string[] }[];
 }
+
+export interface ImpactHighlight {
+  title: string;
+  label: string;
+  description: string;
+}
+
+export interface CapabilityGroup {
+  title: string;
+  items: string[];
+}
+
+export interface PublicProject {
+  name: string;
+  label: string;
+  href: string;
+  description: string;
+  bullets: string[];
+}
+
+export interface ResumeRole {
+  company: string;
+  title: string;
+  dates: string;
+  summary?: string;
+  bullets: string[];
+}

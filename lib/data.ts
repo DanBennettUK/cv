@@ -65,6 +65,8 @@ export const resumeRoles: ResumeRole[] = [
     company: 'KRAFTON',
     title: 'Associate Creator Partnerships Manager, PUBG West',
     dates: 'February 2024 to present',
+    tenure: 'At KRAFTON since December 2020',
+    previousRole: 'EMEA Streamer Partnership Coordinator (2022)',
     summary:
       'Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets.',
     bullets: [
@@ -150,7 +152,8 @@ export function getExperience(): Experience[] {
       category: 'current',
       dates: 'February 2024 to present',
       tenure: 'At KRAFTON since December 2020',
-      description: `Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions. Previously EMEA Streamer Partnership Coordinator in 2022.`,
+      previousRole: 'EMEA Streamer Partnership Coordinator (2022)',
+      description: `Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions.`,
       clusters: [
         {
           title: 'Partner relationships and support',

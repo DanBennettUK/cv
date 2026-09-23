@@ -15,7 +15,7 @@ export default function Header({ config }: HeaderProps) {
 
   return (
     <header className="pt-20 sm:pt-24 pb-10">
-      <a className="skip-link" href="#main-content">Skip to main content</a>
+      <a className="skip-link no-print" href="#main-content">Skip to main content</a>
       <div className="container-main">
         {/* Eyebrow */}
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] mb-5 no-print">
@@ -64,7 +64,7 @@ export default function Header({ config }: HeaderProps) {
           <a
             href="/Dan-Bennett-CV.pdf"
             download
-            className="flex items-center gap-2 hover:text-[var(--accent)] transition-colors"
+            className="no-print flex items-center gap-2 hover:text-[var(--accent)] transition-colors"
           >
             <FileDown className="w-4 h-4" aria-hidden="true" />
             Download CV PDF

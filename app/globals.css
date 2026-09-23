@@ -214,9 +214,33 @@ a, button { touch-action: manipulation; }
   footer {
     display: none !important;
   }
+
+  /* Keep the complete web CV readable at A4 size. */
+  #main-content p, #main-content li {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+  #main-content h3 { font-size: 14pt; }
+  #main-content h4 { font-size: 11pt; }
+  #main-content .prose { font-size: 10pt; }
+  #main-content .prose li::marker { color: #444; }
+  #main-content .role-cluster { margin-top: 0.8rem; }
+  #earlier-employment .experience-item,
+  #community .experience-item { break-inside: avoid; }
+  #ai-systems .space-y-5 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  #ai-systems .space-y-5 > div { margin-top: 0; }
+  #ai-systems .space-y-5 h4 { font-size: 10pt; }
+  #impact article, #ai-systems article { break-inside: avoid; }
+  #impact article { margin-top: 0.6rem; padding: 0.75rem; }
+  #ai-systems article { padding: 0.75rem; }
 }
 
-/* Recruiter-facing resume view and generated PDF. */
+/* Optional abbreviated recruiter view. */
 .resume-page {
   min-height: 100vh;
   background: #fff;

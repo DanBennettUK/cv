@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master, modern-rewrite]
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -32,12 +34,21 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Generate and verify full CV PDF
+        env:
+          CHROMIUM_BIN: /usr/bin/google-chrome
+        run: |
+          python3 -m pip install pypdf==6.0.0
+          npm run pdf:generate
+          python3 scripts/check-pdf.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

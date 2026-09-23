@@ -54,16 +54,28 @@ function ExperienceItem({ experience, first = false }: { experience: Experience;
             )}
           </h3>
 
-          <p className="text-sm font-medium text-[var(--accent)] mb-2">
-            {job_title}
-          </p>
-
-          <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
-            {dates}
-          </p>
           {concurrentWith && <p className="experience-concurrency">Concurrent with {concurrentWith}</p>}
-          {tenure && <p className="mt-3 text-sm text-[var(--text-secondary)]">Company tenure: {tenure}</p>}
-          {previousRole && <p className="mt-1 text-sm text-[var(--text-secondary)]">Previous KRAFTON role: {previousRole}</p>}
+          {previousRole ? (
+            <div className="experience-role-timeline">
+              <p className="experience-company-tenure">{tenure}</p>
+              <div className="experience-role-period">
+                <p className="experience-role-period-label">Previous role</p>
+                <p className="experience-role-period-title">{previousRole.title}</p>
+                <p className="experience-role-period-dates">{previousRole.dates}</p>
+              </div>
+              <div className="experience-role-period">
+                <p className="experience-role-period-label">Current role</p>
+                <p className="experience-role-period-title">{job_title}</p>
+                <p className="experience-role-period-dates">{dates}</p>
+              </div>
+            </div>
+          ) : (
+            <>
+              <p className="text-sm font-medium text-[var(--accent)] mb-2">{job_title}</p>
+              <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]">{dates}</p>
+              {tenure && <p className="mt-3 text-sm text-[var(--text-secondary)]">Company tenure: {tenure}</p>}
+            </>
+          )}
         </div>
 
         {/* Right - Description */}

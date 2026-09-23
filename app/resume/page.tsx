@@ -62,7 +62,7 @@ export default function ResumePage() {
 
         <section className="resume-section resume-ai-section" aria-labelledby="resume-ai-heading">
           <h2 id="resume-ai-heading">Applied AI and systems</h2>
-          <div className="resume-ai-grid">
+          <div className={publicProjects.length > 0 ? 'resume-ai-grid' : 'resume-ai-content'}>
             <div>
               <p>
                 I design and use AI-assisted systems for research, reporting, documentation, coding and task coordination. The focus is the operating model around the model: clear inputs, reliable sources, safe handovers, human review and inspectable work.
@@ -76,7 +76,7 @@ export default function ResumePage() {
                 ))}
               </div>
             </div>
-            <div className="resume-projects">
+            {publicProjects.length > 0 && <div className="resume-projects">
               <p className="resume-label">Selected public projects</p>
               {publicProjects.map((project) => (
                 <article key={project.name} className="resume-project">
@@ -84,7 +84,7 @@ export default function ResumePage() {
                   <p>{project.description}</p>
                 </article>
               ))}
-            </div>
+            </div>}
           </div>
         </section>
 

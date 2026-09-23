@@ -1,7 +1,8 @@
 import { createServer } from 'node:net';
 import { existsSync, mkdtempSync, readFileSync, rmSync, mkdirSync, copyFileSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { spawn } from 'node:child_process';
+import { tmpdir } from 'node:os';
 
 const root = process.cwd();
 const distDir = resolve(root, 'dist');
@@ -12,10 +13,12 @@ const chromiumCandidates = [
   '/usr/bin/chromium',
   '/usr/bin/google-chrome',
   '/usr/bin/google-chrome-stable',
+  'C:/Program Files/Google/Chrome/Application/chrome.exe',
+  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
 ].filter((candidate) => candidate && existsSync(candidate));
 
-if (!existsSync(join(distDir, 'resume', 'index.html'))) {
-  throw new Error('dist/resume/index.html is missing. Run `npm run build` before generating the PDF.');
+if (!existsSync(join(distDir, 'index.html'))) {
+  throw new Error('dist/index.html is missing. Run `npm run build` before generating the PDF.');
 }
 
 if (chromiumCandidates.length === 0) {
@@ -58,7 +61,7 @@ async function waitFor(url) {
 
 function run(command, args) {
   return new Promise((resolveRun, rejectRun) => {
-    const child = spawn(command, args, { stdio: 'inherit' });
+    const child = spawn(command, args, { stdio: 'inherit', windowsHide: true });
     child.once('error', rejectRun);
     child.once('close', (code, signal) => {
       if (code === 0) {
@@ -71,15 +74,19 @@ function run(command, args) {
 }
 
 const port = await getFreePort();
-const server = spawn('python3', ['-m', 'http.server', String(port), '--directory', distDir], {
+const server = spawn(process.env.PYTHON_BIN || 'python3', ['-m', 'http.server', String(port), '--bind', '127.0.0.1', '--directory', distDir], {
   stdio: 'ignore',
+  windowsHide: true,
 });
-const profileDir = mkdtempSync('/tmp/cv-chromium-');
+server.on('error', (error) => console.error(`Local preview failed: ${error.message}`));
+const profileDir = mkdtempSync(join(tmpdir(), 'cv-chromium-'));
+const temporaryPdf = join(profileDir, 'cv.pdf');
 mkdirSync(resolve(root, 'public'), { recursive: true });
 
 try {
-  const resumeUrl = `http://127.0.0.1:${port}/resume/?print=1`;
-  await waitFor(resumeUrl);
+  // Print the full CV, not the deliberately abbreviated /resume/ view.
+  const cvUrl = `http://127.0.0.1:${port}/`;
+  await waitFor(cvUrl);
   await run(chromiumCandidates[0], [
     '--headless=new',
     '--no-sandbox',
@@ -89,17 +96,20 @@ try {
     '--run-all-compositor-stages-before-draw',
     '--virtual-time-budget=3000',
     `--user-data-dir=${profileDir}`,
-    `--print-to-pdf=${outputPath}`,
-    resumeUrl,
+    `--print-to-pdf=${temporaryPdf}`,
+    cvUrl,
   ]);
 
-  if (!existsSync(outputPath) || readFileSync(outputPath).length === 0) {
-    throw new Error(`Chromium did not create a usable PDF at ${outputPath}`);
+  if (!existsSync(temporaryPdf) || readFileSync(temporaryPdf).length === 0) {
+    throw new Error('Chromium did not create a usable PDF.');
   }
 
+  copyFileSync(temporaryPdf, outputPath);
   copyFileSync(outputPath, join(distDir, 'Dan-Bennett-CV.pdf'));
   console.log(`Generated ${outputPath}`);
 } finally {
   server.kill('SIGTERM');
-  rmSync(profileDir, { recursive: true, force: true });
+  if (dirname(resolve(profileDir)) === resolve(tmpdir())) {
+    rmSync(profileDir, { recursive: true, force: true, maxRetries: 5 });
+  }
 }

@@ -40,7 +40,7 @@ export default function AIAndSystems() {
               </ul>
             </article>
 
-            <div className="mt-8 space-y-8">
+            {publicProjects.length > 0 && <div className="mt-8 space-y-8">
               {publicProjects.map((project) => (
                 <article key={project.name} className="border-t-2 border-[var(--border)] pt-6">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -62,7 +62,7 @@ export default function AIAndSystems() {
                   </ul>
                 </article>
               ))}
-            </div>
+            </div>}
           </div>
         </div>
       </div>

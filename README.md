@@ -23,7 +23,7 @@ npm run build
 │   ├── globals.css         # Global styles with CSS variables
 │   ├── layout.tsx          # Root layout with dark mode toggle
 │   ├── page.tsx            # Full CV page
-│   ├── resume/page.tsx     # Compact recruiter view and PDF source
+│   ├── resume/page.tsx     # Optional compact recruiter view
 │   ├── robots.ts           # Crawler rules
 │   └── sitemap.ts          # Public routes for search engines
 ├── components/             # React components
@@ -39,7 +39,7 @@ npm run build
 │   └── types.ts            # TypeScript types
 ├── public/                 # Static assets
 │   ├── assets/             # Images (dan.jpg)
-│   └── Dan-Bennett-CV.pdf  # Generated recruiter PDF
+│   └── Dan-Bennett-CV.pdf  # Generated full CV PDF
 ```
 
 ## 🎨 Customization
@@ -52,7 +52,7 @@ All resume content is in `lib/data.ts`. Edit this file to update:
 - Profile and current-role content
 - Selected impact statements and capability map
 - Public project descriptions
-- Recruiter-view and PDF content derived from the same data
+- Full CV PDF generated directly from the main page
 
 ### Styling
 
@@ -70,22 +70,31 @@ Toggle with the sun/moon button in the top-right corner.
 
 ## 📦 Deployment
 
-### Recruiter PDF
+### Full CV PDF
 
-The compact recruiter view is available at `/resume/`. Generate the downloadable A4 PDF after a content change with:
+The download includes the entire main CV page, including all employment, community, AI and project details. The optional `/resume/` page remains an abbreviated view. Generate the downloadable A4 PDF after a content change with:
 
 ```bash
 npm run pdf
 ```
 
-This runs a production build, serves the static output locally and prints `/resume/` with Chromium. Set `CHROMIUM_BIN` if Chromium is not installed at a standard path. The generated file is `public/Dan-Bennett-CV.pdf`.
+This runs a production build, serves the static output locally and prints `/` with Chromium using the site's print styles. Set `CHROMIUM_BIN` if Chromium is not installed at a standard path and `PYTHON_BIN` if Python is not available as `python3`. The generated file is `public/Dan-Bennett-CV.pdf`, also copied into `dist/`.
+
+Verify content completeness after generation:
+
+```bash
+python3 -m pip install pypdf==6.0.0
+python3 scripts/check-pdf.py
+```
+
+This checks every printable heading, paragraph and bullet from the built CV against the PDF's extracted text, and checks that the deployed copy matches. GitHub Pages runs generation and verification before uploading the deployment.
 
 ### GitHub Pages
 
 The custom domain is deployed from the `master` branch through `.github/workflows/deploy.yml`. GitHub Pages is the authoritative production deployment; local builds and any unrelated preview-provider status do not represent the live site.
 
 1. Push to `master` or run the workflow manually.
-2. The workflow installs dependencies, builds the static export and deploys `dist/`.
+2. The workflow installs dependencies, builds the static export, regenerates and verifies the full CV PDF, and deploys `dist/`.
 3. Verify the live URL and a distinctive content marker after deployment.
 
 ### Build Output

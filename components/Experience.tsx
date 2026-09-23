@@ -26,7 +26,7 @@ export default function ExperienceSection({ experiences, title, id }: Experience
 }
 
 function ExperienceItem({ experience, first = false }: { experience: Experience; first?: boolean }) {
-  const { company, link, job_title, dates, tenure, previousRole, quote, description, clusters } = experience;
+  const { company, link, job_title, dates, tenure, previousRole, concurrentWith, quote, description, clusters } = experience;
 
   return (
     <article
@@ -61,6 +61,7 @@ function ExperienceItem({ experience, first = false }: { experience: Experience;
           <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]">
             {dates}
           </p>
+          {concurrentWith && <p className="experience-concurrency">Concurrent with {concurrentWith}</p>}
           {tenure && <p className="mt-3 text-sm text-[var(--text-secondary)]">Company tenure: {tenure}</p>}
           {previousRole && <p className="mt-1 text-sm text-[var(--text-secondary)]">Previous KRAFTON role: {previousRole}</p>}
         </div>

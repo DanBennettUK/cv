@@ -369,6 +369,7 @@ a, button { touch-action: manipulation; }
 
 .resume-section > p,
 .resume-role-summary,
+.resume-ai-content > div > p,
 .resume-ai-grid > div > p {
   color: #35424d;
   font-size: 0.84rem;

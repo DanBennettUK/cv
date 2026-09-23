@@ -58,41 +58,7 @@ export const capabilityGroups: CapabilityGroup[] = [
   },
 ];
 
-export const publicProjects: PublicProject[] = [
-  {
-    name: 'Open Second Brain',
-    label: 'Open-source memory system',
-    href: 'https://github.com/DanBennettUK/open-second-brain',
-    description:
-      'Built and maintain an Obsidian-native memory layer for AI agents, using plain Markdown, deterministic CLI and MCP tools, provenance, lifecycle controls and cross-runtime integrations.',
-    bullets: [
-      'Keeps memory, preferences and evidence inspectable, versionable and owned by the person using the system.',
-      'Treats source identity, trust, scoped access and recoverable writes as part of the product rather than as afterthoughts.',
-    ],
-  },
-  {
-    name: 'Hermes Todo',
-    label: 'Open-source operational tooling',
-    href: 'https://github.com/DanBennettUK/hermes-todo',
-    description:
-      'Designed a shared task board for Hermes Desktop and agents, with SQLite as the authority and a namespaced CLI and REST surface for agent-writable work.',
-    bullets: [
-      'Durable handovers carry the brief, next action, closure condition, artefacts and waiting context into the next work session.',
-      'Revision checks, append-only history and explicit completion evidence make automation safer to operate and easier to audit.',
-    ],
-  },
-  {
-    name: 'Voice Note to MIDI',
-    label: 'Machine-learning project',
-    href: 'https://github.com/DanBennettUK/voice-note-to-midi',
-    description:
-      'Built a local audio pipeline that turns humming and voice notes into quantised MIDI using harmonic/percussive separation, Spotify Basic Pitch, key detection and post-processing.',
-    bullets: [
-      'Combines key-aware correction, harmonic pruning, legato merging and configurable timing grids.',
-      'Published as a usable CLI with documented setup, workflow and limitations.',
-    ],
-  },
-];
+export const publicProjects: PublicProject[] = [];
 
 export const resumeRoles: ResumeRole[] = [
   {

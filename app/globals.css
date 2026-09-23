@@ -441,6 +441,27 @@ a, button { touch-action: manipulation; }
   line-height: 1.3;
 }
 
+.resume-role-history {
+  margin-top: 0.32rem;
+  color: #52606d;
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+.experience-concurrency {
+  margin-top: 0.25rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.resume-role-concurrency {
+  margin-top: 0.32rem;
+  color: #52606d;
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
 .resume-role-summary { margin-bottom: 0.45rem; }
 
 .resume-role ul {

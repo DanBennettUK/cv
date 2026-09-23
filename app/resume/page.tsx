@@ -104,6 +104,9 @@ function ResumeRole({ role, current = false }: { role: typeof resumeRoles[number
         <h3>{role.company}</h3>
         <p className="resume-role-title">{role.title}</p>
         <p className="resume-dates">{role.dates}</p>
+        {role.concurrentWith && <p className="resume-role-concurrency">Concurrent with {role.concurrentWith}</p>}
+        {role.tenure && <p className="resume-role-history">Company tenure: {role.tenure}</p>}
+        {role.previousRole && <p className="resume-role-history">Previous KRAFTON role: {role.previousRole}</p>}
       </div>
       <div>
         {role.summary && <p className="resume-role-summary">{role.summary}</p>}

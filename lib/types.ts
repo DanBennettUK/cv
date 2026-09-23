@@ -25,6 +25,8 @@ export interface Experience {
   description: string;
   category: 'current' | 'employment' | 'community';
   tenure?: string;
+  previousRole?: string;
+  concurrentWith?: string;
   clusters?: { title: string; bullets: string[] }[];
 }
 
@@ -51,6 +53,9 @@ export interface ResumeRole {
   company: string;
   title: string;
   dates: string;
+  tenure?: string;
+  previousRole?: string;
+  concurrentWith?: string;
   summary?: string;
   bullets: string[];
 }

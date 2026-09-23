@@ -65,6 +65,8 @@ export const resumeRoles: ResumeRole[] = [
     company: 'KRAFTON',
     title: 'Associate Creator Partnerships Manager, PUBG West',
     dates: 'February 2024 to present',
+    tenure: 'At KRAFTON since December 2020',
+    previousRole: 'EMEA Streamer Partnership Coordinator (2022)',
     summary:
       'Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets.',
     bullets: [
@@ -80,6 +82,7 @@ export const resumeRoles: ResumeRole[] = [
     company: 'HowToMoodle',
     title: 'Support Technician',
     dates: '2012 to 2018',
+    concurrentWith: 'PriorsVLE (2017 to 2019)',
     bullets: [
       'Supported Moodle and Totara customers through setup, upgrades, migrations and troubleshooting, including 24/7 hosting on-call cover.',
       'Managed Linux hosting with Apache, PHP, MySQL/MariaDB and monitoring, and supported customer servers across Linux and Windows environments.',
@@ -91,6 +94,7 @@ export const resumeRoles: ResumeRole[] = [
     company: 'PriorsVLE',
     title: 'Director & VLE Technical Consultant',
     dates: '2017 to 2019',
+    concurrentWith: 'HowToMoodle (2012 to 2018)',
     bullets: [
       'Co-founded a Moodle technical support, hosting and development business delivering plugin development, migrations and upgrades.',
       'Managed client relationships, requirements, internal workflows, support, invoicing and service communications.',
@@ -150,7 +154,8 @@ export function getExperience(): Experience[] {
       category: 'current',
       dates: 'February 2024 to present',
       tenure: 'At KRAFTON since December 2020',
-      description: `Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions. Previously EMEA Streamer Partnership Coordinator in 2022.`,
+      previousRole: 'EMEA Streamer Partnership Coordinator (2022)',
+      description: `Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions.`,
       clusters: [
         {
           title: 'Partner relationships and support',
@@ -216,6 +221,7 @@ export function getExperience(): Experience[] {
       link: 'https://priorsvle.com',
       job_title: 'Director & VLE Technical Consultant',
       dates: '2017 - 2019',
+      concurrentWith: 'HowToMoodle (2012 to 2018)',
       description: `Co-founded a Moodle technical support, hosting and development business, delivering custom plugin development, site migrations and upgrades.
 
 - Managed client relationships and captured requirements through to agreed delivery
@@ -230,6 +236,7 @@ export function getExperience(): Experience[] {
       link: 'https://howtomoodle.com',
       job_title: 'Support Technician',
       dates: '2012 - 2018',
+      concurrentWith: 'PriorsVLE (2017 to 2019)',
       description: `Supported Moodle and Totara customers through setup, upgrades, migrations and ongoing troubleshooting. Maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover.
 
 - Automated manual setup and support tasks with scripts and provided first-line support through Helpspot

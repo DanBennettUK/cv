@@ -455,6 +455,47 @@ a, button { touch-action: manipulation; }
   line-height: 1.35;
 }
 
+.experience-role-timeline {
+  margin-top: 0.65rem;
+  border-left: 1px solid var(--border);
+  padding-left: 0.75rem;
+}
+
+.experience-company-tenure {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.experience-role-period {
+  margin-top: 0.75rem;
+}
+
+.experience-role-period-label,
+.resume-role-period-label {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.experience-role-period-title {
+  margin-top: 0.2rem;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.experience-role-period-dates {
+  margin-top: 0.2rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
 .resume-role-concurrency {
   margin-top: 0.32rem;
   color: #52606d;
@@ -580,4 +621,24 @@ a, button { touch-action: manipulation; }
   .resume-contact a,
   .resume-project a,
   .resume-footer a { text-decoration: none; }
+}
+
+.resume-role-timeline {
+  margin-top: 0.55rem;
+  border-left: 1px solid #c7cdd2;
+  padding-left: 0.65rem;
+}
+
+.resume-role-tenure {
+  color: #52606d;
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+.resume-role-period {
+  margin-top: 0.65rem;
+}
+
+.resume-role-period-label {
+  font-size: 0.62rem;
 }

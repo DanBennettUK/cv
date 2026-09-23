@@ -102,11 +102,28 @@ function ResumeRole({ role, current = false }: { role: typeof resumeRoles[number
     <article className={`resume-role${current ? ' resume-role-current' : ''}`}>
       <div className="resume-role-meta">
         <h3>{role.company}</h3>
-        <p className="resume-role-title">{role.title}</p>
-        <p className="resume-dates">{role.dates}</p>
         {role.concurrentWith && <p className="resume-role-concurrency">Concurrent with {role.concurrentWith}</p>}
-        {role.tenure && <p className="resume-role-history">Company tenure: {role.tenure}</p>}
-        {role.previousRole && <p className="resume-role-history">Previous KRAFTON role: {role.previousRole}</p>}
+        {role.previousRole ? (
+          <div className="resume-role-timeline">
+            <p className="resume-role-tenure">{role.tenure}</p>
+            <div className="resume-role-period">
+              <p className="resume-role-period-label">Previous role</p>
+              <p className="resume-role-title">{role.previousRole.title}</p>
+              <p className="resume-dates">{role.previousRole.dates}</p>
+            </div>
+            <div className="resume-role-period">
+              <p className="resume-role-period-label">Current role</p>
+              <p className="resume-role-title">{role.title}</p>
+              <p className="resume-dates">{role.dates}</p>
+            </div>
+          </div>
+        ) : (
+          <>
+            <p className="resume-role-title">{role.title}</p>
+            <p className="resume-dates">{role.dates}</p>
+            {role.tenure && <p className="resume-role-history">Company tenure: {role.tenure}</p>}
+          </>
+        )}
       </div>
       <div>
         {role.summary && <p className="resume-role-summary">{role.summary}</p>}

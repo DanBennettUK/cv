@@ -80,6 +80,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
       </head>
       <body>
+        <a className="skip-link no-print" href="#main-content">Skip to main content</a>
         <ThemeToggle />
         {children}
       </body>

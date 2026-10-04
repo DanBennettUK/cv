@@ -3,12 +3,21 @@ import Header from '@/components/Header';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Footer from '@/components/Footer';
-import ImpactHighlights from '@/components/ImpactHighlights';
 import AIAndSystems from '@/components/AIAndSystems';
 
 export default function Home() {
   const config = getConfig();
   const experiences = getExperience();
+  const career = [
+    ...experiences.filter((exp) => exp.category === 'current'),
+    // Reddit is volunteer community work, listed here because it is the route
+    // into the KRAFTON role and sat directly after it in the August 2026 CV.
+    ...experiences.filter((exp) => exp.company.startsWith('PUBG Reddit')),
+    ...experiences.filter((exp) => exp.category === 'employment'),
+  ];
+  const community = experiences.filter(
+    (exp) => exp.category === 'community' && !exp.company.startsWith('PUBG Reddit'),
+  );
   const sameAs = [
     config.website,
     config.github_username && `https://github.com/${config.github_username}`,
@@ -33,15 +42,13 @@ export default function Home() {
   };
 
   return (
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <Header config={config} />
       <About config={config} />
-      <Experience id="current-role" experiences={experiences.filter(exp => exp.category === 'current')} title="Current role" />
-      <ImpactHighlights />
+      <Experience id="experience" experiences={career} title="Experience" />
+      <Experience id="community" experiences={community} title="Community, events and media" />
       <AIAndSystems />
-      <Experience id="earlier-employment" experiences={experiences.filter(exp => exp.category === 'employment')} title="Earlier employment" />
-      <Experience id="community" experiences={experiences.filter(exp => exp.category === 'community')} title="Community, events and media" />
       <Footer config={config} />
     </main>
   );

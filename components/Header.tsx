@@ -1,105 +1,103 @@
+import Image from 'next/image';
 import { SiteConfig } from '@/lib/types';
-import { Github, Twitter, Instagram, Linkedin, Mail, Globe, FileDown } from 'lucide-react';
 
 interface HeaderProps {
   config: SiteConfig;
 }
 
+interface ContactLink {
+  label: string;
+  href: string;
+  external?: boolean;
+  download?: boolean;
+}
+
 export default function Header({ config }: HeaderProps) {
-  const socialLinks = [
-    { label: 'GitHub', username: config.github_username, icon: Github, url: `https://github.com/${config.github_username}` },
-    { label: 'Twitter', username: config.twitter_username, icon: Twitter, url: `https://twitter.com/${config.twitter_username}` },
-    { label: 'Instagram', username: config.instagram_username, icon: Instagram, url: `https://instagram.com/${config.instagram_username}` },
-    { label: 'LinkedIn', username: config.linkedin_username, icon: Linkedin, url: `https://linkedin.com/in/${config.linkedin_username}` },
-  ].filter(link => link.username);
+  const links: ContactLink[] = [];
+
+  if (config.email) links.push({ label: config.email, href: `mailto:${config.email}` });
+  if (config.website) {
+    links.push({
+      label: config.website.replace(/^https?:\/\//, ''),
+      href: config.website,
+      external: true,
+    });
+  }
+  if (config.linkedin_username) {
+    links.push({
+      label: 'LinkedIn',
+      href: `https://linkedin.com/in/${config.linkedin_username}`,
+      external: true,
+    });
+  }
+  if (config.github_username) {
+    links.push({
+      label: 'GitHub',
+      href: `https://github.com/${config.github_username}`,
+      external: true,
+    });
+  }
+  if (config.twitter_username) {
+    links.push({
+      label: 'Twitter',
+      href: `https://twitter.com/${config.twitter_username}`,
+      external: true,
+    });
+  }
+  if (config.instagram_username) {
+    links.push({
+      label: 'Instagram',
+      href: `https://instagram.com/${config.instagram_username}`,
+      external: true,
+    });
+  }
+  links.push({ label: 'Download CV (PDF)', href: '/Dan-Bennett-CV.pdf', download: true });
 
   return (
-    <header className="pt-20 sm:pt-24 pb-10">
-      <a className="skip-link no-print" href="#main-content">Skip to main content</a>
-      <div className="container-main">
-        {/* Eyebrow */}
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] mb-5 no-print">
-          KRAFTON | PUBG WEST
-        </p>
-
-        {/* Name */}
-        <h1 className="headline-display text-5xl sm:text-6xl mb-4">
-          {config.name}
-        </h1>
-
-        {/* Title */}
-        <p className="text-2xl sm:text-3xl font-medium text-[var(--text-primary)] mb-2">
-          {config.title}
-        </p>
-
-        {/* Tagline */}
-        {config.tagline && (
-          <p className="text-lg text-[var(--text-secondary)] max-w-2xl leading-relaxed mb-6">
-            {config.tagline}
-          </p>
-        )}
-
-        {/* Contact strip */}
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-[var(--text-muted)]">
-          {config.email && (
-            <a
-              href={`mailto:${config.email}`}
-              className="flex items-center gap-2 hover:text-[var(--accent)] transition-colors"
-            >
-              <Mail className="w-4 h-4" aria-hidden="true" />
-              {config.email}
-            </a>
+    <header className="site-header">
+      <div className="wrap">
+        <div className="identity">
+          {config.about_profile_image && (
+            <Image
+              src={config.about_profile_image}
+              alt="Portrait of Dan Bennett"
+              width={96}
+              height={96}
+              priority
+              className="portrait"
+            />
           )}
-          {config.website && (
-            <a
-              href={config.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-[var(--accent)] transition-colors"
-            >
-              <Globe className="w-4 h-4" aria-hidden="true" />
-              {config.website.replace(/^https?:\/\//, '')}
-            </a>
-          )}
-          <a
-            href="/Dan-Bennett-CV.pdf"
-            download
-            className="no-print flex items-center gap-2 hover:text-[var(--accent)] transition-colors"
-          >
-            <FileDown className="w-4 h-4" aria-hidden="true" />
-            Download CV PDF
-          </a>
+          <div>
+            <h1>{config.name}</h1>
+            <p className="job-title">{config.title}</p>
+            <p className="place">
+              <a href="https://www.krafton.com" target="_blank" rel="noopener noreferrer">KRAFTON</a>, based in Amsterdam
+            </p>
+            {config.tagline && <p className="tagline">{config.tagline}</p>}
+          </div>
         </div>
 
-        {/* Social links */}
-        <div className="mt-8 flex flex-wrap items-center gap-3 no-print">
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-button"
-              aria-label={`Open ${link.label}`}
-              title={link.label}
-            >
-              <link.icon className="w-4 h-4" aria-hidden="true" />
-            </a>
+        <ul className="contact-list">
+          {links.map((link) => (
+            <li key={link.label} className={link.download ? 'no-print' : undefined}>
+              <a
+                href={link.href}
+                {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                {...(link.download ? { download: true } : {})}
+              >
+                {link.label}
+              </a>
+            </li>
           ))}
-        </div>
-        <nav aria-label="CV sections" className="mt-8 border-t border-[var(--border)] pt-4 no-print">
-          <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-[var(--text-secondary)]">
-            {[
-              ['profile', 'Profile'],
-              ['current-role', 'Current role'],
-              ['impact', 'Selected impact'],
-              ['ai-systems', 'AI and systems'],
-              ['earlier-employment', 'Earlier employment'],
-              ['community', 'Community and events'],
-              ['contact', 'Contact'],
-            ].map(([id, label]) => (
-              <li key={id}><a href={`#${id}`} className="inline-block py-2 hover:text-[var(--accent)] underline underline-offset-4">{label}</a></li>
-            ))}
+        </ul>
+
+        <nav className="site-nav no-print" aria-label="CV sections">
+          <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#community">Community and events</a></li>
+            <li><a href="#ai-systems">AI and systems</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>

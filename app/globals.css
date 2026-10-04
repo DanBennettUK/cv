@@ -9,20 +9,26 @@
 */
 
 :root {
+  --page: #e6ebf1;
   --bg: #ffffff;
-  --text: #1b1b1b;
-  --text-soft: #333333;
-  --link: #0b4f8a;
-  --border: #d0d0d0;
-  --focus: #0b4f8a;
+  --panel: #f4f7fa;
+  --text: #1c2430;
+  --text-soft: #3e4c5e;
+  --link: #1a4f86;
+  --accent: #1a4f86;
+  --border: #d5dce5;
+  --focus: #1a4f86;
 }
 
 .dark {
-  --bg: #141414;
-  --text: #f2f2f2;
-  --text-soft: #e4e4e4;
+  --page: #0e1217;
+  --bg: #171c22;
+  --panel: #20262e;
+  --text: #f3f5f8;
+  --text-soft: #c5ced8;
   --link: #9dc4ef;
-  --border: #3d3d3d;
+  --accent: #9dc4ef;
+  --border: #323b47;
   --focus: #9dc4ef;
 }
 
@@ -41,7 +47,7 @@ html.dark {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--page);
   color: var(--text);
   font-size: 1.0625rem;
   font-weight: 400;
@@ -97,9 +103,11 @@ button {
 }
 
 .cv {
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 1.25rem 1.25rem 4rem;
+  max-width: 46rem;
+  margin: 1.25rem auto 2rem;
+  padding: 1.75rem 1.35rem 2.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
 }
 
 .header-tools {
@@ -143,10 +151,10 @@ button {
 }
 
 .cv h2 {
-  margin: 0 0 0.85rem;
-  padding-bottom: 0.4rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.45rem;
   border-bottom: 1px solid var(--border);
-  font-size: 1.5rem;
+  font-size: 1.375rem;
 }
 
 .cv h3 {
@@ -154,28 +162,46 @@ button {
   font-size: 1.2rem;
 }
 
+.cv h3 a {
+  color: inherit;
+  text-decoration-color: transparent;
+}
+
+.cv h3 a:hover {
+  color: var(--link);
+  text-decoration-color: var(--link);
+}
+
 .cv h4 {
-  margin: 1.25rem 0 0.35rem;
-  font-size: 1.125rem;
+  margin: 1.15rem 0 0.35rem;
+  font-size: 1.0625rem;
 }
 
 .cv p {
   margin: 0.75rem 0 0;
 }
 
-.cv section {
-  margin-top: 2.5rem;
+.cv > header {
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv section,
+.cv-footer {
+  margin-top: 2.75rem;
 }
 
 .cv-title {
-  margin: 0.4rem 0 0;
-  font-size: 1.25rem;
+  margin: 0.45rem 0 0;
+  color: var(--accent);
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.35;
 }
 
 .cv-place {
-  margin: 0.3rem 0 0;
+  margin: 0.35rem 0 0;
+  color: var(--text-soft);
   font-size: 1.0625rem;
   font-weight: 600;
 }
@@ -189,8 +215,8 @@ button {
 .cv-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem 1.1rem;
-  margin: 1rem 0 0;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -200,19 +226,53 @@ button {
   margin: 0;
 }
 
-.contact-list a,
+.contact-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  border-color: var(--link);
+  background: var(--panel);
+  color: var(--link);
+}
+
+.contact-mark {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: none;
+  color: var(--accent);
+}
+
 .project a {
   overflow-wrap: anywhere;
 }
 
 .cv-nav {
   margin-top: 1.15rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--border);
+  padding-top: 0.15rem;
 }
 
 .cv-nav a {
+  color: var(--text-soft);
+  font-size: 1rem;
   font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.cv-nav a:hover {
+  color: var(--link);
+  border-bottom-color: var(--link);
 }
 
 .profile {
@@ -226,6 +286,7 @@ button {
   width: 6.75rem;
   height: 6.75rem;
   object-fit: cover;
+  border: 1px solid var(--border);
 }
 
 .profile-caption {
@@ -236,13 +297,15 @@ button {
 }
 
 .role {
-  padding: 1.25rem 0;
-  border-top: 1px solid var(--border);
+  margin-top: 0.85rem;
+  padding: 1rem 1.05rem 1.1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
 }
 
 .role:first-of-type {
-  border-top: 0;
-  padding-top: 0.25rem;
+  margin-top: 0.35rem;
 }
 
 .role-top {
@@ -260,11 +323,16 @@ button {
 
 .role-dates {
   margin: 0;
+  color: var(--text);
+  font-size: 1.0625rem;
   font-weight: 600;
+  line-height: 1.35;
   text-align: right;
 }
 
 .role-title {
+  color: var(--accent);
+  font-size: 1.0625rem;
   font-weight: 600;
 }
 
@@ -291,10 +359,24 @@ button {
   color: var(--text);
 }
 
+.cv .contact-list,
+.cv .cv-nav {
+  padding-left: 0;
+}
+
+.cv .contact-list li,
+.cv .cv-nav li {
+  margin: 0;
+  padding-left: 0;
+}
+
 .impact-item,
 .skill-group,
 .project {
-  margin-top: 1.15rem;
+  margin-top: 0.85rem;
+  padding: 0.9rem 1rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
 }
 
 .impact-item h3,
@@ -312,7 +394,6 @@ button {
 }
 
 .cv-footer {
-  margin-top: 2.5rem;
   padding-top: 0.25rem;
 }
 
@@ -324,11 +405,12 @@ button {
 
 @media (min-width: 720px) {
   .cv {
-    padding-top: 1.75rem;
+    margin-top: 2rem;
+    padding: 2.25rem 2.25rem 3rem;
   }
 
   .cv h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -371,10 +453,13 @@ button {
 
   :root,
   .dark {
+    --page: #ffffff;
     --bg: #ffffff;
+    --panel: #ffffff;
     --text: #000000;
     --text-soft: #222222;
     --link: #000000;
+    --accent: #000000;
     --border: #bbbbbb;
   }
 
@@ -390,7 +475,23 @@ button {
 
   .cv {
     max-width: none;
+    margin: 0;
     padding: 0;
+    border: 0;
+  }
+
+  .role,
+  .impact-item,
+  .skill-group,
+  .project {
+    background: #ffffff;
+    border-left-width: 0;
+  }
+
+  .contact-list a {
+    padding: 0;
+    border: 0;
+    background: transparent;
   }
 
   .cv h1 {

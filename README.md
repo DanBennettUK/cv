@@ -31,8 +31,7 @@ npm run build
 │   ├── About.tsx           # Profile image and bio
 │   ├── Experience.tsx      # Work history
 │   ├── Footer.tsx          # Contact footer
-│   ├── ImpactHighlights.tsx # Outcome-led impact cards
-│   ├── AIAndSystems.tsx    # AI practice and public projects
+│   ├── AIAndSystems.tsx    # AI practice and capability groups
 │   └── ThemeToggle.tsx     # Dark mode toggle button
 ├── lib/                    # Utilities and data
 │   ├── data.ts             # Shared CV, impact, capability and project content
@@ -50,7 +49,7 @@ All resume content is in `lib/data.ts`. Edit this file to update:
 
 - Personal info (name, title, email, social links)
 - Profile and current-role content
-- Selected impact statements and capability map
+- Capability groups and the shorter CV at /resume/
 - Public project descriptions
 - Full CV PDF generated directly from the main page
 

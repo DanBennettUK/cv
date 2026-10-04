@@ -11,110 +11,76 @@ export default function ExperienceSection({ experiences, title, id }: Experience
   if (experiences.length === 0) return null;
 
   return (
-    <section id={id} aria-labelledby={`${id}-heading`} className="py-12 sm:py-16">
-      <div className="container-main">
-        <h2 id={`${id}-heading`} className="section-title-editorial">{title}</h2>
-
-        <div>
-          {experiences.map((exp, index) => (
-            <ExperienceItem key={exp.company} experience={exp} first={index === 0} />
-          ))}
-        </div>
+    <section id={id} aria-labelledby={`${id}-heading`} className="section">
+      <div className="wrap">
+        <h2 id={`${id}-heading`}>{title}</h2>
+        {experiences.map((experience) => (
+          <ExperienceItem key={experience.company} experience={experience} />
+        ))}
       </div>
     </section>
   );
 }
 
-function ExperienceItem({ experience, first = false }: { experience: Experience; first?: boolean }) {
+function ExperienceItem({ experience }: { experience: Experience }) {
   const { company, link, job_title, dates, tenure, previousRole, concurrentWith, quote, description, clusters } = experience;
 
   return (
-    <article
-      className={`experience-item pb-10 last:pb-0 ${
-        first
-          ? 'pt-0'
-          : 'border-t-2 border-[var(--border)] pt-10'
-      }`}
-    >
-      <div className="grid lg:grid-cols-12 gap-6">
-        {/* Left - Company & Meta */}
-        <div className="lg:col-span-4">
-          <h3 className="headline-display text-2xl mb-1.5">
-            {link ? (
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
-              >
-                {company}
-              </a>
-            ) : (
-              company
-            )}
-          </h3>
-
-          {concurrentWith && <p className="experience-concurrency">Concurrent with {concurrentWith}</p>}
-          {previousRole ? (
-            <div className="experience-role-timeline">
-              <p className="experience-company-tenure">{tenure}</p>
-              <div className="experience-role-period">
-                <p className="experience-role-period-label">Previous role</p>
-                <p className="experience-role-period-title">{previousRole.title}</p>
-                <p className="experience-role-period-dates">{previousRole.dates}</p>
-              </div>
-              <div className="experience-role-period">
-                <p className="experience-role-period-label">Current role</p>
-                <p className="experience-role-period-title">{job_title}</p>
-                <p className="experience-role-period-dates">{dates}</p>
-              </div>
-            </div>
+    <article className="role">
+      <div className="role-head">
+        <h3>
+          {link ? (
+            <a href={link} target="_blank" rel="noopener noreferrer">{company}</a>
           ) : (
-            <>
-              <p className="text-sm font-medium text-[var(--accent)] mb-2">{job_title}</p>
-              <p className="text-xs uppercase tracking-wider text-[var(--text-muted)]">{dates}</p>
-              {tenure && <p className="mt-3 text-sm text-[var(--text-secondary)]">Company tenure: {tenure}</p>}
-            </>
+            company
           )}
-        </div>
+        </h3>
+        {!previousRole && <p className="role-dates">{dates}</p>}
+      </div>
 
-        {/* Right - Description */}
-        <div className="lg:col-span-8">
-          {quote && (
-            <p className="quote-editorial">
-              {quote}
-            </p>
-          )}
-
-          <div className="prose prose-lg max-w-none text-[var(--text-secondary)]">
-            <ReactMarkdown
-              components={{
-                p: ({ children }) => (
-                  <p className="mb-4 leading-relaxed">{children}</p>
-                ),
-                ul: ({ children }) => (
-                  <ul className="mt-4 space-y-1.5 pl-5 list-disc">{children}</ul>
-                ),
-                li: ({ children }) => (
-                  <li className="pl-1">{children}</li>
-                ),
-                strong: ({ children }) => (
-                  <strong className="font-semibold text-[var(--text-primary)]">{children}</strong>
-                ),
-              }}
-            >
-              {description}
-            </ReactMarkdown>
+      {previousRole ? (
+        <>
+          {tenure && <p className="role-note">{tenure}</p>}
+          <div className="role-post">
+            <p className="role-title">{job_title}</p>
+            <p className="role-dates">{dates}</p>
           </div>
-          {clusters?.map((cluster) => (
-            <div key={cluster.title} className="role-cluster mt-7">
-              <h4 className="font-semibold text-[var(--text-primary)] mb-2">{cluster.title}</h4>
-              <ul className="list-disc pl-5 space-y-2 text-[var(--text-secondary)]">
-                {cluster.bullets.map((bullet) => <li key={bullet} className="pl-1">{bullet}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
+          <div className="role-post">
+            <p className="role-title">
+              <span className="role-label">Previous role. </span>
+              {previousRole.title}
+            </p>
+            <p className="role-dates">{previousRole.dates}</p>
+          </div>
+        </>
+      ) : (
+        <p className="role-title">{job_title}</p>
+      )}
+
+      {concurrentWith && <p className="role-note">Concurrent with {concurrentWith}</p>}
+
+      <div className="role-copy">
+        {quote && <p>{quote}</p>}
+        <ReactMarkdown
+          components={{
+            p: ({ children }) => <p>{children}</p>,
+            ul: ({ children }) => <ul>{children}</ul>,
+            li: ({ children }) => <li>{children}</li>,
+            strong: ({ children }) => <strong>{children}</strong>,
+          }}
+        >
+          {description}
+        </ReactMarkdown>
+        {clusters?.map((cluster) => (
+          <div key={cluster.title} className="cluster">
+            <h4>{cluster.title}</h4>
+            <ul>
+              {cluster.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </article>
   );

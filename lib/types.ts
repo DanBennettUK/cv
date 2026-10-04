@@ -30,12 +30,6 @@ export interface Experience {
   clusters?: { title: string; bullets: string[] }[];
 }
 
-export interface ImpactHighlight {
-  title: string;
-  label: string;
-  description: string;
-}
-
 export interface CapabilityGroup {
   title: string;
   items: string[];

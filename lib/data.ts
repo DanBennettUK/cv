@@ -1,32 +1,10 @@
 import {
   CapabilityGroup,
   Experience,
-  ImpactHighlight,
   PublicProject,
   ResumeRole,
   SiteConfig,
 } from './types';
-
-export const impactHighlights: ImpactHighlight[] = [
-  {
-    title: 'Make Partner support clearer',
-    label: 'Partner operations',
-    description:
-      'Turn requirements, recurring questions and evidence into practical guidance, support routes and follow-up that Partners can act on.',
-  },
-  {
-    title: 'Make campaign progress visible',
-    label: 'Campaign delivery',
-    description:
-      'Coordinate briefing, delivery, submission, review, completion tracking and reporting across creators, agencies and internal teams.',
-  },
-  {
-    title: 'Improve the system around the work',
-    label: 'AI and operational systems',
-    description:
-      'Move repeatable work towards clearer data flows, source-grounded AI support, human review and recoverable handovers.',
-  },
-];
 
 export const capabilityGroups: CapabilityGroup[] = [
   {
@@ -82,15 +60,23 @@ export const resumeRoles: ResumeRole[] = [
     ],
   },
   {
-    company: 'HowToMoodle',
-    title: 'Support Technician',
-    dates: '2012 to 2018',
-    concurrentWith: 'PriorsVLE (2017 to 2019)',
+    company: 'PUBG Reddit (r/PUBATTLEGROUNDS)',
+    title: 'Volunteer Community Manager & Community Games Host',
+    dates: '2018 to December 2020',
     bullets: [
-      'Supported Moodle and Totara customers through setup, upgrades, migrations and troubleshooting, including 24/7 hosting on-call cover.',
-      'Managed Linux hosting with Apache, PHP, MySQL/MariaDB and monitoring, and supported customer servers across Linux and Windows environments.',
-      'Debugged application issues in PHP and MySQL, tested plugins with JIRA, managed Git repositories and documented platform changes.',
-      'Rolled out a Windows Server 2012 domain controller and managed company devices, patching, upgrades and asset tracking.',
+      'Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.',
+      'Ran moderation, player feedback, community events, custom games, tournaments, live streams and Discord bot support in Python.',
+    ],
+  },
+  {
+    company: 'APT Solutions',
+    title: 'Service Desk Agent',
+    dates: 'November 2019 to December 2020',
+    bullets: [
+      'Supported membership software as one of three Service Desk Agents, working with customers from small taxi firms to large unions.',
+      'Covered UK, Australian and New Zealand customers across three shift patterns, including nights.',
+      'Investigated incidents, identified causes and considered how to prevent recurrence.',
+      'Wrote clear customer-facing incident reports and supported customers across multiple time zones.',
     ],
   },
   {
@@ -104,12 +90,15 @@ export const resumeRoles: ResumeRole[] = [
     ],
   },
   {
-    company: 'PUBG Reddit (r/PUBATTLEGROUNDS)',
-    title: 'Volunteer Community Manager & Community Games Host',
-    dates: '2018 to December 2020',
+    company: 'HowToMoodle',
+    title: 'Support Technician',
+    dates: '2012 to 2018',
+    concurrentWith: 'PriorsVLE (2017 to 2019)',
     bullets: [
-      'Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.',
-      'Ran moderation, player feedback, community events, custom games, tournaments, live streams and Discord bot support in Python.',
+      'Supported Moodle and Totara customers through setup, upgrades, migrations and troubleshooting, including 24/7 hosting on-call cover.',
+      'Managed Linux hosting with Apache, PHP, MySQL/MariaDB and monitoring, and supported customer servers across Linux and Windows environments.',
+      'Debugged application issues in PHP and MySQL, tested plugins with JIRA, managed Git repositories and documented platform changes.',
+      'Rolled out a Windows Server 2012 domain controller and managed company devices, patching, upgrades and asset tracking.',
     ],
   },
   {
@@ -127,7 +116,7 @@ const defaultConfig: SiteConfig = {
   name: 'Dan Bennett',
   title: 'Associate Creator Partnerships Manager, PUBG West',
   tagline:
-    'Creator partnerships and Partner Program operations for PUBG: BATTLEGROUNDS, supported by practical reporting, workflow design and applied AI systems.',
+    'Creator partnerships, Partner Program operations and community events for PUBG: BATTLEGROUNDS across Western markets.',
   email: 'dan@danbennett.me',
   website: 'https://danbennett.me',
   twitter_username: 'DanBennettUK',
@@ -135,11 +124,11 @@ const defaultConfig: SiteConfig = {
   instagram_username: 'danbennettuk',
   linkedin_username: 'danbennettuk',
   about_profile_image: 'assets/dan.jpg',
-  about_content: `I manage creator relationships and day-to-day Partner Program operations for PUBG WEST at KRAFTON. Working across Western markets, I coordinate campaigns and community events with creators, agencies and internal teams, and help Partners navigate requirements, resolve issues and get clear follow-up.
+  about_content: `I manage the partner and operational side of the PUBG WEST Partner Program at KRAFTON, working with creators and community Partners across Western markets. The role covers relationship management, campaign delivery, event coordination, reporting, issue resolution and improvements to the systems and guidance Partners use.
 
-My community and technical support background shapes the way I work. Alongside relationships and delivery, I improve the reporting, guidance and workflows that support the work, turning campaign activity and feedback into practical next steps.
-
-Alongside my role, I build practical AI and operational systems for research, documentation, coding and task coordination. I am interested in the useful layer around the model: clear inputs, reliable sources, safe handovers, human review and work that can be inspected after it is done.`,
+I came into the role through years of PUBG community work, including a 100k+ member Reddit community, tournaments, live broadcasts and structured player feedback for the game team. I also bring a technical support background, which helps me turn messy operational problems into clear next steps.`,
+  current_focus:
+    'Partner relationships, programme operations, campaign delivery, community events, cross-team coordination, reporting and process improvement.',
   experience_title: 'Experience',
   footer_show_references: false,
 };
@@ -166,7 +155,7 @@ export function getExperience(): Experience[] {
         {
           title: 'Partner relationships and support',
           bullets: [
-            'Act as the day-to-day contact for PUBG WEST Partners, clarifying program requirements, campaign expectations and available support.',
+            'Act as the day-to-day contact for PUBG WEST Partners, clarifying programme requirements, campaign expectations and available support.',
             'Translate recurring questions and requirements into Partner-facing guidance, campaign instructions and clear support routes, and coordinate follow-up when issues depend on multiple teams.',
           ],
         },
@@ -182,7 +171,7 @@ export function getExperience(): Experience[] {
           title: 'Reporting and data quality',
           bullets: [
             'Maintain operational trackers that give teams a shared view of Partner activity, campaign progress, completion and next actions.',
-            'Turn creator and campaign activity into performance reporting and recommendations, separating program-controlled actions from wider product and market factors.',
+            'Turn creator and campaign activity into performance reporting and recommendations, separating programme-controlled actions from wider product and market factors.',
             'Improve reporting workflows, data quality and automation so repeatable operational checks are easier to maintain and review.',
           ],
         },
@@ -200,7 +189,7 @@ export function getExperience(): Experience[] {
       company: 'PUBG Reddit (r/PUBATTLEGROUNDS)',
       link: 'https://www.reddit.com/r/pubattlegrounds',
       job_title: 'Volunteer Community Manager & Community Games Host',
-      dates: '2018 - December 2020',
+      dates: '2018 to December 2020',
       description: `Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.
 
 - Moderated the community, resolving conflicts and applying community standards fairly
@@ -214,7 +203,7 @@ export function getExperience(): Experience[] {
       category: 'employment',
       company: 'APT Solutions',
       job_title: 'Service Desk Agent',
-      dates: 'November 2019 - December 2020',
+      dates: 'November 2019 to December 2020',
       description: `Supported membership software as one of three Service Desk Agents, working with customers from small taxi firms to large unions.
 
 - Covered UK, Australian and New Zealand customers across three shift patterns, including nights
@@ -226,7 +215,7 @@ export function getExperience(): Experience[] {
       company: 'PriorsVLE',
       link: 'https://priorsvle.com',
       job_title: 'Director & VLE Technical Consultant',
-      dates: '2017 - 2019',
+      dates: '2017 to 2019',
       concurrentWith: 'HowToMoodle (2012 to 2018)',
       description: `Co-founded a Moodle technical support, hosting and development business, delivering custom plugin development, site migrations and upgrades.
 
@@ -241,7 +230,7 @@ export function getExperience(): Experience[] {
       company: 'HowToMoodle',
       link: 'https://howtomoodle.com',
       job_title: 'Support Technician',
-      dates: '2012 - 2018',
+      dates: '2012 to 2018',
       concurrentWith: 'PriorsVLE (2017 to 2019)',
       description: `Supported Moodle and Totara customers through setup, upgrades, migrations and ongoing troubleshooting. Maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover.
 
@@ -257,7 +246,7 @@ export function getExperience(): Experience[] {
       category: 'employment',
       company: 'Capita ITS (ex-i2Q Education)',
       job_title: 'Junior Technical Support',
-      dates: '2008 - 2012',
+      dates: '2008 to 2012',
       description: `Joined i2Q Education, later Capita ITS, supporting schools and colleges using Moodle and handling annual data rollovers in their customised environment before the new academic year.
 
 - Resolved platform questions and issues during term time
@@ -268,7 +257,7 @@ export function getExperience(): Experience[] {
       company: 'EGX & epic.LAN',
       link: 'https://www.egx.net/egx/2019/watch-and-learn',
       job_title: 'Watch & Learn PUBG Professional',
-      dates: '17th October - 20th October 2019',
+      dates: '17th October to 20th October 2019',
       description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG, showing them how to improve, and giving console players a chance to try the PC version.
 
 - Helped set up and pack down multiple EGX stages managed by epic.LAN
@@ -291,7 +280,7 @@ export function getExperience(): Experience[] {
       category: 'community',
       company: 'NovaFM',
       job_title: 'Volunteer Presenter / Producer',
-      dates: '2012 - 2014',
+      dates: '2012 to 2014',
       description: `Hosted and produced two weekly shows at Newport's community radio station. One covered new, upcoming and rarely heard artists; the other focused on dance, trance and UK hardcore.
 
 - Wrote and produced hourly Friday and Saturday news bulletins

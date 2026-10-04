@@ -7,56 +7,39 @@ interface AboutProps {
 }
 
 export default function About({ config }: AboutProps) {
+  const photo = config.about_profile_image
+    ? (config.about_profile_image.startsWith('/')
+      ? config.about_profile_image
+      : `/${config.about_profile_image}`)
+    : undefined;
+
   return (
-    <section id="profile" aria-labelledby="profile-heading" className="pt-8 pb-16">
-      <div className="container-main">
-        <h2 id="profile-heading" className="section-title-editorial">Profile</h2>
+    <section id="profile" aria-labelledby="profile-heading">
+      <h2 id="profile-heading">Profile</h2>
 
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
-          {/* Profile Image */}
-          {config.about_profile_image && (
-            <div className="lg:col-span-4 no-print">
-              <Image
-                src={config.about_profile_image}
-                alt="Portrait of Dan Bennett"
-                width={400}
-                height={400}
-                className="w-full aspect-square object-cover border border-[var(--border)]"
-              />
-              <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mt-3">
-                Dan Bennett - Amsterdam, NL
-              </p>
-            </div>
-          )}
-
-          {/* Content */}
-          <div className={`${config.about_profile_image ? 'lg:col-span-8' : 'lg:col-span-12'}`}>
-            <div className="prose prose-lg max-w-none text-[var(--text-primary)] leading-relaxed">
-              <ReactMarkdown
-                components={{
-                  p: ({ children }) => (
-                    <p className="text-lg leading-relaxed mb-4 text-[var(--text-secondary)]">
-                      {children}
-                    </p>
-                  ),
-                  strong: ({ children }) => (
-                    <strong className="font-semibold text-[var(--text-primary)]">{children}</strong>
-                  ),
-                }}
-              >
-                {config.about_content}
-              </ReactMarkdown>
-            </div>
-
-            {config.current_focus && (
-              <p className="mt-8 text-sm text-[var(--text-muted)]">
-                <span className="font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
-                  Current focus:
-                </span>{' '}
-                {config.current_focus}
-              </p>
-            )}
+      <div className="profile">
+        {photo && (
+          <div className="no-print">
+            <Image
+              src={photo}
+              alt="Portrait of Dan Bennett"
+              width={400}
+              height={400}
+              className="profile-photo"
+            />
+            <p className="profile-caption">Dan Bennett - Amsterdam, NL</p>
           </div>
+        )}
+
+        <div>
+          <ReactMarkdown
+            components={{
+              p: ({ children }) => <p>{children}</p>,
+              strong: ({ children }) => <strong>{children}</strong>,
+            }}
+          >
+            {config.about_content}
+          </ReactMarkdown>
         </div>
       </div>
     </section>

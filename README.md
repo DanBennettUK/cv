@@ -1,6 +1,6 @@
 # Dan Bennett CV
 
-A modern, static resume site built with Next.js 15, React, TypeScript, and Tailwind CSS. It includes a full portfolio view and a compact recruiter view, with GitHub Pages as the authoritative deployment.
+A static web CV built with Next.js 15, React, TypeScript, and Tailwind CSS. The home page is the full CV. `/resume/` is a shorter view of the same facts. GitHub Pages, from the `master` branch, is the live site.
 
 ## 🚀 Quick Start
 
@@ -27,12 +27,13 @@ npm run build
 │   ├── robots.ts           # Crawler rules
 │   └── sitemap.ts          # Public routes for search engines
 ├── components/             # React components
-│   ├── Header.tsx          # Name, title, social links
+│   ├── Header.tsx          # Name, role, contact links
+│   ├── ContactList.tsx     # Email, site and profile links
 │   ├── About.tsx           # Profile image and bio
 │   ├── Experience.tsx      # Work history
 │   ├── Footer.tsx          # Contact footer
-│   ├── ImpactHighlights.tsx # Outcome-led impact cards
-│   ├── AIAndSystems.tsx    # AI practice and public projects
+│   ├── ImpactHighlights.tsx # Short impact statements
+│   ├── AIAndSystems.tsx    # Skills, AI practice and public projects
 │   └── ThemeToggle.tsx     # Dark mode toggle button
 ├── lib/                    # Utilities and data
 │   ├── data.ts             # Shared CV, impact, capability and project content
@@ -57,7 +58,7 @@ All resume content is in `lib/data.ts`. Edit this file to update:
 ### Styling
 
 - **Colors**: Edit CSS variables in `app/globals.css`
-- **Typography**: Space Grotesk (display) and Plus Jakarta Sans (body), loaded from Google Fonts in `app/layout.tsx`
+- **Typography**: Source Sans 3, loaded in `app/layout.tsx`
 - **Dark mode**: Automatic via CSS variables + localStorage
 
 ## 🌙 Dark Mode

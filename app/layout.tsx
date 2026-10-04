@@ -1,20 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
+import { Source_Sans_3 } from 'next/font/google';
 import './globals.css';
-import ThemeToggle from '@/components/ThemeToggle';
 
-const spaceGrotesk = Space_Grotesk({
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-display',
-  display: 'swap',
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-body',
+  weight: ['400', '600', '700'],
   display: 'swap',
 });
 
@@ -60,7 +51,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#111827' },
+    { media: '(prefers-color-scheme: dark)', color: '#141414' },
   ],
 };
 
@@ -75,14 +66,11 @@ const darkModeScript = `(function () {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-GB" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
+    <html lang="en-GB" className={sourceSans.className} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
       </head>
-      <body>
-        <ThemeToggle />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

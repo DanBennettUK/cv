@@ -1,6 +1,6 @@
 # Dan Bennett CV
 
-A modern, static resume site built with Next.js 15, React, TypeScript, and Tailwind CSS. It includes a full portfolio view and a compact recruiter view, with GitHub Pages as the authoritative deployment.
+A static web CV built with Next.js 15, React, TypeScript, and Tailwind CSS. The home page is the full CV. `/resume/` is a shorter view of the same facts. GitHub Pages, from the `master` branch, is the live site.
 
 ## 🚀 Quick Start
 
@@ -27,12 +27,13 @@ npm run build
 │   ├── robots.ts           # Crawler rules
 │   └── sitemap.ts          # Public routes for search engines
 ├── components/             # React components
-│   ├── Header.tsx          # Name, title, social links
+│   ├── Header.tsx          # Name, role, contact links
+│   ├── ContactList.tsx     # Email, site and profile links
 │   ├── About.tsx           # Profile image and bio
 │   ├── Experience.tsx      # Work history
 │   ├── Footer.tsx          # Contact footer
-│   ├── ImpactHighlights.tsx # Outcome-led impact cards
-│   ├── AIAndSystems.tsx    # AI practice and public projects
+│   ├── ImpactHighlights.tsx # Short impact statements
+│   ├── AIAndSystems.tsx    # Skills, AI practice and public projects
 │   └── ThemeToggle.tsx     # Dark mode toggle button
 ├── lib/                    # Utilities and data
 │   ├── data.ts             # Shared CV, impact, capability and project content
@@ -57,7 +58,7 @@ All resume content is in `lib/data.ts`. Edit this file to update:
 ### Styling
 
 - **Colors**: Edit CSS variables in `app/globals.css`
-- **Typography**: Space Grotesk (display) and Plus Jakarta Sans (body), loaded from Google Fonts in `app/layout.tsx`
+- **Typography**: Source Sans 3, loaded in `app/layout.tsx`
 - **Dark mode**: Automatic via CSS variables + localStorage
 
 ## 🌙 Dark Mode
@@ -72,7 +73,7 @@ Toggle with the sun/moon button in the top-right corner.
 
 ### Full CV PDF
 
-The download includes the entire main CV page, including all employment, community, AI and project details. The optional `/resume/` page remains an abbreviated view. Generate the downloadable A4 PDF after a content change with:
+The download includes the entire main CV page, including all employment, community and AI details. The optional `/resume/` page remains an abbreviated view. Generate the downloadable A4 PDF after a content change with:
 
 ```bash
 npm run pdf
@@ -91,11 +92,17 @@ This checks every printable heading, paragraph and bullet from the built CV agai
 
 ### GitHub Pages
 
-The custom domain is deployed from the `master` branch through `.github/workflows/deploy.yml`. GitHub Pages is the authoritative production deployment; local builds and any unrelated preview-provider status do not represent the live site.
+The custom domain is deployed from the `master` branch through `.github/workflows/deploy.yml`. GitHub Pages is the authoritative production deployment; local builds and any unrelated preview-provider status do not represent the live site. `cv.danbennett.me` stays on `master` only.
 
 1. Push to `master` or run the workflow manually.
 2. The workflow installs dependencies, builds the static export, regenerates and verifies the full CV PDF, and deploys `dist/`.
 3. Verify the live URL and a distinctive content marker after deployment.
+
+A push to `modern-rewrite` uses the same deploy job and the same Pages site. It is not a separate preview.
+
+Pull requests run the build and upload the Pages artifact. The deploy job is skipped, so the pull request does not get its own hosted URL. This repository has one Pages site. Publishing this branch with `actions/deploy-pages` would replace `cv.danbennett.me`. GitHub documents the action's `preview` input as an internal alpha that is not available to the public, so the workflow does not set it. A `/pr-preview/` folder is only served when Pages is set to deploy from a branch. This site is deployed by GitHub Actions. Switching that source would take the custom domain off the `master` workflow.
+
+The Pages artifact on the pull request's Actions run is the built site for that commit. It is a download, not a public URL. To read the branch before merge, use the pull request or run `npm install && npm run dev`.
 
 ### Build Output
 

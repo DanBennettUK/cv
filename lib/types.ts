@@ -41,14 +41,6 @@ export interface CapabilityGroup {
   items: string[];
 }
 
-export interface PublicProject {
-  name: string;
-  label: string;
-  href: string;
-  description: string;
-  bullets: string[];
-}
-
 export interface ResumeRole {
   company: string;
   title: string;

@@ -2,7 +2,6 @@ import {
   CapabilityGroup,
   Experience,
   ImpactHighlight,
-  PublicProject,
   ResumeRole,
   SiteConfig,
 } from './types';
@@ -58,8 +57,6 @@ export const capabilityGroups: CapabilityGroup[] = [
   },
 ];
 
-export const publicProjects: PublicProject[] = [];
-
 export const resumeRoles: ResumeRole[] = [
   {
     company: 'KRAFTON',
@@ -79,6 +76,16 @@ export const resumeRoles: ResumeRole[] = [
       'Maintain shared operational views and reporting workflows for Partner activity, campaign progress, completion and next actions.',
       'Design feedback and escalation routes and lead evidence reviews that turn Partner, campaign and community input into prioritised actions.',
       'Improve repeatable work through clearer data flows, workflow design, data quality checks and applied AI support.',
+    ],
+  },
+  {
+    company: 'APT Solutions',
+    title: 'Service Desk Agent',
+    dates: 'November 2019 to December 2020',
+    bullets: [
+      'Supported membership software as one of three Service Desk Agents, from small taxi firms to large unions, including not-for-profit membership organisations.',
+      'Covered UK, Australian and New Zealand customers across three shift patterns, including nights.',
+      'Investigated incidents, wrote customer-facing reports and supported customers across multiple time zones.',
     ],
   },
   {
@@ -137,7 +144,7 @@ const defaultConfig: SiteConfig = {
   about_profile_image: 'assets/dan.jpg',
   about_content: `I manage creator relationships and day-to-day Partner Program operations for PUBG WEST at KRAFTON. Working across Western markets, I coordinate campaigns and community events with creators, agencies and internal teams, and help Partners navigate requirements, resolve issues and get clear follow-up.
 
-My community and technical support background shapes the way I work. Alongside relationships and delivery, I improve the reporting, guidance and workflows that support the work, turning campaign activity and feedback into practical next steps.
+My community and technical support background shapes the way I work. Alongside relationships and delivery, I improve the reporting, guidance and workflows that support the work, turning campaign activity and feedback into practical next steps. I came into this work through PUBG community roles, including a 100k+ member Reddit community, tournaments, live broadcasts and structured player feedback for the game team.
 
 Alongside my role, I build practical AI and operational systems for research, documentation, coding and task coordination. I am interested in the useful layer around the model: clear inputs, reliable sources, safe handovers, human review and work that can be inspected after it is done.`,
   experience_title: 'Experience',
@@ -161,12 +168,14 @@ export function getExperience(): Experience[] {
         title: 'EMEA Streamer Partnership Coordinator',
         dates: '2022',
       },
-      description: `Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions.`,
+      description: `I joined KRAFTON in December 2020. The role developed through streamer and creator partnership work supporting the PUBG Partner Program on PUBG: Battlegrounds across the western region.
+
+Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions.`,
       clusters: [
         {
           title: 'Partner relationships and support',
           bullets: [
-            'Act as the day-to-day contact for PUBG WEST Partners, clarifying program requirements, campaign expectations and available support.',
+            'Act as the day-to-day contact for PUBG WEST Partners, clarifying program requirements, campaign expectations and available support. This includes communications, feedback, sentiment and campaign participation across the Partner Program.',
             'Translate recurring questions and requirements into Partner-facing guidance, campaign instructions and clear support routes, and coordinate follow-up when issues depend on multiple teams.',
           ],
         },
@@ -183,7 +192,7 @@ export function getExperience(): Experience[] {
           bullets: [
             'Maintain operational trackers that give teams a shared view of Partner activity, campaign progress, completion and next actions.',
             'Turn creator and campaign activity into performance reporting and recommendations, separating program-controlled actions from wider product and market factors.',
-            'Improve reporting workflows, data quality and automation so repeatable operational checks are easier to maintain and review.',
+            'Improve reporting workflows, data quality and automation so repeatable operational checks are easier to maintain and review, moving manual processes towards scalable, data-backed tools.',
           ],
         },
         {
@@ -201,13 +210,13 @@ export function getExperience(): Experience[] {
       link: 'https://www.reddit.com/r/pubattlegrounds',
       job_title: 'Volunteer Community Manager & Community Games Host',
       dates: '2018 - December 2020',
-      description: `Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.
+      description: `Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit. The community covered PLAYERUNKNOWN'S BATTLEGROUNDS on PC, Xbox One and PlayStation 4.
 
 - Moderated the community, resolving conflicts and applying community standards fairly
 - Turned player feedback into structured discussions with the game team through Reddit and Twitter
 - Worked with PUBG Corp staff on community events, giveaways, bug reports and player feedback
-- Gathered evidence for the Community Reporting team and submitted cases to the development team
-- Ran Community Custom Games, including tournaments, leaderboards, live streams and casting on Twitch
+- Gathered evidence for the Community Reporting team and submitted cases to the development team. Later joined that team, providing evidence of rule-breaking, including cheating
+- Ran Community Custom Games, including tournaments, leaderboards, live streams and casting on Twitch. Some modes were created with the team and players
 - Managed the PUBG Reddit Twitter account and built Discord bots in Python to support community operations`,
     },
     {
@@ -215,7 +224,7 @@ export function getExperience(): Experience[] {
       company: 'APT Solutions',
       job_title: 'Service Desk Agent',
       dates: 'November 2019 - December 2020',
-      description: `Supported membership software as one of three Service Desk Agents, working with customers from small taxi firms to large unions.
+      description: `Supported membership software as one of three Service Desk Agents, working with customers from small taxi firms to large unions. The software served not-for-profit membership organisations, including trade unions, professional institutions, sporting bodies and charities.
 
 - Covered UK, Australian and New Zealand customers across three shift patterns, including nights
 - Investigated incidents, identified causes and considered how to prevent recurrence
@@ -228,7 +237,7 @@ export function getExperience(): Experience[] {
       job_title: 'Director & VLE Technical Consultant',
       dates: '2017 - 2019',
       concurrentWith: 'HowToMoodle (2012 to 2018)',
-      description: `Co-founded a Moodle technical support, hosting and development business, delivering custom plugin development, site migrations and upgrades.
+      description: `Co-founded a Moodle technical support, hosting and development business, delivering custom plugin development, site migrations and upgrades. PriorsVLE is a virtual learning environment (VLE) business, working with schools, colleges and businesses, including sites owned by the customer or by third parties.
 
 - Managed client relationships and captured requirements through to agreed delivery
 - Built internal systems to support efficient day-to-day workflows and applied LEAN process thinking
@@ -243,9 +252,9 @@ export function getExperience(): Experience[] {
       job_title: 'Support Technician',
       dates: '2012 - 2018',
       concurrentWith: 'PriorsVLE (2017 to 2019)',
-      description: `Supported Moodle and Totara customers through setup, upgrades, migrations and ongoing troubleshooting. Maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover.
+      description: `Supported Moodle and Totara customers through setup, upgrades, migrations and ongoing troubleshooting. Maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover. Work was completed to mutually agreed timescales.
 
-- Automated manual setup and support tasks with scripts and provided first-line support through Helpspot
+- Automated manual setup and support tasks with scripts and provided first-line support through Helpspot. Designed and implemented that automation for most of the manual setup work
 - Provided Moodle/Totara administrator and technical server support for customer sites hosted in-house or by third parties
 - Managed internal CentOS hosting (versions 5, 6 and 7) with Apache, PHP, MySQL/MariaDB and DirectAdmin, plus client servers running CentOS, Ubuntu, Gentoo and Windows Server with HTTPD, Apache2 and Nginx
 - Monitored sites and servers with Icinga/Nagios and kept customers informed when issues affected service
@@ -258,7 +267,7 @@ export function getExperience(): Experience[] {
       company: 'Capita ITS (ex-i2Q Education)',
       job_title: 'Junior Technical Support',
       dates: '2008 - 2012',
-      description: `Joined i2Q Education, later Capita ITS, supporting schools and colleges using Moodle and handling annual data rollovers in their customised environment before the new academic year.
+      description: `Joined i2Q Education, later Capita ITS, supporting schools and colleges using Moodle and handling annual data rollovers in their customised environment before the new academic year. i2Q Education was part of Synetrix.
 
 - Resolved platform questions and issues during term time
 - Worked with developers on QA for OpenHive, writing test plans and automated test scripts`,
@@ -269,7 +278,7 @@ export function getExperience(): Experience[] {
       link: 'https://www.egx.net/egx/2019/watch-and-learn',
       job_title: 'Watch & Learn PUBG Professional',
       dates: '17th October - 20th October 2019',
-      description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG, showing them how to improve, and giving console players a chance to try the PC version.
+      description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG, showing them how to improve, and giving console players a chance to try the PC version. PUBG is PLAYERUNKNOWN'S BATTLEGROUNDS.
 
 - Helped set up and pack down multiple EGX stages managed by epic.LAN
 - Ran my own dedicated Watch & Learn station for all four days
@@ -295,7 +304,7 @@ export function getExperience(): Experience[] {
       description: `Hosted and produced two weekly shows at Newport's community radio station. One covered new, upcoming and rarely heard artists; the other focused on dance, trance and UK hardcore.
 
 - Wrote and produced hourly Friday and Saturday news bulletins
-- Supported outside broadcasts at local festivals, including Newfest and The Pheztival`,
+- Supported outside broadcasts at local festivals, including Newfest and The Pheztival, in 2012 and 2013`,
     },
   ];
 }

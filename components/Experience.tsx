@@ -47,10 +47,21 @@ function ExperienceItem({ experience }: { experience: Experience }) {
         <p className="role-dates">{dates}</p>
       </div>
 
-      <p className="role-title">{job_title}</p>
+      {experience.titles && experience.titles.length > 0 ? (
+        <ul className="role-titles">
+          {experience.titles.map((item) => (
+            <li key={item.title}>
+              <span className="role-title">{item.title}</span>
+              <span className="role-title-dates">{item.dates}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="role-title">{job_title}</p>
+      )}
       {concurrentWith && <p className="role-meta">Concurrent with {concurrentWith}</p>}
-      {tenure && <p className="role-meta">{tenure}</p>}
-      {previousRole && (
+      {!experience.titles?.length && tenure && <p className="role-meta">{tenure}</p>}
+      {!experience.titles?.length && previousRole && (
         <p className="role-meta">Previous role: {previousRole.title}, {previousRole.dates}</p>
       )}
 

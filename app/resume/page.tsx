@@ -40,10 +40,7 @@ export default function ResumePage() {
       </section>
 
       <section aria-labelledby="resume-impact-heading">
-        <h2 id="resume-impact-heading">Selected impact</h2>
-        <p className="section-intro">
-          The thread running through my work: make people, processes and evidence easier to work with.
-        </p>
+        <h2 id="resume-impact-heading">Current work</h2>
         {impactHighlights.map((highlight) => (
           <article key={highlight.title} className="impact-item">
             <h3>{highlight.title}</h3>
@@ -64,10 +61,21 @@ export default function ResumePage() {
               <h3>{role.company}</h3>
               <p className="role-dates">{role.dates}</p>
             </div>
-            <p className="role-title">{role.title}</p>
+            {role.titles && role.titles.length > 0 ? (
+              <ul className="role-titles">
+                {role.titles.map((item) => (
+                  <li key={item.title}>
+                    <span className="role-title">{item.title}</span>
+                    <span className="role-title-dates">{item.dates}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="role-title">{role.title}</p>
+            )}
             {role.concurrentWith && <p className="role-meta">Concurrent with {role.concurrentWith}</p>}
-            {role.tenure && <p className="role-meta">{role.tenure}</p>}
-            {role.previousRole && (
+            {!role.titles?.length && role.tenure && <p className="role-meta">{role.tenure}</p>}
+            {!role.titles?.length && role.previousRole && (
               <p className="role-meta">Previous role: {role.previousRole.title}, {role.previousRole.dates}</p>
             )}
             {role.summary && <p>{role.summary}</p>}
@@ -79,9 +87,9 @@ export default function ResumePage() {
       </section>
 
       <section aria-labelledby="resume-ai-heading">
-        <h2 id="resume-ai-heading">Applied AI and systems</h2>
+        <h2 id="resume-ai-heading">AI and tools</h2>
         <p>
-          I design and use AI-assisted systems for research, reporting, documentation, coding and task coordination. The focus is the operating model around the model: clear inputs, reliable sources, safe handovers, human review and inspectable work.
+          I build AI tools for research, reporting, documentation, coding and task coordination. I write down the inputs and the sources, a person reviews the result, and the handover can be checked.
         </p>
         {capabilityGroups.map((group) => (
           <div key={group.title} className="skill-group">
@@ -92,7 +100,7 @@ export default function ResumePage() {
       </section>
 
       <p className="page-note">
-        Full history and links: <a href="https://cv.danbennett.me/">cv.danbennett.me</a>
+        Full history and links are at <a href="https://cv.danbennett.me/">cv.danbennett.me</a>
       </p>
     </main>
   );

@@ -18,21 +18,21 @@ export default function AIAndSystems() {
       </section>
 
       <section id="ai-systems" aria-labelledby="ai-systems-heading">
-        <h2 id="ai-systems-heading">Applied AI and operational systems</h2>
+        <h2 id="ai-systems-heading">AI and tools</h2>
         <p>
-          Alongside creator partnerships and program operations, I design and use AI-assisted systems for research, reporting, documentation, coding and task coordination.
+          As well as creator partnerships, I build AI tools for research, reporting, documentation, coding and task coordination.
         </p>
         <p>
-          The useful part is the operating model around the model: clear inputs, reliable sources, safe handovers, human review and work that can still be inspected after it is done.
+          I write down the inputs and the sources. A person reviews the result. I write the handover so the next person can check it and continue.
         </p>
 
         <h3>How I work with AI</h3>
         <ul>
-          <li>Use AI-assisted tools for bounded research, analysis, drafting, coding and documentation, treating generated output as a working draft rather than an authority.</li>
-          <li>Design workflows with explicit inputs, source links, handovers, review points and closure conditions so work can continue without losing context.</li>
-          <li>Connect agents to tools through CLI, MCP and REST interfaces, while keeping credentials, permissions and external sends behind explicit boundaries.</li>
-          <li>Build local-first, auditable state with structured memory, task history, provenance and recoverable changes instead of opaque generated output.</li>
-          <li>Verify meaningful outputs against source material, tests, build results and the intended destination before treating them as finished.</li>
+          <li>I use AI tools for research, analysis, drafting, coding and documentation. I treat the output as a draft, and I check it.</li>
+          <li>I write the inputs, the source links, the handover, the review and what done means, so the next session can continue.</li>
+          <li>I connect agents to tools through CLI, MCP and REST. Credentials, permissions and anything sent outside stay behind a check I approve.</li>
+          <li>I keep memory, task history and changes in files I can read and undo. I do not leave the record as model output I cannot check.</li>
+          <li>I check the output against the source, the tests, the build and the place it is meant to go before I call it finished.</li>
         </ul>
       </section>
     </>

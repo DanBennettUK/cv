@@ -8,22 +8,22 @@ import {
 
 export const impactHighlights: ImpactHighlight[] = [
   {
-    title: 'Make Partner support clearer',
+    title: 'Partner support',
     label: 'Partner operations',
     description:
-      'Turn requirements, recurring questions and evidence into practical guidance, support routes and follow-up that Partners can act on.',
+      'I turn Partner requirements, repeat questions and evidence into guidance, a support route and a follow-up.',
   },
   {
-    title: 'Make campaign progress visible',
-    label: 'Campaign delivery',
+    title: 'Campaign delivery',
+    label: 'Campaigns',
     description:
-      'Coordinate briefing, delivery, submission, review, completion tracking and reporting across creators, agencies and internal teams.',
+      'I coordinate briefing, delivery, submission, review, completion tracking and reporting with creators, agencies and internal teams.',
   },
   {
-    title: 'Improve the system around the work',
-    label: 'AI and operational systems',
+    title: 'Repeat work',
+    label: 'AI and tools',
     description:
-      'Move repeatable work towards clearer data flows, source-grounded AI support, human review and recoverable handovers.',
+      'I use AI on repeat tasks where the source is written down. A person reviews the result, and the handover can be picked up again.',
   },
 ];
 
@@ -31,26 +31,26 @@ export const capabilityGroups: CapabilityGroup[] = [
   {
     title: 'Creator and Partner operations',
     items: [
-      'Relationship management',
-      'Campaign lifecycle ownership',
+      'Creator relationships',
+      'Campaigns from brief to report',
       'Support and escalation',
-      'Cross-functional coordination',
+      'Work across teams',
     ],
   },
   {
-    title: 'AI and systems practice',
+    title: 'AI and tools',
     items: [
-      'Source-grounded research',
-      'CLI, MCP and REST tool integration',
-      'Provenance and human review',
-      'Recoverable task handovers',
+      'Research with the source linked',
+      'CLI, MCP and REST tools',
+      'Source notes and a human check',
+      'Handovers another person can continue',
     ],
   },
   {
     title: 'Reporting and delivery',
     items: [
       'KPI and OKR reporting',
-      'Data quality and workflow design',
+      'Data checks and workflow design',
       'Feedback and evidence reviews',
       'Community operations',
     ],
@@ -61,21 +61,26 @@ export const resumeRoles: ResumeRole[] = [
   {
     company: 'KRAFTON',
     title: 'Associate Creator Partnerships Manager, PUBG West',
-    dates: 'February 2024 to present',
-    tenure: 'At KRAFTON since December 2020',
-    previousRole: {
-      title: 'EMEA Streamer Partnership Coordinator',
-      dates: '2022',
-    },
+    dates: 'December 2020 to present',
+    titles: [
+      {
+        title: 'EMEA Streamer Partnership Coordinator',
+        dates: '2022',
+      },
+      {
+        title: 'Associate Creator Partnerships Manager, PUBG West',
+        dates: 'February 2024 to present',
+      },
+    ],
     summary:
-      'Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets.',
+      'I manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets.',
     bullets: [
-      'Operate Partner support across Western markets, translating requirements into usable guidance and clear follow-up.',
-      'Plan, launch and report on streaming and short-form creator campaigns with Partners, agencies, HQ, Marketing, Media Ops and regional teams.',
-      'Coordinate briefing, content submission, review, completion tracking and reporting across the full campaign lifecycle.',
-      'Maintain shared operational views and reporting workflows for Partner activity, campaign progress, completion and next actions.',
-      'Design feedback and escalation routes and lead evidence reviews that turn Partner, campaign and community input into prioritised actions.',
-      'Improve repeatable work through clearer data flows, workflow design, data quality checks and applied AI support.',
+      'I run Partner support across Western markets, and I turn requirements into guidance and a clear follow-up.',
+      'I plan, launch and report on streaming and short-form creator campaigns with Partners, agencies, HQ, Marketing, Media Ops and regional teams.',
+      'I coordinate the brief, content submission, review, completion tracking and the report.',
+      'I keep shared trackers for Partner activity, campaign progress, completion and next actions.',
+      'I set up feedback and escalation routes, and I lead reviews that turn Partner, campaign and community input into a priority list.',
+      'I make repeat work easier to check, with clearer data, workflow changes, data checks and AI where it helps.',
     ],
   },
   {
@@ -83,7 +88,7 @@ export const resumeRoles: ResumeRole[] = [
     title: 'Service Desk Agent',
     dates: 'November 2019 to December 2020',
     bullets: [
-      'Supported membership software as one of three Service Desk Agents, from small taxi firms to large unions, including not-for-profit membership organisations.',
+      'I supported membership software as one of three Service Desk Agents. Customers included small taxi firms and large unions, and not-for-profit membership organisations.',
       'Covered UK, Australian and New Zealand customers across three shift patterns, including nights.',
       'Investigated incidents, wrote customer-facing reports and supported customers across multiple time zones.',
     ],
@@ -115,7 +120,7 @@ export const resumeRoles: ResumeRole[] = [
     title: 'Volunteer Community Manager & Community Games Host',
     dates: '2018 to December 2020',
     bullets: [
-      'Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit.',
+      'I joined as a community member, then moderated, then led community operations for a 100k+ member subreddit.',
       'Ran moderation, player feedback, community events, custom games, tournaments, live streams and Discord bot support in Python.',
     ],
   },
@@ -134,7 +139,7 @@ const defaultConfig: SiteConfig = {
   name: 'Dan Bennett',
   title: 'Associate Creator Partnerships Manager, PUBG West',
   tagline:
-    'Creator partnerships and Partner Program operations for PUBG: BATTLEGROUNDS, supported by practical reporting, workflow design and applied AI systems.',
+    'Creator partnerships and Partner Program operations for PUBG: BATTLEGROUNDS. I also keep the reporting, and I use AI on the repeat work.',
   email: 'dan@danbennett.me',
   website: 'https://danbennett.me',
   twitter_username: 'DanBennettUK',
@@ -142,11 +147,11 @@ const defaultConfig: SiteConfig = {
   instagram_username: 'danbennettuk',
   linkedin_username: 'danbennettuk',
   about_profile_image: 'assets/dan.jpg',
-  about_content: `I manage creator relationships and day-to-day Partner Program operations for PUBG WEST at KRAFTON. Working across Western markets, I coordinate campaigns and community events with creators, agencies and internal teams, and help Partners navigate requirements, resolve issues and get clear follow-up.
+  about_content: `I manage creator relationships and day-to-day Partner Program operations for PUBG WEST at KRAFTON. I work across Western markets. I coordinate campaigns and community events with creators, agencies and internal teams. I help Partners with requirements, issues and follow-up.
 
-My community and technical support background shapes the way I work. Alongside relationships and delivery, I improve the reporting, guidance and workflows that support the work, turning campaign activity and feedback into practical next steps. I came into this work through PUBG community roles, including a 100k+ member Reddit community, tournaments, live broadcasts and structured player feedback for the game team.
+I came into this work from technical support and from PUBG community roles. That included a 100k+ member Reddit community, tournaments, live broadcasts and player feedback for the game team. I still write the reporting and the guidance, and I turn campaign feedback into the next step.
 
-Alongside my role, I build practical AI and operational systems for research, documentation, coding and task coordination. I am interested in the useful layer around the model: clear inputs, reliable sources, safe handovers, human review and work that can be inspected after it is done.`,
+As well as the KRAFTON job, I build AI tools for research, documentation, coding and task coordination. I write down the inputs and the sources. A person reviews the result. I write the handover so the next person can check it and continue.`,
   experience_title: 'Experience',
   footer_show_references: false,
 };
@@ -162,44 +167,49 @@ export function getExperience(): Experience[] {
       link: 'https://www.krafton.com',
       job_title: 'Associate Creator Partnerships Manager, PUBG West',
       category: 'current',
-      dates: 'February 2024 to present',
-      tenure: 'At KRAFTON since December 2020',
-      previousRole: {
-        title: 'EMEA Streamer Partnership Coordinator',
-        dates: '2022',
-      },
-      description: `I joined KRAFTON in December 2020. The role developed through streamer and creator partnership work supporting the PUBG Partner Program on PUBG: Battlegrounds across the western region.
+      dates: 'December 2020 to present',
+      titles: [
+        {
+          title: 'EMEA Streamer Partnership Coordinator',
+          dates: '2022',
+        },
+        {
+          title: 'Associate Creator Partnerships Manager, PUBG West',
+          dates: 'February 2024 to present',
+        },
+      ],
+      description: `I joined KRAFTON in December 2020, on streamer and creator partnerships for the PUBG Partner Program on PUBG: BATTLEGROUNDS in the western region.
 
-Manage creator relationships, campaign delivery and day-to-day Partner Program operations for PUBG: BATTLEGROUNDS across Western markets. The work combines Partner support with the operating systems behind delivery: translating requirements into practical guidance, coordinating cross-functional work, maintaining reliable reporting, and turning evidence into next actions.`,
+I manage creator relationships, campaign delivery and day-to-day Partner Program operations across Western markets. I write the guidance from the requirements. I keep the reporting up to date. I work with the other teams, and I turn the evidence into the next action.`,
       clusters: [
         {
           title: 'Partner relationships and support',
           bullets: [
-            'Act as the day-to-day contact for PUBG WEST Partners, clarifying program requirements, campaign expectations and available support. This includes communications, feedback, sentiment and campaign participation across the Partner Program.',
-            'Translate recurring questions and requirements into Partner-facing guidance, campaign instructions and clear support routes, and coordinate follow-up when issues depend on multiple teams.',
+            'I am the day-to-day contact for PUBG WEST Partners. I explain program requirements, campaign expectations and the support available. That covers communications, feedback, sentiment and campaign participation across the Partner Program.',
+            'I write Partner guidance and campaign instructions from the questions that keep coming back. When an issue needs more than one team, I coordinate the follow-up.',
           ],
         },
         {
           title: 'Campaigns and activations',
           bullets: [
-            'Plan, launch and report on streaming and short-form creator campaigns with HQ, regional teams, Marketing, Media Ops, agencies and creators.',
-            'Coordinate briefing, requirements, content submission, review, completion tracking and follow-up across the full campaign lifecycle.',
-            'Align Partner needs, assets, announcements and timelines across marketing, esports, product and community teams, including creator and community activations.',
+            'I plan, launch and report on streaming and short-form creator campaigns with HQ, regional teams, Marketing, Media Ops, agencies and creators.',
+            'I coordinate the brief, the requirements, content submission, review, completion tracking and follow-up.',
+            'I match Partner needs, assets, announcements and timelines with marketing, esports, product and community teams. That includes creator and community activations.',
           ],
         },
         {
           title: 'Reporting and data quality',
           bullets: [
-            'Maintain operational trackers that give teams a shared view of Partner activity, campaign progress, completion and next actions.',
-            'Turn creator and campaign activity into performance reporting and recommendations, separating program-controlled actions from wider product and market factors.',
-            'Improve reporting workflows, data quality and automation so repeatable operational checks are easier to maintain and review, moving manual processes towards scalable, data-backed tools.',
+            'I keep operational trackers so teams can see Partner activity, campaign progress, what is finished and what happens next.',
+            'I turn creator and campaign activity into performance reports and recommendations. I separate what the program controlled from wider product and market factors.',
+            'I improve the reporting workflows, the data checks and the automation, so the same operational checks are easier to run and review. I am moving manual checks onto tools that use our data and can take more of the load.',
           ],
         },
         {
-          title: 'Feedback and evidence-led reviews',
+          title: 'Feedback and evidence reviews',
           bullets: [
-            'Design practical feedback and escalation routes so creators can raise issues, provide evidence and receive follow-up.',
-            'Lead cross-functional evidence reviews that turn campaign, Partner and community feedback into prioritised actions for PUBG WEST.',
+            'I set up routes for creators to raise an issue, send evidence and get a follow-up.',
+            'I lead evidence reviews with the other teams. We turn campaign, Partner and community feedback into prioritised actions for PUBG WEST.',
           ],
         },
       ],
@@ -210,7 +220,7 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
       link: 'https://www.reddit.com/r/pubattlegrounds',
       job_title: 'Volunteer Community Manager & Community Games Host',
       dates: '2018 - December 2020',
-      description: `Progressed from community member to moderator and wider community operations lead for a 100k+ member subreddit. The community covered PLAYERUNKNOWN'S BATTLEGROUNDS on PC, Xbox One and PlayStation 4.
+      description: `I joined as a community member, then became a moderator, then led community operations for a 100k+ member subreddit. The community covered PLAYERUNKNOWN'S BATTLEGROUNDS on PC, Xbox One and PlayStation 4.
 
 - Moderated the community, resolving conflicts and applying community standards fairly
 - Turned player feedback into structured discussions with the game team through Reddit and Twitter
@@ -224,7 +234,7 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
       company: 'APT Solutions',
       job_title: 'Service Desk Agent',
       dates: 'November 2019 - December 2020',
-      description: `Supported membership software as one of three Service Desk Agents, working with customers from small taxi firms to large unions. The software served not-for-profit membership organisations, including trade unions, professional institutions, sporting bodies and charities.
+      description: `I supported membership software as one of three Service Desk Agents. Customers included small taxi firms and large unions. The software is for not-for-profit membership organisations, including trade unions, professional institutions, sporting bodies and charities.
 
 - Covered UK, Australian and New Zealand customers across three shift patterns, including nights
 - Investigated incidents, identified causes and considered how to prevent recurrence
@@ -237,10 +247,10 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
       job_title: 'Director & VLE Technical Consultant',
       dates: '2017 - 2019',
       concurrentWith: 'HowToMoodle (2012 to 2018)',
-      description: `Co-founded a Moodle technical support, hosting and development business, delivering custom plugin development, site migrations and upgrades. PriorsVLE is a virtual learning environment (VLE) business, working with schools, colleges and businesses, including sites owned by the customer or by third parties.
+      description: `I co-founded a Moodle technical support, hosting and development business. We built plugins, migrated sites and ran upgrades. PriorsVLE is a virtual learning environment (VLE) business. We worked with schools, colleges and businesses, including sites owned by the customer or by third parties.
 
-- Managed client relationships and captured requirements through to agreed delivery
-- Built internal systems to support efficient day-to-day workflows and applied LEAN process thinking
+- Managed client relationships and took requirements through to the work we had agreed
+- Built internal systems for the day-to-day work and used LEAN on those workflows
 - Provided first-line support for client users and coordinated technical follow-up
 - Managed invoicing and payment follow-up
 - Ran social media marketing, sharing Moodle tips, news and service information`,
@@ -252,7 +262,7 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
       job_title: 'Support Technician',
       dates: '2012 - 2018',
       concurrentWith: 'PriorsVLE (2017 to 2019)',
-      description: `Supported Moodle and Totara customers through setup, upgrades, migrations and ongoing troubleshooting. Maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover. Work was completed to mutually agreed timescales.
+      description: `I supported Moodle and Totara customers with setup, upgrades, migrations and troubleshooting. I maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover. We agreed the timescales, and the work was done to them.
 
 - Automated manual setup and support tasks with scripts and provided first-line support through Helpspot. Designed and implemented that automation for most of the manual setup work
 - Provided Moodle/Totara administrator and technical server support for customer sites hosted in-house or by third parties
@@ -267,7 +277,7 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
       company: 'Capita ITS (ex-i2Q Education)',
       job_title: 'Junior Technical Support',
       dates: '2008 - 2012',
-      description: `Joined i2Q Education, later Capita ITS, supporting schools and colleges using Moodle and handling annual data rollovers in their customised environment before the new academic year. i2Q Education was part of Synetrix.
+      description: `I joined i2Q Education, later Capita ITS. I supported schools and colleges using Moodle, and I handled the annual data rollovers in their customised environment before the new academic year. i2Q Education was part of Synetrix.
 
 - Resolved platform questions and issues during term time
 - Worked with developers on QA for OpenHive, writing test plans and automated test scripts`,
@@ -282,8 +292,8 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
 
 - Helped set up and pack down multiple EGX stages managed by epic.LAN
 - Ran my own dedicated Watch & Learn station for all four days
-- Developed teaching skills showing complete beginners the ropes
-- Promoted the sessions on my own social media to drive interest`,
+- Taught complete beginners the basics
+- Posted the sessions on my own social media`,
     },
     {
       category: 'community',
@@ -291,7 +301,7 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
       link: 'https://www.specialeffect.org.uk',
       job_title: 'PUBG Observer',
       dates: '26th July 2019',
-      description: `Volunteered at SpecialEffect's Chicken4Charity 2019 PUBG tournament, featuring 20 teams from the UK games industry. The event raised over £14,000 to help disabled gamers play.
+      description: `I volunteered at SpecialEffect's Chicken4Charity 2019 PUBG tournament. It had 20 teams from the UK games industry. The event raised over £14,000 to help disabled gamers play.
 
 - Helped set up matches and managed in-game observer cameras to capture live action
 - Supported broadcasts on Steam, Twitch and Facebook`,
@@ -301,7 +311,7 @@ Manage creator relationships, campaign delivery and day-to-day Partner Program o
       company: 'NovaFM',
       job_title: 'Volunteer Presenter / Producer',
       dates: '2012 - 2014',
-      description: `Hosted and produced two weekly shows at Newport's community radio station. One covered new, upcoming and rarely heard artists; the other focused on dance, trance and UK hardcore.
+      description: `I hosted and produced two weekly shows at Newport's community radio station. One covered new, upcoming and rarely heard artists. The other focused on dance, trance and UK hardcore.
 
 - Wrote and produced hourly Friday and Saturday news bulletins
 - Supported outside broadcasts at local festivals, including Newfest and The Pheztival, in 2012 and 2013`,

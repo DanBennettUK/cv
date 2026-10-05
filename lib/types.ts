@@ -16,6 +16,11 @@ export interface SiteConfig {
   footer_show_references?: boolean;
 }
 
+export interface RoleTitle {
+  title: string;
+  dates: string;
+}
+
 export interface Experience {
   company: string;
   link?: string;
@@ -26,6 +31,7 @@ export interface Experience {
   category: 'current' | 'employment' | 'community';
   tenure?: string;
   previousRole?: { title: string; dates: string };
+  titles?: RoleTitle[];
   concurrentWith?: string;
   clusters?: { title: string; bullets: string[] }[];
 }
@@ -47,6 +53,7 @@ export interface ResumeRole {
   dates: string;
   tenure?: string;
   previousRole?: { title: string; dates: string };
+  titles?: RoleTitle[];
   concurrentWith?: string;
   summary?: string;
   bullets: string[];

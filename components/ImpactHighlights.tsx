@@ -3,10 +3,7 @@ import { impactHighlights } from '@/lib/data';
 export default function ImpactHighlights() {
   return (
     <section id="impact" aria-labelledby="impact-heading">
-      <h2 id="impact-heading">Selected impact</h2>
-      <p className="section-intro">
-        The thread running through my work: make people, processes and evidence easier to work with.
-      </p>
+      <h2 id="impact-heading">Current work</h2>
 
       {impactHighlights.map((highlight) => (
         <article key={highlight.title} className="impact-item">

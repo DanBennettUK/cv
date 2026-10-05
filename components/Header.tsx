@@ -9,9 +9,9 @@ interface HeaderProps {
 const sections = [
   ['profile', 'Profile'],
   ['experience', 'Experience'],
-  ['impact', 'Selected impact'],
+  ['impact', 'Current work'],
   ['skills', 'Skills'],
-  ['ai-systems', 'AI and systems'],
+  ['ai-systems', 'AI and tools'],
   ['contact', 'Contact'],
 ];
 

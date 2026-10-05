@@ -336,6 +336,38 @@ button {
   font-weight: 600;
 }
 
+.role-titles {
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
+}
+
+.cv .role-titles {
+  padding-left: 0;
+}
+
+.cv .role-titles li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1rem;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0.2rem 0;
+  padding-left: 0;
+}
+
+.role-titles .role-title,
+.role-title-dates {
+  margin: 0;
+}
+
+.role-title-dates {
+  color: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
 .role-meta {
   color: var(--text);
 }

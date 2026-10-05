@@ -47,6 +47,12 @@ jobs:
         with:
           path: dist/
 
+  # One Pages site per repository, on the custom domain cv.danbennett.me.
+  # Push to master or modern-rewrite publishes to that same site. A pull
+  # request, including this preview branch, builds and uploads an artifact
+  # only. Do not deploy it: that would replace the live site. The
+  # deploy-pages preview input is an internal alpha and is not public, so
+  # it is not used here.
   deploy:
     if: github.event_name != 'pull_request'
     environment:

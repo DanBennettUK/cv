@@ -1,4 +1,4 @@
-import { capabilityGroups, publicProjects } from '@/lib/data';
+import { capabilityGroups } from '@/lib/data';
 
 export default function AIAndSystems() {
   return (
@@ -34,28 +34,6 @@ export default function AIAndSystems() {
           <li>Build local-first, auditable state with structured memory, task history, provenance and recoverable changes instead of opaque generated output.</li>
           <li>Verify meaningful outputs against source material, tests, build results and the intended destination before treating them as finished.</li>
         </ul>
-
-        {publicProjects.length > 0 && (
-          <>
-            <h3>Selected public work</h3>
-            {publicProjects.map((project) => (
-              <article key={project.name} className="project">
-                <h4>
-                  <a href={project.href} target="_blank" rel="noopener noreferrer">
-                    {project.name}
-                  </a>
-                </h4>
-                <p className="role-meta">{project.label}</p>
-                <p>{project.description}</p>
-                <ul>
-                  {project.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </>
-        )}
       </section>
     </>
   );

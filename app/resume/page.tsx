@@ -3,7 +3,6 @@ import {
   capabilityGroups,
   getConfig,
   impactHighlights,
-  publicProjects,
   resumeRoles,
 } from '@/lib/data';
 import ContactList from '@/components/ContactList';
@@ -57,7 +56,7 @@ export default function ResumePage() {
       <section aria-labelledby="resume-experience-heading">
         <h2 id="resume-experience-heading">Experience</h2>
         <p className="section-intro">
-          A shorter view. The full CV also includes APT Solutions, EGX & epic.LAN, Chicken4Charity - SpecialEffect and NovaFM.
+          A shorter view. The full CV also includes EGX & epic.LAN, Chicken4Charity - SpecialEffect and NovaFM.
         </p>
         {resumeRoles.map((role) => (
           <article key={`${role.company}-${role.title}`} className="role">
@@ -89,13 +88,6 @@ export default function ResumePage() {
             <h3>{group.title}</h3>
             <p>{group.items.join(' · ')}</p>
           </div>
-        ))}
-        {publicProjects.map((project) => (
-          <article key={project.name} className="project">
-            <h3><a href={project.href}>{project.name}</a></h3>
-            <p className="role-meta">{project.label}</p>
-            <p>{project.description}</p>
-          </article>
         ))}
       </section>
 

@@ -1,69 +1,44 @@
-import { FileDown, Github, Globe, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
+import { FileDown, Github, Globe, Linkedin, Mail } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { pdfVariants } from '@/lib/pdf-variants';
 import { SiteConfig } from '@/lib/types';
 
 interface ContactListProps {
   config: SiteConfig;
   showPdf?: boolean;
+  print?: boolean;
 }
 
 interface ContactLink {
   href: string;
   label: string;
+  address?: string;
   icon: LucideIcon;
   external?: boolean;
   pdf?: boolean;
 }
 
-export default function ContactList({ config, showPdf = false }: ContactListProps) {
+function printAddress(address: string): string {
+  return address.replace(/^https:\/\/(?:www\.)?/i, '');
+}
+
+export default function ContactList({ config, showPdf = false, print = false }: ContactListProps) {
   const links: ContactLink[] = [
-    { href: `mailto:${config.email}`, label: 'Email', icon: Mail },
-    { href: config.website, label: 'Site', icon: Globe, external: true },
+    { href: `mailto:${config.email}`, label: 'Email', address: config.email, icon: Mail },
+    { href: config.website, label: 'Site', address: print ? printAddress(config.website) : config.website, icon: Globe, external: true },
+    { href: config.linkedinUrl, label: 'LinkedIn', address: print ? printAddress(config.linkedinUrl) : config.linkedinUrl, icon: Linkedin, external: true },
+    { href: config.githubUrl, label: 'GitHub', address: print ? printAddress(config.githubUrl) : config.githubUrl, icon: Github, external: true },
   ];
 
-  if (config.linkedin_username) {
-    links.push({
-      href: `https://linkedin.com/in/${config.linkedin_username}`,
-      label: 'LinkedIn',
-      icon: Linkedin,
-      external: true,
-    });
-  }
-
-  if (config.github_username) {
-    links.push({
-      href: `https://github.com/${config.github_username}`,
-      label: 'GitHub',
-      icon: Github,
-      external: true,
-    });
-  }
-
-  if (config.twitter_username) {
-    links.push({
-      href: `https://twitter.com/${config.twitter_username}`,
-      label: 'Twitter',
-      icon: Twitter,
-      external: true,
-    });
-  }
-
-  if (config.instagram_username) {
-    links.push({
-      href: `https://instagram.com/${config.instagram_username}`,
-      label: 'Instagram',
-      icon: Instagram,
-      external: true,
-    });
-  }
-
   if (showPdf) {
-    links.push({
-      href: '/Dan-Bennett-CV.pdf',
-      label: 'CV PDF',
-      icon: FileDown,
-      pdf: true,
-    });
+    for (const variant of pdfVariants) {
+      links.push({
+        href: `/${variant.fileName}`,
+        label: variant.label,
+        icon: FileDown,
+        pdf: true,
+      });
+    }
   }
 
   return (
@@ -77,8 +52,11 @@ export default function ContactList({ config, showPdf = false }: ContactListProp
               {...(link.pdf ? { download: true } : {})}
               {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
-              <Icon className="contact-mark" aria-hidden="true" />
-              <span>{link.label}</span>
+              {print ? null : <Icon className="contact-mark" aria-hidden="true" />}
+              <span className="contact-text">
+                {print ? null : <span className="contact-label">{link.label}</span>}
+                {link.address && <span className="contact-address">{link.address}</span>}
+              </span>
             </a>
           </li>
         );

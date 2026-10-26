@@ -2,12 +2,16 @@
   "name": "cv-site",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint app components lib --ext .ts,.tsx",
-    "pdf": "npm run build && node scripts/generate-pdf.mjs",
+    "check": "python3 scripts/check-copy.py",
+    "pdf": "npm run build && python3 scripts/check-copy.py && node scripts/generate-pdf.mjs",
     "pdf:generate": "node scripts/generate-pdf.mjs"
   },
   "dependencies": {

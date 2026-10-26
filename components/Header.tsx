@@ -8,8 +8,8 @@ interface HeaderProps {
 
 const sections = [
   ['profile', 'Profile'],
-  ['experience', 'Experience'],
   ['impact', 'Current work'],
+  ['experience', 'Experience'],
   ['skills', 'Skills'],
   ['ai-systems', 'AI and tools'],
   ['contact', 'Contact'],
@@ -25,12 +25,11 @@ export default function Header({ config }: HeaderProps) {
 
       <h1>{config.name}</h1>
       <p className="cv-title">{config.title}</p>
-      <p className="cv-place">KRAFTON, Amsterdam</p>
+      <p className="cv-place">{config.location}</p>
+      <p>{config.workRights}</p>
 
       {config.tagline && <p className="lede">{config.tagline}</p>}
-      <p>
-        At KRAFTON since December 2020. Earlier work includes APT Solutions, PriorsVLE, HowToMoodle and Capita ITS, plus community roles with PUBG Reddit, EGX, SpecialEffect and NovaFM.
-      </p>
+      <p>{config.earlierWork}</p>
 
       <ContactList config={config} showPdf />
 

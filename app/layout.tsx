@@ -37,6 +37,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary',
+  },
 };
 
 export const viewport: Viewport = {

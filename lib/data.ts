@@ -10,7 +10,7 @@ export const headline = 'Creator partnerships and Partner Program owner, PUBG We
 
 export const tagline = 'I own the PUBG Partner Program for PUBG West end to end: around 350 creators (around 280 active in a typical month) across EMEA, Türkiye, CIS, North America and Latin America, on PC and console, across Twitch, Kick, YouTube and TikTok. I partner directly with HQ on programme direction and approvals, and I build the tooling the programme runs on.';
 
-export const metaDescription = `${headline}. ${tagline}`;
+export const metaDescription = 'Creator partnerships and Partner Program owner, PUBG West (KRAFTON). I own the PUBG Partner Program end to end.';
 
 export const aiLine = 'I also build the automations behind the programme, including a weekly report cut from about three hours to about five minutes.';
 
@@ -28,7 +28,7 @@ export const usCommunityLine = 'Community work includes leading a 100k+ member P
 
 const kraftonBulletText = {
   scope: 'Own the programme end to end across EMEA, Türkiye, CIS, North America and Latin America: creator selection, rules and benefits, quarterly activity audits, campaigns and Partner support.',
-  commercial: 'Handle Partner contracts and agreements, scope and negotiate agency work, and manage campaign budgets.',
+  commercial: 'Handle Partner contracts and agreements, and scope and negotiate agency work.',
   people: 'Manage external agencies on campaigns alongside hands-on roster work, and supervise an intern building a consolidated team dashboard and reporting tool.',
   campaign: 'Planned and oversaw a 16-creator regional streaming campaign delivered with an external agency, and prepared its social posts and assets: delivered all 64 contracted streams, with viewership and watch hours well above target.',
   completion: 'Ran update campaigns on PC and console. On a recent PC streaming campaign, 89 of 93 participating Partners completed.',
@@ -49,17 +49,14 @@ const kraftonClusters: { title: string; ids: KraftonBulletId[] }[] = [
 export const impactHighlights: ImpactHighlight[] = [
   {
     title: 'Partner Program',
-    label: 'Programme',
     description: 'Around 350 creators (around 280 active in a typical month) across EMEA, Türkiye, CIS, North America and Latin America, on PC and console, owned end to end.',
   },
   {
     title: 'Campaigns',
-    label: 'Delivery',
     description: 'Delivered all 64 contracted streams on a 16-creator regional campaign, with viewership and watch hours well above target.',
   },
   {
     title: 'Automation',
-    label: 'Tooling',
     description: 'Cut a weekly Partner report from about three hours of work to about five minutes of review.',
   },
 ];
@@ -70,7 +67,6 @@ export const capabilityGroups: CapabilityGroup[] = [
     items: [
       'Partner programme design (selection, rules, benefits, audits)',
       'Contracts and agency negotiation',
-      'Campaign budgets',
       'Twitch, Kick, YouTube and TikTok',
     ],
   },
@@ -111,7 +107,7 @@ export const earlierEmploymentOrder = [
 export const communityOrder = [
   'PUBG Reddit (r/PUBATTLEGROUNDS)',
   'EGX & epic.LAN',
-  'Chicken4Charity - SpecialEffect',
+  'Chicken4Charity for SpecialEffect',
   'NovaFM',
 ];
 
@@ -170,7 +166,7 @@ export function getExperience(): Experience[] {
       job_title: 'Volunteer Community Manager & Community Games Host',
       dates: '2018 to December 2020',
       summaryLines: [
-        'Led community operations for a 100k+ member PUBG subreddit, from community member to moderator to community lead (2018 to December 2020).',
+        'Led community operations for a 100k+ member PUBG subreddit, from community member to moderator to community lead.',
         'Ran moderation, player feedback, community events, custom games, tournaments and live streams, and built Discord bots in Python.',
       ],
       description: `I joined as a community member, then became a moderator, then led community operations for a 100k+ member subreddit. The community covered PLAYERUNKNOWN'S BATTLEGROUNDS on PC, Xbox One and PlayStation 4.
@@ -188,7 +184,7 @@ export function getExperience(): Experience[] {
       job_title: 'Service Desk Agent',
       dates: 'November 2019 to December 2020',
       summaryLines: [
-        'Supported membership software for customers in the UK, Australia and New Zealand as a Service Desk Agent (November 2019 to December 2020).',
+        'Supported membership software for customers in the UK, Australia and New Zealand.',
       ],
       description: `I supported membership software as one of three Service Desk Agents. Customers included small taxi firms and large unions. The software is for not-for-profit membership organisations, including trade unions, professional institutions, sporting bodies and charities.
 
@@ -204,7 +200,7 @@ export function getExperience(): Experience[] {
       dates: '2017 to 2019',
       concurrentWith: 'HowToMoodle (2012 to 2018)',
       summaryLines: [
-        'Co-founded a Moodle technical support, hosting and development business (2017 to 2019), alongside HowToMoodle.',
+        'Co-founded a Moodle technical support, hosting and development business, alongside HowToMoodle.',
       ],
       description: `I co-founded a Moodle technical support, hosting and development business. We built plugins, migrated sites and ran upgrades. PriorsVLE is a virtual learning environment (VLE) business. We worked with schools, colleges and businesses, including sites owned by the customer or by third parties.
 
@@ -222,10 +218,10 @@ export function getExperience(): Experience[] {
       dates: '2012 to 2018',
       concurrentWith: 'PriorsVLE (2017 to 2019)',
       summaryLines: [
-        'Supported Moodle and Totara customers and managed Linux hosting, including scripting, upgrades and on-call cover (2012 to 2018).',
+        'Supported Moodle and Totara customers and managed Linux hosting, including scripting, upgrades and on-call cover.',
       ],
       detailLines: [
-        'Automated manual setup and support tasks with scripts, and supported Moodle and Totara customers through setup, upgrades, migrations and troubleshooting, including hosting on-call cover (2012 to 2018).',
+        'Automated manual setup and support tasks with scripts, and supported Moodle and Totara customers through setup, upgrades, migrations and troubleshooting, including hosting on-call cover.',
         'Managed Linux hosting with Apache, PHP, MySQL and MariaDB, and debugged application issues in PHP and MySQL.',
       ],
       description: `I supported Moodle and Totara customers with setup, upgrades, migrations and troubleshooting. I maintained client relationships and kept customers informed during incidents, including 24/7 hosting on-call cover. We agreed the timescales, and the work was done to them.
@@ -244,7 +240,7 @@ export function getExperience(): Experience[] {
       job_title: 'Junior Technical Support',
       dates: '2008 to 2012',
       summaryLines: [
-        'Supported schools and colleges using Moodle, and wrote test plans and automated test scripts (2008 to 2012).',
+        'Supported schools and colleges using Moodle, and wrote test plans and automated test scripts.',
       ],
       description: `I joined i2Q Education, later Capita ITS. I supported schools and colleges using Moodle, and I handled the annual data rollovers in their customised environment before the new academic year. i2Q Education was part of Synetrix.
 
@@ -258,7 +254,7 @@ export function getExperience(): Experience[] {
       job_title: 'Watch & Learn PUBG Professional',
       dates: '17 October to 20 October 2019',
       summaryLines: [
-        'Taught new PUBG players at EGX 2019 in the Watch and Learn area (October 2019).',
+        'Taught new players the basics of PUBG.',
       ],
       description: `epic.LAN brought me in to teach new players in their Watch & Learn area during EGX 2019. I spent four days running 30-minute sessions, teaching people the basics of PUBG, showing them how to improve, and giving console players a chance to try the PC version. PUBG is PLAYERUNKNOWN'S BATTLEGROUNDS.
 
@@ -268,12 +264,12 @@ export function getExperience(): Experience[] {
     },
     {
       category: 'community',
-      company: 'Chicken4Charity - SpecialEffect',
+      company: 'Chicken4Charity for SpecialEffect',
       link: 'https://www.specialeffect.org.uk',
       job_title: 'PUBG Observer',
       dates: '26 July 2019',
       summaryLines: [
-        'Volunteered as a PUBG observer at SpecialEffect Chicken4Charity (July 2019).',
+        'Helped run matches and in-game cameras for the tournament.',
       ],
       description: `I volunteered at SpecialEffect's Chicken4Charity 2019 PUBG tournament. It had 20 teams from the UK games industry.
 
@@ -286,7 +282,7 @@ export function getExperience(): Experience[] {
       job_title: 'Volunteer Presenter and Producer',
       dates: '2012 to 2014',
       summaryLines: [
-        'Hosted and produced weekly shows at Newport community radio (2012 to 2014).',
+        'Hosted and produced weekly shows at Newport community radio.',
       ],
       description: `I hosted and produced two weekly shows at Newport's community radio station. One covered new, upcoming and rarely heard artists. The other focused on dance, trance and UK hardcore.
 

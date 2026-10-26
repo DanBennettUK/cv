@@ -8,7 +8,6 @@ export default function ImpactHighlights() {
       {impactHighlights.map((highlight) => (
         <article key={highlight.title} className="impact-item">
           <h3>{highlight.title}</h3>
-          <p className="role-meta">{highlight.label}</p>
           <p>{highlight.description}</p>
         </article>
       ))}

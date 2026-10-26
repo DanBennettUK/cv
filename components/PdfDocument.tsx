@@ -135,7 +135,6 @@ function CreatorPdf() {
 
 function AiPdf() {
   const config = getConfig();
-  const otherEmployment = earlierEmploymentOrder.filter((company) => company !== 'HowToMoodle');
   return (
     <PdfShell className="pdf-ai">
       <ProfileBlock paragraphs={[config.tagline, aiMethod]} />
@@ -150,7 +149,7 @@ function AiPdf() {
       </section>
       <section aria-labelledby="pdf-earlier-heading">
         <h2 id="pdf-earlier-heading">Earlier experience</h2>
-        <SummaryRoles companies={['HowToMoodle', ...otherEmployment]} detailedCompany="HowToMoodle" />
+        <SummaryRoles companies={earlierEmploymentOrder} detailedCompany="HowToMoodle" />
       </section>
       <section aria-labelledby="pdf-community-heading">
         <h2 id="pdf-community-heading">Community and volunteering</h2>

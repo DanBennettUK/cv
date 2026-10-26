@@ -41,6 +41,7 @@ npm run build
 ├── public/                 # Static assets
 │   ├── assets/             # Images (dan.jpg)
 │   ├── Dan-Bennett-Creator-Partnerships.pdf
+│   ├── Dan-Bennett-CV.pdf
 │   ├── Dan-Bennett-AI-and-Ops.pdf
 │   └── Dan-Bennett-CV-US.pdf
 ```
@@ -81,7 +82,7 @@ The site is the full CV. Three shorter PDFs are printed from the same content, f
 npm run pdf
 ```
 
-This checks the copy, runs a production build, serves the static output locally and prints each `/pdf/` page with Chromium. Set `CHROMIUM_BIN` if Chromium is not installed at a standard path and `PYTHON_BIN` if Python is not available as `python3`. The files land in `public/` and are copied into `dist/`.
+This runs a production build, checks the copy, serves the static output locally and prints each `/pdf/` page with Chromium. Set `CHROMIUM_BIN` if Chromium is not installed at a standard path and `PYTHON_BIN` if Python is not available as `python3`. The files land in `public/` and are copied into `dist/`. `Dan-Bennett-CV.pdf` is the same file as the creator PDF, kept so the previous public link still resolves.
 
 Verify page counts and content after generation:
 

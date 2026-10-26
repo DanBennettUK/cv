@@ -541,8 +541,7 @@ button {
 
   .profile-copy,
   .lede,
-  .pdf-cv p,
-  .pdf-cv li {
+  .pdf-cv p {
     max-width: none;
     width: 100%;
   }
@@ -632,6 +631,53 @@ button {
   .pdf-cv {
     font-size: 10.5pt;
     line-height: 1.35;
+  }
+
+  .pdf-cv .contact-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.85rem;
+    margin-top: 0.35rem;
+  }
+
+  .pdf-cv .contact-list li {
+    display: inline-flex;
+    width: auto;
+    margin: 0;
+  }
+
+  .pdf-cv .contact-list a {
+    display: inline-flex;
+    width: auto;
+    align-items: baseline;
+    gap: 0.3rem;
+  }
+
+  .pdf-cv .contact-text {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.3rem;
+  }
+
+  .pdf-cv ul {
+    list-style: disc outside;
+  }
+
+  .pdf-cv li {
+    display: list-item;
+    width: auto;
+  }
+
+  .pdf-cv .role-titles,
+  .pdf-cv .contact-list {
+    list-style: none;
+  }
+
+  .pdf-cv .role-titles li,
+  .pdf-cv .contact-list li {
+    display: flex;
+    list-style: none;
   }
 
   .pdf-cv section {

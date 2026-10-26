@@ -111,6 +111,12 @@ try {
     copyFileSync(temporaryPdf, outputPath);
     copyFileSync(outputPath, join(distDir, variant.fileName));
     console.log(`Generated ${outputPath}`);
+    if (variant.id === 'creator') {
+      const aliasPath = resolve(root, 'public', 'Dan-Bennett-CV.pdf');
+      copyFileSync(outputPath, aliasPath);
+      copyFileSync(outputPath, join(distDir, 'Dan-Bennett-CV.pdf'));
+      console.log(`Generated ${aliasPath}`);
+    }
   }
 } finally {
   server.kill('SIGTERM');

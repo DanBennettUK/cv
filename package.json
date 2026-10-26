@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint app components lib --ext .ts,.tsx",
     "check": "python3 scripts/check-copy.py",
-    "pdf": "python3 scripts/check-copy.py && npm run build && node scripts/generate-pdf.mjs",
+    "pdf": "npm run build && python3 scripts/check-copy.py && node scripts/generate-pdf.mjs",
     "pdf:generate": "node scripts/generate-pdf.mjs"
   },
   "dependencies": {

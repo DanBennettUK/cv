@@ -107,7 +107,15 @@ def main():
             if needle not in pdf_text:
                 errors.append(f"{label}: PDF text does not include {required}")
 
-        errors.extend(scan_text(f"{label} pdf", raw_text))
+        errors.extend(scan_text(f"{label} pdf", raw_text, visible=True))
+
+        if label == "creator":
+            alias = root / "public" / "Dan-Bennett-CV.pdf"
+            deployed_alias = root / "dist" / "Dan-Bennett-CV.pdf"
+            if not alias.is_file() or alias.read_bytes() != pdf_path.read_bytes():
+                errors.append("creator: Dan-Bennett-CV.pdf is not a copy of the creator PDF")
+            elif not deployed_alias.is_file() or deployed_alias.read_bytes() != pdf_path.read_bytes():
+                errors.append("creator: dist/Dan-Bennett-CV.pdf differs from the creator PDF")
 
         if not deployed_pdf.is_file() or deployed_pdf.read_bytes() != pdf_path.read_bytes():
             errors.append(f"{label}: the deployed PDF differs from the generated download")

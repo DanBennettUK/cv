@@ -12,7 +12,7 @@ const experienceOrder = [
   'PUBG Reddit (r/PUBATTLEGROUNDS)',
   'PriorsVLE',
   'EGX & epic.LAN',
-  'Chicken4Charity - SpecialEffect',
+  'Chicken4Charity for SpecialEffect',
   'HowToMoodle',
   'NovaFM',
   'Capita ITS (ex-i2Q Education)',

@@ -36,7 +36,6 @@ export interface Experience {
 
 export interface ImpactHighlight {
   title: string;
-  label: string;
   description: string;
 }
 

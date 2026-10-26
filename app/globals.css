@@ -293,6 +293,15 @@ button {
   color: var(--accent);
 }
 
+.pdf-cv .contact-mark {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+}
+
 .project a,
 .repo-list a {
   overflow-wrap: anywhere;
@@ -650,9 +659,9 @@ button {
 
   .pdf-cv .contact-list {
     display: flex;
-    flex-flow: row wrap;
-    column-gap: 1.15rem;
-    row-gap: 0.06rem;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    column-gap: 0.8rem;
     margin-top: 0.3rem;
     padding-left: 0;
     list-style: none;
@@ -670,8 +679,8 @@ button {
     display: flex;
     width: auto;
     align-items: baseline;
-    gap: 0.35rem;
-    font-size: 9.25pt;
+    gap: 0;
+    font-size: 8.75pt;
     font-weight: 400;
     line-height: 1.3;
     white-space: nowrap;
@@ -681,11 +690,7 @@ button {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: baseline;
-    gap: 0.35rem;
-  }
-
-  .pdf-cv .contact-mark {
-    display: none;
+    gap: 0;
   }
 
   .pdf-cv ul {

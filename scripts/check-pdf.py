@@ -22,7 +22,16 @@ scan_text = check_copy.scan_text
 
 REQUIRED_TEXT = (
     "dan@danbennett.me",
+    "danbennett.me",
+    "linkedin.com/in/danbennettuk",
+    "github.com/DanBennettUK",
+)
+
+REQUIRED_LINKS = (
+    "mailto:dan@danbennett.me",
+    "https://danbennett.me",
     "https://www.linkedin.com/in/danbennettuk",
+    "https://github.com/DanBennettUK",
 )
 
 
@@ -99,6 +108,42 @@ def required_errors(label, pdf_text):
     ]
 
 
+def annotation_uris(reader):
+    found = []
+    for page in reader.pages:
+        annots = page.get("/Annots") or []
+        for annot in annots:
+            action = annot.get_object().get("/A")
+            if action is None:
+                continue
+            if hasattr(action, "get_object"):
+                action = action.get_object()
+            uri = action.get("/URI") if hasattr(action, "get") else None
+            if uri is not None:
+                found.append(str(uri))
+    return found
+
+
+def link_present(required, found):
+    return required in found or f"{required}/" in found
+
+
+def link_errors(label, reader):
+    found = annotation_uris(reader)
+    return [
+        f"{label}: PDF is missing link {required}"
+        for required in REQUIRED_LINKS
+        if not link_present(required, found)
+    ]
+
+
+def icon_errors(label, html_path):
+    html = html_path.read_text(encoding="utf-8")
+    if "contact-mark" in html:
+        return [f"{label}: contact icons are still in the PDF page"]
+    return []
+
+
 def alias_errors(root, pdf_path):
     alias = root / "public" / "Dan-Bennett-CV.pdf"
     deployed_alias = root / "dist" / "Dan-Bennett-CV.pdf"
@@ -133,6 +178,8 @@ def check_variant(root, variant):
     errors.extend(content_errors(label, blocks, pdf_text))
     errors.extend(page_errors(label, len(reader.pages), variant["pages"]))
     errors.extend(required_errors(label, pdf_text))
+    errors.extend(link_errors(label, reader))
+    errors.extend(icon_errors(label, html_path))
     errors.extend(scan_text(f"{label} pdf", raw_text, visible=True))
     if label == "creator":
         errors.extend(alias_errors(root, pdf_path))

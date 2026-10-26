@@ -20,9 +20,9 @@ export const location = 'Amsterdam, Netherlands';
 
 export const workRights = 'Right to work in the UK and the Netherlands. Open to remote.';
 
-export const earlierWork = 'At KRAFTON since December 2020. Earlier work includes APT Solutions, HowToMoodle, PriorsVLE and Capita ITS, plus community roles with PUBG Reddit, EGX, SpecialEffect and NovaFM.';
+export const earlierWork = 'At KRAFTON since December 2020. Earlier work includes APT Solutions, PriorsVLE, HowToMoodle and Capita ITS, plus community roles with PUBG Reddit, EGX, SpecialEffect and NovaFM.';
 
-export const usEarlierLine = 'Earlier experience includes service desk work at APT Solutions, Moodle support, Linux hosting and scripting at HowToMoodle, a director role at PriorsVLE, and junior technical support at Capita ITS.';
+export const usEarlierLine = 'Earlier experience includes service desk work at APT Solutions, a director role at PriorsVLE, Moodle support, Linux hosting and scripting at HowToMoodle, and junior technical support at Capita ITS.';
 
 export const usCommunityLine = 'Community work includes leading a 100k+ member PUBG subreddit, plus EGX, SpecialEffect and NovaFM.';
 
@@ -99,8 +99,8 @@ export const publicRepos: PublicRepo[] = [
 
 export const earlierEmploymentOrder = [
   'APT Solutions',
-  'HowToMoodle',
   'PriorsVLE',
+  'HowToMoodle',
   'Capita ITS (ex-i2Q Education)',
 ];
 

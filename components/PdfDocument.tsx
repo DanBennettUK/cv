@@ -24,7 +24,7 @@ function PdfShell({ children, className = '' }: { children: ReactNode; className
         <p className="cv-title">{config.title}</p>
         <p className="cv-place">{config.location}</p>
         <p>{config.workRights}</p>
-        <ContactList config={config} />
+        <ContactList config={config} print />
       </header>
       {children}
     </main>

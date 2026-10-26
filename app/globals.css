@@ -590,12 +590,6 @@ button {
     border-left-width: 0;
   }
 
-  .contact-list a {
-    padding: 0;
-    border: 0;
-    background: transparent;
-  }
-
   .cv h1 {
     font-size: 22pt;
   }
@@ -667,6 +661,7 @@ button {
   .pdf-cv li {
     display: list-item;
     width: auto;
+    margin: 0.12rem 0;
   }
 
   .pdf-cv .role-titles,
@@ -701,10 +696,6 @@ button {
 
   .pdf-cv p {
     margin-top: 0.28rem;
-  }
-
-  .pdf-cv li {
-    margin: 0.12rem 0;
   }
 
   .pdf-ai {

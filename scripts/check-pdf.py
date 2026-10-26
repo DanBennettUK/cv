@@ -69,59 +69,84 @@ def printable_blocks(html_path):
     return parser.blocks
 
 
+def missing_file(label, path, root):
+    if path.is_file():
+        return []
+    return [f"{label}: missing {path.relative_to(root)}"]
+
+
+def content_errors(label, blocks, pdf_text):
+    if not blocks:
+        return [f"{label}: no CV content found in the static export"]
+    missing = [text for text in blocks if normalize(text) not in pdf_text]
+    if not missing:
+        return []
+    detail = "\n".join(f"- {text}" for text in missing)
+    return [f"{label}: PDF is missing CV content:\n{detail}"]
+
+
+def page_errors(label, found, expected):
+    if found == expected:
+        return []
+    return [f"{label}: expected {expected} pages, found {found}"]
+
+
+def required_errors(label, pdf_text):
+    return [
+        f"{label}: PDF text does not include {required}"
+        for required in REQUIRED_TEXT
+        if normalize(required) not in pdf_text
+    ]
+
+
+def alias_errors(root, pdf_path):
+    alias = root / "public" / "Dan-Bennett-CV.pdf"
+    deployed_alias = root / "dist" / "Dan-Bennett-CV.pdf"
+    if not alias.is_file() or alias.read_bytes() != pdf_path.read_bytes():
+        return ["creator: Dan-Bennett-CV.pdf is not a copy of the creator PDF"]
+    if not deployed_alias.is_file() or deployed_alias.read_bytes() != pdf_path.read_bytes():
+        return ["creator: dist/Dan-Bennett-CV.pdf differs from the creator PDF"]
+    return []
+
+
+def deploy_errors(label, pdf_path, deployed_pdf, blocks, pages):
+    if not deployed_pdf.is_file() or deployed_pdf.read_bytes() != pdf_path.read_bytes():
+        return [f"{label}: the deployed PDF differs from the generated download"]
+    print(f"Verified {label}: {len(blocks)} text blocks across {pages} pages.")
+    return []
+
+
+def check_variant(root, variant):
+    label = variant["id"]
+    html_path = root / "dist" / "pdf" / label / "index.html"
+    pdf_path = root / "public" / variant["fileName"]
+    deployed_pdf = root / "dist" / variant["fileName"]
+    gaps = missing_file(label, html_path, root) + missing_file(label, pdf_path, root)
+    if gaps:
+        return gaps
+
+    blocks = printable_blocks(html_path)
+    reader = PdfReader(pdf_path)
+    raw_text = "\n".join(page.extract_text() or "" for page in reader.pages)
+    pdf_text = normalize(raw_text)
+    errors = []
+    errors.extend(content_errors(label, blocks, pdf_text))
+    errors.extend(page_errors(label, len(reader.pages), variant["pages"]))
+    errors.extend(required_errors(label, pdf_text))
+    errors.extend(scan_text(f"{label} pdf", raw_text, visible=True))
+    if label == "creator":
+        errors.extend(alias_errors(root, pdf_path))
+    errors.extend(deploy_errors(label, pdf_path, deployed_pdf, blocks, len(reader.pages)))
+    return errors
+
+
 def main():
     root = Path(__file__).resolve().parent.parent
-    variants = json.loads((root / "lib" / "pdf-variants.json").read_text(encoding="utf-8"))["variants"]
+    variant_file = root / "lib" / "pdf-variants.json"
+    variants = json.loads(variant_file.read_text(encoding="utf-8"))["variants"]
     errors = []
-
     for variant in variants:
-        html_path = root / "dist" / "pdf" / variant["id"] / "index.html"
-        pdf_path = root / "public" / variant["fileName"]
-        deployed_pdf = root / "dist" / variant["fileName"]
-        label = variant["id"]
-
-        if not html_path.is_file():
-            errors.append(f"{label}: missing {html_path.relative_to(root)}")
-            continue
-        if not pdf_path.is_file():
-            errors.append(f"{label}: missing {pdf_path.relative_to(root)}")
-            continue
-
-        blocks = printable_blocks(html_path)
-        if not blocks:
-            errors.append(f"{label}: no CV content found in the static export")
-            continue
-
-        reader = PdfReader(pdf_path)
-        raw_text = "\n".join(page.extract_text() or "" for page in reader.pages)
-        pdf_text = normalize(raw_text)
-        missing = [text for text in blocks if normalize(text) not in pdf_text]
-        if missing:
-            errors.append(f"{label}: PDF is missing CV content:\n" + "\n".join(f"- {text}" for text in missing))
-
-        if len(reader.pages) != variant["pages"]:
-            errors.append(f"{label}: expected {variant['pages']} pages, found {len(reader.pages)}")
-
-        normalized_required = [normalize(text) for text in REQUIRED_TEXT]
-        for required, needle in zip(REQUIRED_TEXT, normalized_required):
-            if needle not in pdf_text:
-                errors.append(f"{label}: PDF text does not include {required}")
-
-        errors.extend(scan_text(f"{label} pdf", raw_text, visible=True))
-
-        if label == "creator":
-            alias = root / "public" / "Dan-Bennett-CV.pdf"
-            deployed_alias = root / "dist" / "Dan-Bennett-CV.pdf"
-            if not alias.is_file() or alias.read_bytes() != pdf_path.read_bytes():
-                errors.append("creator: Dan-Bennett-CV.pdf is not a copy of the creator PDF")
-            elif not deployed_alias.is_file() or deployed_alias.read_bytes() != pdf_path.read_bytes():
-                errors.append("creator: dist/Dan-Bennett-CV.pdf differs from the creator PDF")
-
-        if not deployed_pdf.is_file() or deployed_pdf.read_bytes() != pdf_path.read_bytes():
-            errors.append(f"{label}: the deployed PDF differs from the generated download")
-        else:
-            print(f"Verified {label}: {len(blocks)} text blocks across {len(reader.pages)} pages.")
-
+        errors.extend(check_variant(root, variant))
     if errors:
         sys.exit("PDF check failed:\n" + "\n".join(errors))
 

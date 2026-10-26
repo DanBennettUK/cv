@@ -1,4 +1,4 @@
-import { capabilityGroups } from '@/lib/data';
+import { aiMethod, capabilityGroups, publicRepos } from '@/lib/data';
 
 export default function AIAndSystems() {
   return (
@@ -19,20 +19,15 @@ export default function AIAndSystems() {
 
       <section id="ai-systems" aria-labelledby="ai-systems-heading">
         <h2 id="ai-systems-heading">AI and tools</h2>
-        <p>
-          As well as creator partnerships, I build AI tools for research, reporting, documentation, coding and task coordination.
-        </p>
-        <p>
-          I write down the inputs and the sources. A person reviews the result. I write the handover so the next person can check it and continue.
-        </p>
-
-        <h3>How I work with AI</h3>
-        <ul>
-          <li>I use AI tools for research, analysis, drafting, coding and documentation. I treat the output as a draft, and I check it.</li>
-          <li>I write the inputs, the source links, the handover, the review and what done means, so the next session can continue.</li>
-          <li>I connect agents to tools through CLI, MCP and REST. Credentials, permissions and anything sent outside stay behind a check I approve.</li>
-          <li>I keep memory, task history and changes in files I can read and undo. I do not leave the record as model output I cannot check.</li>
-          <li>I check the output against the source, the tests, the build and the place it is meant to go before I call it finished.</li>
+        <p>{aiMethod}</p>
+        <ul className="repo-list">
+          {publicRepos.map((repo) => (
+            <li key={repo.url}>
+              <a href={repo.url}>{repo.name}</a>
+              <span className="repo-url">{repo.url}</span>
+              <span className="repo-note">{repo.description}</span>
+            </li>
+          ))}
         </ul>
       </section>
     </>

@@ -1,0 +1,22 @@
+{
+  "variants": [
+    {
+      "id": "creator",
+      "fileName": "Dan-Bennett-Creator-Partnerships.pdf",
+      "label": "Creator partnerships PDF",
+      "pages": 2
+    },
+    {
+      "id": "ai",
+      "fileName": "Dan-Bennett-AI-and-Ops.pdf",
+      "label": "AI and ops PDF",
+      "pages": 2
+    },
+    {
+      "id": "us",
+      "fileName": "Dan-Bennett-CV-US.pdf",
+      "label": "US CV PDF",
+      "pages": 1
+    }
+  ]
+}

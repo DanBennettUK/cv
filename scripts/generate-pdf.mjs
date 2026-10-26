@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 
 const root = process.cwd();
 const distDir = resolve(root, 'dist');
-const outputPath = resolve(root, 'public', 'Dan-Bennett-CV.pdf');
+const variants = JSON.parse(readFileSync(resolve(root, 'lib', 'pdf-variants.json'), 'utf8')).variants;
 const chromiumCandidates = [
   process.env.CHROMIUM_BIN,
   '/usr/local/bin/chromium',
@@ -80,36 +80,38 @@ const server = spawn(process.env.PYTHON_BIN || 'python3', ['-m', 'http.server', 
 });
 server.on('error', (error) => console.error(`Local preview failed: ${error.message}`));
 const profileDir = mkdtempSync(join(tmpdir(), 'cv-chromium-'));
-const temporaryPdf = join(profileDir, 'cv.pdf');
 mkdirSync(resolve(root, 'public'), { recursive: true });
 
 try {
-  // Print the full CV, not the deliberately abbreviated /resume/ view.
-  const cvUrl = `http://127.0.0.1:${port}/`;
-  await waitFor(cvUrl);
-  await run(chromiumCandidates[0], [
-    '--headless=new',
-    '--no-sandbox',
-    '--disable-gpu',
-    '--disable-dev-shm-usage',
-    '--disable-background-networking',
-    '--disable-sync',
-    '--no-first-run',
-    '--no-pdf-header-footer',
-    '--run-all-compositor-stages-before-draw',
-    '--virtual-time-budget=3000',
-    `--user-data-dir=${profileDir}`,
-    `--print-to-pdf=${temporaryPdf}`,
-    cvUrl,
-  ]);
+  for (const variant of variants) {
+    const cvUrl = `http://127.0.0.1:${port}/pdf/${variant.id}/`;
+    const temporaryPdf = join(profileDir, `${variant.id}.pdf`);
+    const outputPath = resolve(root, 'public', variant.fileName);
+    await waitFor(cvUrl);
+    await run(chromiumCandidates[0], [
+      '--headless=new',
+      '--no-sandbox',
+      '--disable-gpu',
+      '--disable-dev-shm-usage',
+      '--disable-background-networking',
+      '--disable-sync',
+      '--no-first-run',
+      '--no-pdf-header-footer',
+      '--run-all-compositor-stages-before-draw',
+      '--virtual-time-budget=3000',
+      `--user-data-dir=${profileDir}`,
+      `--print-to-pdf=${temporaryPdf}`,
+      cvUrl,
+    ]);
 
-  if (!existsSync(temporaryPdf) || readFileSync(temporaryPdf).length === 0) {
-    throw new Error('Chromium did not create a usable PDF.');
+    if (!existsSync(temporaryPdf) || readFileSync(temporaryPdf).length === 0) {
+      throw new Error(`Chromium did not create a usable PDF for ${variant.id}.`);
+    }
+
+    copyFileSync(temporaryPdf, outputPath);
+    copyFileSync(outputPath, join(distDir, variant.fileName));
+    console.log(`Generated ${outputPath}`);
   }
-
-  copyFileSync(temporaryPdf, outputPath);
-  copyFileSync(outputPath, join(distDir, 'Dan-Bennett-CV.pdf'));
-  console.log(`Generated ${outputPath}`);
 } finally {
   server.kill('SIGTERM');
   if (dirname(resolve(profileDir)) === resolve(tmpdir())) {

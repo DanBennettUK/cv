@@ -1,20 +1,32 @@
-"""Check that the download includes every printable CV heading and text block.
+"""Check each CV PDF against the page that produced it.
 
 Run after npm run pdf. Requires pypdf (python3 -m pip install pypdf==6.0.0).
 """
 
 from html.parser import HTMLParser
 from pathlib import Path
+import json
 import re
 import sys
 import unicodedata
 
 from pypdf import PdfReader
 
+import importlib.util
+
+_copy_path = Path(__file__).with_name("check-copy.py")
+_copy_spec = importlib.util.spec_from_file_location("check_copy", _copy_path)
+check_copy = importlib.util.module_from_spec(_copy_spec)
+_copy_spec.loader.exec_module(check_copy)
+scan_text = check_copy.scan_text
+
+REQUIRED_TEXT = (
+    "dan@danbennett.me",
+    "https://www.linkedin.com/in/danbennettuk",
+)
+
 
 def normalize(text):
-    # Font extraction can insert spaces, preserve ligatures, or map a hyphen
-    # glyph to a minus sign (for example, the font's numeric "30-minute").
     text = unicodedata.normalize("NFKC", text).replace("\u2212", "-")
     return re.sub(r"\s+", "", text).casefold()
 
@@ -51,22 +63,60 @@ class PrintableContent(HTMLParser):
                 self.blocks.append("".join(text).strip())
 
 
-root = Path(__file__).resolve().parent.parent
-parser = PrintableContent()
-parser.feed((root / "dist/index.html").read_text(encoding="utf-8"))
-if not parser.blocks:
-    sys.exit("No CV content found in the static export.")
+def printable_blocks(html_path):
+    parser = PrintableContent()
+    parser.feed(html_path.read_text(encoding="utf-8"))
+    return parser.blocks
 
-pdf_path = Path(sys.argv[1]) if len(sys.argv) > 1 else root / "public/Dan-Bennett-CV.pdf"
-reader = PdfReader(pdf_path)
-pdf_text = normalize("\n".join(page.extract_text() or "" for page in reader.pages))
-missing = [text for text in parser.blocks if normalize(text) not in pdf_text]
-if missing:
-    sys.exit("PDF is missing CV content:\n" + "\n".join(f"- {text}" for text in missing))
 
-if len(sys.argv) == 1:
-    deployed_pdf = root / "dist/Dan-Bennett-CV.pdf"
-    if deployed_pdf.read_bytes() != pdf_path.read_bytes():
-        sys.exit("The deployed PDF differs from the generated download.")
+def main():
+    root = Path(__file__).resolve().parent.parent
+    variants = json.loads((root / "lib" / "pdf-variants.json").read_text(encoding="utf-8"))["variants"]
+    errors = []
 
-print(f"Verified {len(parser.blocks)} CV text blocks across {len(reader.pages)} PDF pages.")
+    for variant in variants:
+        html_path = root / "dist" / "pdf" / variant["id"] / "index.html"
+        pdf_path = root / "public" / variant["fileName"]
+        deployed_pdf = root / "dist" / variant["fileName"]
+        label = variant["id"]
+
+        if not html_path.is_file():
+            errors.append(f"{label}: missing {html_path.relative_to(root)}")
+            continue
+        if not pdf_path.is_file():
+            errors.append(f"{label}: missing {pdf_path.relative_to(root)}")
+            continue
+
+        blocks = printable_blocks(html_path)
+        if not blocks:
+            errors.append(f"{label}: no CV content found in the static export")
+            continue
+
+        reader = PdfReader(pdf_path)
+        raw_text = "\n".join(page.extract_text() or "" for page in reader.pages)
+        pdf_text = normalize(raw_text)
+        missing = [text for text in blocks if normalize(text) not in pdf_text]
+        if missing:
+            errors.append(f"{label}: PDF is missing CV content:\n" + "\n".join(f"- {text}" for text in missing))
+
+        if len(reader.pages) != variant["pages"]:
+            errors.append(f"{label}: expected {variant['pages']} pages, found {len(reader.pages)}")
+
+        normalized_required = [normalize(text) for text in REQUIRED_TEXT]
+        for required, needle in zip(REQUIRED_TEXT, normalized_required):
+            if needle not in pdf_text:
+                errors.append(f"{label}: PDF text does not include {required}")
+
+        errors.extend(scan_text(f"{label} pdf", raw_text))
+
+        if not deployed_pdf.is_file() or deployed_pdf.read_bytes() != pdf_path.read_bytes():
+            errors.append(f"{label}: the deployed PDF differs from the generated download")
+        else:
+            print(f"Verified {label}: {len(blocks)} text blocks across {len(reader.pages)} pages.")
+
+    if errors:
+        sys.exit("PDF check failed:\n" + "\n".join(errors))
+
+
+if __name__ == "__main__":
+    main()

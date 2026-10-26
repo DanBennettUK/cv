@@ -1,18 +1,17 @@
 export interface SiteConfig {
   name: string;
   title: string;
-  tagline?: string;
-  current_focus?: string;
+  tagline: string;
+  location: string;
+  workRights: string;
+  earlierWork: string;
   email: string;
   website: string;
-  twitter_username?: string;
-  github_username?: string;
-  instagram_username?: string;
-  linkedin_username?: string;
+  githubUrl: string;
+  linkedinUrl: string;
   about_profile_image?: string;
-  about_content: string;
+  aboutParagraphs: string[];
   experience_title?: string;
-  more_content?: string;
   footer_show_references?: boolean;
 }
 
@@ -26,14 +25,13 @@ export interface Experience {
   link?: string;
   job_title: string;
   dates: string;
-  quote?: string;
   description: string;
   category: 'current' | 'employment' | 'community';
-  tenure?: string;
-  previousRole?: { title: string; dates: string };
-  titles?: RoleTitle[];
   concurrentWith?: string;
+  titles?: RoleTitle[];
   clusters?: { title: string; bullets: string[] }[];
+  summaryLines?: string[];
+  detailLines?: string[];
 }
 
 export interface ImpactHighlight {
@@ -47,14 +45,8 @@ export interface CapabilityGroup {
   items: string[];
 }
 
-export interface ResumeRole {
-  company: string;
-  title: string;
-  dates: string;
-  tenure?: string;
-  previousRole?: { title: string; dates: string };
-  titles?: RoleTitle[];
-  concurrentWith?: string;
-  summary?: string;
-  bullets: string[];
+export interface PublicRepo {
+  name: string;
+  url: string;
+  description: string;
 }

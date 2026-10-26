@@ -29,7 +29,7 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
 }
 
 function ExperienceItem({ experience }: { experience: Experience }) {
-  const { company, link, job_title, dates, tenure, previousRole, concurrentWith, description, clusters } = experience;
+  const { company, link, job_title, dates, concurrentWith, description, clusters } = experience;
   const anchor = roleAnchor[company];
 
   return (
@@ -60,10 +60,6 @@ function ExperienceItem({ experience }: { experience: Experience }) {
         <p className="role-title">{job_title}</p>
       )}
       {concurrentWith && <p className="role-meta">Concurrent with {concurrentWith}</p>}
-      {!experience.titles?.length && tenure && <p className="role-meta">{tenure}</p>}
-      {!experience.titles?.length && previousRole && (
-        <p className="role-meta">Previous role: {previousRole.title}, {previousRole.dates}</p>
-      )}
 
       <div>
         <ReactMarkdown

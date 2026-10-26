@@ -1,4 +1,4 @@
-import { getConfig, getExperience } from '@/lib/data';
+import { getConfig, getExperience, metaDescription } from '@/lib/data';
 import Header from '@/components/Header';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
@@ -25,13 +25,7 @@ export default function Home() {
     ...experienceOrder.flatMap((company) => listed.filter((item) => item.company === company)),
     ...listed.filter((item) => !experienceOrder.includes(item.company)),
   ];
-  const sameAs = [
-    config.website,
-    config.github_username && `https://github.com/${config.github_username}`,
-    config.linkedin_username && `https://www.linkedin.com/in/${config.linkedin_username}`,
-    config.twitter_username && `https://twitter.com/${config.twitter_username}`,
-    config.instagram_username && `https://www.instagram.com/${config.instagram_username}`,
-  ].filter((value): value is string => Boolean(value));
+  const sameAs = [config.website, config.githubUrl, config.linkedinUrl];
 
   const personJsonLd = {
     '@context': 'https://schema.org',
@@ -39,7 +33,7 @@ export default function Home() {
     name: config.name,
     url: 'https://cv.danbennett.me/',
     jobTitle: config.title,
-    description: config.tagline,
+    description: metaDescription,
     worksFor: {
       '@type': 'Organization',
       name: 'KRAFTON',
@@ -53,8 +47,8 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <Header config={config} />
       <About config={config} />
-      <Experience experiences={experiences} />
       <ImpactHighlights />
+      <Experience experiences={experiences} />
       <AIAndSystems />
       <Footer config={config} />
     </main>

@@ -40,7 +40,9 @@ npm run build
 │   └── types.ts            # TypeScript types
 ├── public/                 # Static assets
 │   ├── assets/             # Images (dan.jpg)
-│   └── Dan-Bennett-CV.pdf  # Generated full CV PDF
+│   ├── Dan-Bennett-Creator-Partnerships.pdf
+│   ├── Dan-Bennett-AI-and-Ops.pdf
+│   └── Dan-Bennett-CV-US.pdf
 ```
 
 ## 🎨 Customization
@@ -73,29 +75,29 @@ Toggle with the sun/moon button in the top-right corner.
 
 ### Full CV PDF
 
-The download includes the entire main CV page, including all employment, community and AI details. The optional `/resume/` page remains an abbreviated view. Generate the downloadable A4 PDF after a content change with:
+The site is the full CV. Three shorter PDFs are printed from the same content, for creator partnerships (2 pages), AI and ops (2 pages), and a US one-page CV. `/resume/` stays a shorter web view. Generate the PDFs after a content change with:
 
 ```bash
 npm run pdf
 ```
 
-This runs a production build, serves the static output locally and prints `/` with Chromium using the site's print styles. Set `CHROMIUM_BIN` if Chromium is not installed at a standard path and `PYTHON_BIN` if Python is not available as `python3`. The generated file is `public/Dan-Bennett-CV.pdf`, also copied into `dist/`.
+This checks the copy, runs a production build, serves the static output locally and prints each `/pdf/` page with Chromium. Set `CHROMIUM_BIN` if Chromium is not installed at a standard path and `PYTHON_BIN` if Python is not available as `python3`. The files land in `public/` and are copied into `dist/`.
 
-Verify content completeness after generation:
+Verify page counts and content after generation:
 
 ```bash
 python3 -m pip install pypdf==6.0.0
 python3 scripts/check-pdf.py
 ```
 
-This checks every printable heading, paragraph and bullet from the built CV against the PDF's extracted text, and checks that the deployed copy matches. GitHub Pages runs generation and verification before uploading the deployment.
+`scripts/check-copy.py` scans the CV sources. `scripts/check-pdf.py` checks each PDF against the page that produced it, including the page count. GitHub Pages runs both checks before uploading the deployment. Pull requests run the same checks and do not publish the site.
 
 ### GitHub Pages
 
 The custom domain is deployed from the `master` branch through `.github/workflows/deploy.yml`. GitHub Pages is the authoritative production deployment; local builds and any unrelated preview-provider status do not represent the live site. `cv.danbennett.me` stays on `master` only.
 
 1. Push to `master` or run the workflow manually.
-2. The workflow installs dependencies, builds the static export, regenerates and verifies the full CV PDF, and deploys `dist/`.
+2. The workflow installs dependencies, builds the static export, checks the copy, regenerates and verifies the CV PDFs, and deploys `dist/`.
 3. Verify the live URL and a distinctive content marker after deployment.
 
 A push to `modern-rewrite` uses the same deploy job and the same Pages site. It is not a separate preview.

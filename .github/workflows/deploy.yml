@@ -34,7 +34,10 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Generate and verify full CV PDF
+      - name: Check CV copy
+        run: python3 scripts/check-copy.py
+
+      - name: Generate and verify CV PDFs
         env:
           CHROMIUM_BIN: /usr/bin/google-chrome
         run: |

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { SiteConfig } from '@/lib/types';
-import ReactMarkdown from 'react-markdown';
 
 interface AboutProps {
   config: SiteConfig;
@@ -27,19 +26,12 @@ export default function About({ config }: AboutProps) {
               height={400}
               className="profile-photo"
             />
-            <p className="profile-caption">Dan Bennett - Amsterdam, NL</p>
+            <p className="profile-caption">Dan Bennett, Amsterdam, Netherlands</p>
           </div>
         )}
 
-        <div>
-          <ReactMarkdown
-            components={{
-              p: ({ children }) => <p>{children}</p>,
-              strong: ({ children }) => <strong>{children}</strong>,
-            }}
-          >
-            {config.about_content}
-          </ReactMarkdown>
+        <div className="profile-copy">
+          {config.aboutParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       </div>
     </section>

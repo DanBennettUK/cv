@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Source_Sans_3 } from 'next/font/google';
+import { getConfig, metaDescription } from '@/lib/data';
 import './globals.css';
 
 const sourceSans = Source_Sans_3({
@@ -10,39 +11,31 @@ const sourceSans = Source_Sans_3({
 });
 
 const siteUrl = 'https://cv.danbennett.me/';
+const config = getConfig();
+const pageTitle = `${config.name} | ${config.title}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: { canonical: siteUrl },
-  authors: [{ name: 'Dan Bennett', url: siteUrl }],
-  creator: 'Dan Bennett',
-  title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
-  description:
-    'Associate Creator Partnerships Manager at KRAFTON. Creator partnerships, Partner Program operations and reporting for PUBG: BATTLEGROUNDS across Western markets.',
+  authors: [{ name: config.name, url: siteUrl }],
+  creator: config.name,
+  title: pageTitle,
+  description: metaDescription,
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
-    description:
-      'Creator partnerships, Partner Program operations and reporting across Western markets.',
+    title: pageTitle,
+    description: metaDescription,
     url: siteUrl,
-    siteName: 'Dan Bennett',
+    siteName: config.name,
     type: 'website',
     images: [
       {
         url: '/assets/dan.jpg',
-        alt: 'Dan Bennett',
+        alt: config.name,
       },
     ],
-  },
-  twitter: {
-    card: 'summary',
-    creator: '@DanBennettUK',
-    title: 'Dan Bennett | Associate Creator Partnerships Manager, PUBG West | KRAFTON',
-    description:
-      'Creator partnerships, Partner Program operations and reporting across Western markets.',
-    images: ['/assets/dan.jpg'],
   },
 };
 

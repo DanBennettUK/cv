@@ -29,6 +29,8 @@ SOURCE_PATTERNS = (
     ("Streaming Partnership", re.compile(r"Streaming\s+Partnership", re.I)),
     ("budget", re.compile(r"budget", re.I)),
     ("redundancy", re.compile(r"redundan", re.I)),
+    ("KCN", re.compile(r"\bKCN\b")),
+    ("Partner Hub", re.compile(r"Partner\s+Hub", re.I)),
     ("300+", re.compile(r"300\+")),
 )
 

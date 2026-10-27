@@ -35,7 +35,7 @@ const kraftonBulletText = {
   completion: 'Ran update campaigns on PC and console. On a recent PC streaming campaign, 89 of 93 participating Partners completed.',
   regions: 'Delivered creator campaigns across multiple regions and languages with HQ, regional, marketing and media teams, agencies and creators.',
   campaignPlans: 'Write paid creator campaign plans and submit them to HQ for approval.',
-  migration: 'Migrate Partner Hub to KCN and build creator mission campaigns on the new platform.',
+  migration: 'Build creator mission campaigns on the programme\'s new creator platform.',
   agents: 'Run a set of AI agents that automate campaign operations, reporting and documentation, with a human approval step before anything goes out.',
   dashboard: 'Rebuilt the Partner data dashboard end to end; it replaced spreadsheet tracking and is now the single source of truth for programme reporting.',
   sentiment: 'Produce weekly creator sentiment reporting and monthly programme reporting for HQ leadership.',
@@ -98,7 +98,7 @@ export const projects: ProjectCase[] = [
   {
     title: 'Player-report triage',
     problem: 'Community conduct reports arrived unstructured.',
-    built: 'An automated intake turns them into tracked tickets with evidence and auto-approves high-confidence types.',
+    built: 'An automated intake that turns them into tracked tickets with evidence.',
     tools: 'Python, Jira',
     result: 'High-confidence types are auto-approved.',
   },

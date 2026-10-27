@@ -9,6 +9,7 @@ import {
   getConfig,
   kraftonBullets,
   publicRepos,
+  toolsLine,
   usCommunityLine,
   usEarlierLine,
   type KraftonBulletId,
@@ -114,7 +115,7 @@ function CreatorPdf() {
         <h2 id="pdf-experience-heading">Experience</h2>
         <KraftonBlock
           intro
-          ids={['scope', 'commercial', 'people', 'campaign', 'completion', 'regions']}
+          ids={['scope', 'commercial', 'people', 'campaign', 'completion', 'regions', 'campaignPlans', 'migration', 'agents', 'dashboard', 'sentiment']}
         />
       </section>
       <section aria-labelledby="pdf-earlier-heading">
@@ -140,12 +141,17 @@ function AiPdf() {
       <ProfileBlock paragraphs={[config.tagline, aiMethod]} />
       <section aria-labelledby="pdf-ai-heading">
         <h2 id="pdf-ai-heading">AI and tools</h2>
-        <p>{kraftonBullets.tooling}</p>
+        <ul>
+          {(['agents', 'dashboard', 'sentiment', 'playerReports'] as KraftonBulletId[]).map((id) => (
+            <li key={id}>{kraftonBullets[id]}</li>
+          ))}
+        </ul>
+        <p>{toolsLine}.</p>
         <RepoList />
       </section>
       <section aria-labelledby="pdf-experience-heading">
         <h2 id="pdf-experience-heading">Experience</h2>
-        <KraftonBlock ids={['scope', 'commercial', 'campaign']} />
+        <KraftonBlock ids={['scope', 'commercial', 'campaign', 'campaignPlans', 'migration']} />
       </section>
       <section aria-labelledby="pdf-earlier-heading">
         <h2 id="pdf-earlier-heading">Earlier experience</h2>
@@ -166,13 +172,14 @@ function UsPdf() {
       <ProfileBlock paragraphs={[config.tagline]} />
       <section aria-labelledby="pdf-experience-heading">
         <h2 id="pdf-experience-heading">Experience</h2>
-        <KraftonBlock ids={['scope', 'commercial', 'campaign', 'tooling']} />
+        <KraftonBlock ids={['scope', 'commercial', 'campaign', 'campaignPlans', 'migration', 'agents', 'dashboard', 'sentiment', 'playerReports']} />
         <p>{usEarlierLine}</p>
         <p>{usCommunityLine}</p>
       </section>
       <section aria-labelledby="pdf-ai-heading">
         <h2 id="pdf-ai-heading">AI and tools</h2>
         <p>{`${aiLine} ${aiMethod}`}</p>
+        <p>{toolsLine}.</p>
         <RepoList />
       </section>
     </PdfShell>

@@ -33,7 +33,12 @@ const kraftonBulletText = {
   campaign: 'Planned and oversaw a 16-creator regional streaming campaign delivered with an external agency, and prepared its social posts and assets: delivered all 64 contracted streams, with viewership and watch hours well above target.',
   completion: 'Ran update campaigns on PC and console. On a recent PC streaming campaign, 89 of 93 participating Partners completed.',
   regions: 'Delivered creator campaigns across multiple regions and languages with HQ, regional, marketing and media teams, agencies and creators.',
-  tooling: 'Built the tooling that runs the programme: an automated weekly Partner sentiment report (about three hours of work cut to about five minutes of review), an automated player-report intake and triage system that I designed and operate, and a Partner dashboard that replaced spreadsheet-based Partner management.',
+  campaignPlans: 'Write paid creator campaign plans and submit them to HQ for approval.',
+  migration: 'Build creator mission campaigns on the programme\'s new creator platform.',
+  agents: 'Run a set of AI agents that automate campaign operations, reporting and documentation, with a human approval step before anything goes out.',
+  dashboard: 'Rebuilt the Partner data dashboard end to end; it replaced spreadsheet tracking and is now the single source of truth for programme reporting.',
+  sentiment: 'Produce weekly creator sentiment reporting and monthly programme reporting for HQ leadership.',
+  playerReports: 'Built an automated player-report intake and triage system that I designed and operate.',
 } as const;
 
 export type KraftonBulletId = keyof typeof kraftonBulletText;
@@ -42,8 +47,8 @@ export const kraftonBullets: Record<KraftonBulletId, string> = kraftonBulletText
 
 const kraftonClusters: { title: string; ids: KraftonBulletId[] }[] = [
   { title: 'Partner programme', ids: ['scope', 'commercial', 'people'] },
-  { title: 'Campaigns', ids: ['campaign', 'completion', 'regions'] },
-  { title: 'Tooling', ids: ['tooling'] },
+  { title: 'Campaigns', ids: ['campaign', 'completion', 'regions', 'campaignPlans', 'migration'] },
+  { title: 'Tooling', ids: ['agents', 'dashboard', 'sentiment', 'playerReports'] },
 ];
 
 export const impactHighlights: ImpactHighlight[] = [
@@ -61,6 +66,8 @@ export const impactHighlights: ImpactHighlight[] = [
   },
 ];
 
+export const toolsLine = 'Python, PHP and MySQL, Git, Linux, Tableau and StreamHatchet';
+
 export const capabilityGroups: CapabilityGroup[] = [
   {
     title: 'Creator and Partner operations',
@@ -74,7 +81,7 @@ export const capabilityGroups: CapabilityGroup[] = [
     title: 'AI and tools',
     items: [
       'Workflow automation and AI tooling',
-      'Python, PHP and MySQL, Git and Linux',
+      toolsLine,
     ],
   },
 ];

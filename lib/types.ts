@@ -49,3 +49,11 @@ export interface PublicRepo {
   url: string;
   description: string;
 }
+
+export interface ProjectCase {
+  title: string;
+  problem: string;
+  built: string;
+  tools: string;
+  result: string;
+}

@@ -4,6 +4,7 @@ import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Footer from '@/components/Footer';
 import ImpactHighlights from '@/components/ImpactHighlights';
+import Projects from '@/components/Projects';
 import AIAndSystems from '@/components/AIAndSystems';
 
 const experienceOrder = [
@@ -49,6 +50,7 @@ export default function Home() {
       <About config={config} />
       <ImpactHighlights />
       <Experience experiences={experiences} />
+      <Projects />
       <AIAndSystems />
       <Footer config={config} />
     </main>

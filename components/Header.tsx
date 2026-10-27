@@ -10,6 +10,7 @@ const sections = [
   ['profile', 'Profile'],
   ['impact', 'Current work'],
   ['experience', 'Experience'],
+  ['projects', 'Projects'],
   ['skills', 'Skills'],
   ['ai-systems', 'AI and tools'],
   ['contact', 'Contact'],

@@ -41,12 +41,18 @@ export default function ContactList({ config, showPdf = false, print = false }: 
     }
   }
 
-  return (
-    <ul className="contact-list">
-      {links.map((link) => {
+  const contacts = links.filter((link) => !link.pdf);
+  const downloads = links.filter((link) => link.pdf);
+
+  const list = (items: ContactLink[], className: string, label: string) => (
+    <ul className={className} aria-label={label}>
+      {items.map((link) => {
         const Icon = link.icon;
+        const address = link.address && link.address.startsWith('http')
+          ? printAddress(link.address)
+          : link.address;
         return (
-          <li key={link.label} className={link.pdf ? 'no-print' : undefined}>
+          <li key={link.label}>
             <a
               href={link.href}
               {...(link.pdf ? { download: true } : {})}
@@ -54,13 +60,24 @@ export default function ContactList({ config, showPdf = false, print = false }: 
             >
               {print ? null : <Icon className="contact-mark" aria-hidden="true" />}
               <span className="contact-text">
-                {print ? null : <span className="contact-label">{link.label}</span>}
-                {link.address && <span className="contact-address">{link.address}</span>}
+                {print ? null : (
+                  link.address
+                    ? <span className="visually-hidden">{link.label}</span>
+                    : <span className="contact-label">{link.label}</span>
+                )}
+                {address && <span className="contact-address">{address}</span>}
               </span>
             </a>
           </li>
         );
       })}
     </ul>
+  );
+
+  return (
+    <>
+      {list(contacts, 'contact-list', 'Contact')}
+      {downloads.length > 0 && list(downloads, 'contact-list contact-downloads no-print', 'CV downloads')}
+    </>
   );
 }

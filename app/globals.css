@@ -286,6 +286,88 @@ button {
   color: var(--link);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cv:not(.pdf-cv) .contact-list {
+  gap: 0.1rem 0.55rem;
+  align-items: center;
+  margin-top: 0.65rem;
+}
+
+.cv:not(.pdf-cv) .contact-list a {
+  position: relative;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.1rem;
+  border: 0;
+  background: transparent;
+  color: var(--link);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.cv:not(.pdf-cv) .contact-list a:hover {
+  border-color: transparent;
+  background: transparent;
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+
+.cv:not(.pdf-cv) .contact-address {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.cv:not(.pdf-cv) .contact-text {
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+}
+
+.cv:not(.pdf-cv) .contact-downloads {
+  gap: 0.05rem 0.65rem;
+  margin-top: 0;
+}
+
+.cv:not(.pdf-cv) .contact-downloads a,
+.cv:not(.pdf-cv) .contact-downloads .contact-label {
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cv:not(.pdf-cv) .contact-downloads a:hover {
+  color: var(--link);
+}
+
+.cv:not(.pdf-cv) .contact-downloads .contact-mark {
+  width: 0.85rem;
+  height: 0.85rem;
+  color: currentColor;
+}
+
+@media (min-width: 720px) {
+  .cv:not(.pdf-cv) .contact-list:not(.contact-downloads) {
+    flex-wrap: nowrap;
+  }
+}
+
 .contact-mark {
   width: 0.95rem;
   height: 0.95rem;

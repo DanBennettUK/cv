@@ -8,7 +8,6 @@ import {
   experienceByCompany,
   getConfig,
   kraftonBullets,
-  projects,
   publicRepos,
   toolsLine,
   usCommunityLine,
@@ -145,14 +144,6 @@ function AiPdf() {
         <ul>
           {(['agents', 'dashboard', 'sentiment', 'playerReports'] as KraftonBulletId[]).map((id) => (
             <li key={id}>{kraftonBullets[id]}</li>
-          ))}
-        </ul>
-        <h3>Projects</h3>
-        <ul className="project-summaries">
-          {projects.map((project) => (
-            <li key={project.title}>
-              {`${project.title}. ${project.problem} ${project.built} Tools: ${project.tools}. ${project.result}`}
-            </li>
           ))}
         </ul>
         <p>{toolsLine}.</p>

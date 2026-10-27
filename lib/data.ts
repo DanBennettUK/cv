@@ -2,7 +2,6 @@ import {
   CapabilityGroup,
   Experience,
   ImpactHighlight,
-  ProjectCase,
   PublicRepo,
   SiteConfig,
 } from './types';
@@ -84,30 +83,6 @@ export const capabilityGroups: CapabilityGroup[] = [
       'Workflow automation and AI tooling',
       toolsLine,
     ],
-  },
-];
-
-export const projects: ProjectCase[] = [
-  {
-    title: 'Sentiment reporting',
-    problem: 'A manual weekly report took about three hours.',
-    built: 'Automated the weekly creator sentiment report.',
-    tools: 'Python, LLM agent automation, PostgreSQL, Discord, Confluence and Microsoft Graph APIs',
-    result: 'It now takes about five minutes.',
-  },
-  {
-    title: 'Player-report triage',
-    problem: 'Community conduct reports arrived unstructured.',
-    built: 'An automated intake that turns them into tracked tickets with evidence.',
-    tools: 'Python, Discord API, LLM triage, Jira REST API, PostgreSQL',
-    result: 'High-confidence types are auto-approved.',
-  },
-  {
-    title: 'Partner dashboard',
-    problem: 'Campaign and viewership tracking lived in Excel.',
-    built: 'Rebuilt it as a web dashboard.',
-    tools: 'TypeScript, Next.js, React, Prisma, PostgreSQL, Twitch, YouTube, Kick and PUBG APIs',
-    result: 'Feeds all programme reporting.',
   },
 ];
 

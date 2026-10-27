@@ -384,7 +384,6 @@ button {
   position: absolute !important;
 }
 
-.project a,
 .repo-list a {
   overflow-wrap: anywhere;
 }
@@ -550,8 +549,7 @@ button {
 }
 
 .impact-item,
-.skill-group,
-.project {
+.skill-group {
   margin-top: 0.85rem;
   padding: 0.9rem 1rem 1rem;
   background: var(--panel);
@@ -559,38 +557,8 @@ button {
 }
 
 .impact-item h3,
-.project h3,
 .skill-group h3 {
   font-size: 1.125rem;
-}
-
-.project-facts {
-  display: grid;
-  gap: 0.55rem 0.85rem;
-  margin: 0.55rem 0 0;
-}
-
-.project-facts div {
-  display: grid;
-  grid-template-columns: 5.25rem minmax(0, 1fr);
-  gap: 0.15rem 0.75rem;
-  align-items: baseline;
-}
-
-.project-facts dt,
-.project-facts dd {
-  margin: 0;
-}
-
-.project-facts dt {
-  color: var(--text-soft);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-.project-facts dd {
-  max-width: 62ch;
 }
 
 .skill-group ul {
@@ -638,11 +606,6 @@ button {
 
   .role-dates {
     text-align: left;
-  }
-
-  .project-facts div {
-    grid-template-columns: 1fr;
-    gap: 0.05rem;
   }
 }
 
@@ -730,8 +693,7 @@ button {
 
   .role,
   .impact-item,
-  .skill-group,
-  .project {
+  .skill-group {
     background: #ffffff;
     border-left-width: 0;
   }
@@ -751,7 +713,6 @@ button {
   }
 
   .role-cluster,
-  .project,
   .impact-item,
   .skill-group {
     break-inside: avoid;
@@ -860,10 +821,6 @@ button {
 
   .pdf-ai {
     line-height: 1.24;
-  }
-
-  .pdf-ai .project-summaries {
-    margin-top: 0.15rem;
   }
 
   .pdf-ai h3 {

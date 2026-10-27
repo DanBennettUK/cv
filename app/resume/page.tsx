@@ -11,7 +11,6 @@ import {
   publicRepos,
 } from '@/lib/data';
 import ContactList from '@/components/ContactList';
-import Projects from '@/components/Projects';
 import ThemeToggle from '@/components/ThemeToggle';
 import { pdfVariants } from '@/lib/pdf-variants';
 
@@ -106,8 +105,6 @@ export default function ResumePage() {
           ))}
         </article>
       </section>
-
-      <Projects />
 
       <section aria-labelledby="resume-earlier-heading">
         <h2 id="resume-earlier-heading">Earlier experience</h2>

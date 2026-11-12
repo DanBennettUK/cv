@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { Source_Sans_3 } from 'next/font/google';
+import { Fraunces, Source_Sans_3 } from 'next/font/google';
 import { getConfig, metaDescription } from '@/lib/data';
 import './globals.css';
 
@@ -8,6 +8,14 @@ const sourceSans = Source_Sans_3({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   display: 'swap',
+  variable: '--font-body',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['500', '700'],
+  display: 'swap',
+  variable: '--font-display',
 });
 
 const siteUrl = 'https://cv.danbennett.me/';
@@ -46,8 +54,8 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#141414' },
+    { media: '(prefers-color-scheme: light)', color: '#f4efe6' },
+    { media: '(prefers-color-scheme: dark)', color: '#14181e' },
   ],
 };
 
@@ -62,7 +70,7 @@ const darkModeScript = `(function () {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-GB" className={sourceSans.className} suppressHydrationWarning>
+    <html lang="en-GB" className={`${sourceSans.className} ${sourceSans.variable} ${fraunces.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
       </head>

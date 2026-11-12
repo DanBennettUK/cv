@@ -9,11 +9,29 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
+        sans: ['var(--font-body)', 'Source Sans 3', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
       },
       colors: {
-        accent: '#477dca',
-        'accent-hover': '#355e98',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        border: 'var(--border)',
+        ring: 'var(--ring)',
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+      },
+      boxShadow: {
+        panel: '0 12px 32px -18px rgb(28 36 48 / 0.35)',
       },
     },
   },

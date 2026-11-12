@@ -9,27 +9,43 @@
 */
 
 :root {
-  --page: #e6ebf1;
-  --bg: #ffffff;
-  --panel: #f4f7fa;
+  --page: #f4efe6;
+  --bg: #fffdf8;
+  --panel: #f7f3eb;
   --text: #1c2430;
   --text-soft: #3e4c5e;
   --link: #1a4f86;
   --accent: #1a4f86;
-  --border: #d5dce5;
+  --border: #e2d9cc;
   --focus: #1a4f86;
+  --background: #f4efe6;
+  --foreground: #1c2430;
+  --card: #fffdf8;
+  --card-foreground: #1c2430;
+  --muted: #f7f3eb;
+  --muted-foreground: #3e4c5e;
+  --ring: #1a4f86;
+  --accent-foreground: #fffdf8;
 }
 
 .dark {
-  --page: #0e1217;
-  --bg: #171c22;
-  --panel: #20262e;
-  --text: #f3f5f8;
+  --page: #14181e;
+  --bg: #1c222b;
+  --panel: #242b36;
+  --text: #f4f1ea;
   --text-soft: #c5ced8;
   --link: #9dc4ef;
   --accent: #9dc4ef;
-  --border: #323b47;
+  --border: #3a4452;
   --focus: #9dc4ef;
+  --background: #14181e;
+  --foreground: #f4f1ea;
+  --card: #1c222b;
+  --card-foreground: #f4f1ea;
+  --muted: #242b36;
+  --muted-foreground: #c5ced8;
+  --ring: #9dc4ef;
+  --accent-foreground: #14181e;
 }
 
 * {
@@ -39,6 +55,7 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light;
+  scrollbar-color: var(--border) var(--background);
 }
 
 html.dark {
@@ -47,12 +64,25 @@ html.dark {
 
 body {
   margin: 0;
-  background: var(--page);
-  color: var(--text);
+  background: var(--background);
+  color: var(--foreground);
   font-size: 1.0625rem;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+.site :is(h1, h2) {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+}
+
+.site :is(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.site :is(p, li) {
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -848,5 +878,13 @@ button {
 
   .pdf-us .role {
     padding: 0.15rem 0.3rem 0.25rem;
+  }
+
+  .site,
+  .site header,
+  .site article,
+  .site section {
+    background: #ffffff !important;
+    box-shadow: none !important;
   }
 }

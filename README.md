@@ -60,8 +60,8 @@ All resume content is in `lib/data.ts`. Edit this file to update:
 
 ### Styling
 
-- **Colors**: Edit CSS variables in `app/globals.css`
-- **Typography**: Source Sans 3, loaded in `app/layout.tsx`
+- **Colors**: Semantic tokens in `app/globals.css` (`--background`, `--foreground`, `--card`, `--accent`)
+- **Typography**: Fraunces for the name and section headings, Source Sans 3 for reading text, both loaded in `app/layout.tsx`. PDF pages keep Source Sans 3.
 - **Dark mode**: Automatic via CSS variables + localStorage
 
 ## 🌙 Dark Mode

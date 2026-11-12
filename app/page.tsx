@@ -43,7 +43,7 @@ export default function Home() {
   };
 
   return (
-    <main id="main-content" className="cv">
+    <main id="main-content" className="site mx-auto max-w-[50rem] px-4 pb-16 pt-4 md:px-6 md:pt-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <Header config={config} />
       <About config={config} />

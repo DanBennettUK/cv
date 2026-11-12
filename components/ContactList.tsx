@@ -44,8 +44,40 @@ export default function ContactList({ config, showPdf = false, print = false }: 
   const contacts = links.filter((link) => !link.pdf);
   const downloads = links.filter((link) => link.pdf);
 
-  const list = (items: ContactLink[], className: string, label: string) => (
-    <ul className={className} aria-label={label}>
+  if (print) {
+    const list = (items: ContactLink[], className: string, label: string) => (
+      <ul className={className} aria-label={label}>
+        {items.map((link) => {
+          const address = link.address && link.address.startsWith('http')
+            ? printAddress(link.address)
+            : link.address;
+          return (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                {...(link.pdf ? { download: true } : {})}
+                {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                <span className="contact-text">
+                  {address && <span className="contact-address">{address}</span>}
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    );
+
+    return (
+      <>
+        {list(contacts, 'contact-list', 'Contact')}
+        {downloads.length > 0 && list(downloads, 'contact-list contact-downloads no-print', 'CV downloads')}
+      </>
+    );
+  }
+
+  const webList = (items: ContactLink[], label: string) => (
+    <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1" aria-label={label}>
       {items.map((link) => {
         const Icon = link.icon;
         const address = link.address && link.address.startsWith('http')
@@ -55,17 +87,18 @@ export default function ContactList({ config, showPdf = false, print = false }: 
           <li key={link.label}>
             <a
               href={link.href}
+              className="inline-flex min-h-11 items-center gap-1.5 py-1 text-sm font-semibold text-accent hover:underline"
               {...(link.pdf ? { download: true } : {})}
               {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
-              {print ? null : <Icon className="contact-mark" aria-hidden="true" />}
-              <span className="contact-text">
-                {print ? null : (
-                  link.address
-                    ? <span className="visually-hidden">{link.label}</span>
-                    : <span className="contact-label">{link.label}</span>
+              <Icon className="size-4 shrink-0" aria-hidden="true" />
+              <span>
+                {address ? (
+                  <span className="visually-hidden">{link.label}</span>
+                ) : (
+                  <span>{link.label}</span>
                 )}
-                {address && <span className="contact-address">{address}</span>}
+                {address && <span>{address}</span>}
               </span>
             </a>
           </li>
@@ -76,8 +109,8 @@ export default function ContactList({ config, showPdf = false, print = false }: 
 
   return (
     <>
-      {list(contacts, 'contact-list', 'Contact')}
-      {downloads.length > 0 && list(downloads, 'contact-list contact-downloads no-print', 'CV downloads')}
+      {webList(contacts, 'Contact')}
+      {downloads.length > 0 && webList(downloads, 'CV downloads')}
     </>
   );
 }
